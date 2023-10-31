@@ -89,7 +89,7 @@ namespace UI
 
 
         }
-
+     
 
         private void OpenChildfrom(Form childform, object btnSender)
         {
@@ -184,16 +184,19 @@ namespace UI
 
         public void MainMenu_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("sdadss");
-            btnRegister.Visible = true;
-            btnRegister.Enabled = true;
-            btnLogin.Visible = true;
-            btnLogin.Enabled = true;
 
             // Hide and disable the LogOut button
-            btnLogOut.Visible = false;
-            btnLogOut.Enabled = false;
-            //UpdateUIForUserLoggedIn();
+            UpdateUIForUserLoggedIn();
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            getCustomer = null;
+            this.Close();
+
+            // Create and show a new instance of MainMenu
+            MainMenu newMainMenu = new MainMenu();
+            newMainMenu.Show();
         }
     }
 }

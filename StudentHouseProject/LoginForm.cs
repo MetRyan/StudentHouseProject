@@ -81,18 +81,21 @@ namespace StudentHouseProject
 
                         if (checkCustomer)
                         {
-                            this.Hide();
+                            this.Close(); 
+
                             Customer getCustomerbyEmail = repository_Customer.getCustomerbyEmail(email);
-                            MainMenu f = new MainMenu();
+                            MainMenu f = new MainMenu() { getCustomer = getCustomerbyEmail, };
                             f.btnHomepage_Click(null, null);
-                            UserHome userHome = new UserHome()
+                            /*     UserHome userHome = new UserHome()
 
-                            {
-                                getCustomer = getCustomerbyEmail,
-                            };
+                                 {
+                                     getCustomer = getCustomerbyEmail,
+                                 };*/
 
+                            // Trong class khác
+                  
                             f.ShowDialog();
-
+                           
                             f.Close();
 
                         }
