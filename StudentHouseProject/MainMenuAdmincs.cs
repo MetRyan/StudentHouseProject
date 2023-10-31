@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using StudentHouseProject.AdminAPage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI.AdminPage;
 
 namespace UI
 {
@@ -17,7 +19,7 @@ namespace UI
         private Random random;
         private int tempIndex;
         private Form activeForm;
-        public Admin getAdmin {  get; set; }
+        public Admin getAdmin { get; set; }
         public MainMenuAdmincs()
         {
             InitializeComponent();
@@ -96,38 +98,66 @@ namespace UI
 
         }
 
-
-
-
-       /* private void lbTitle_Click(object sender, EventArgs e)
+        private void btnAssignServicetoStaff_Click(object sender, EventArgs e)
         {
+            OpenChildfrom(new AdminAssignServiceToStaffs(), sender);
 
         }
 
-        private void btnCustomerManagement_Click(object sender, EventArgs e)
+        private void btnAdminViewServiceDetails_Click(object sender, EventArgs e)
         {
-            OpenChildfrom(new Admin.frmCustomerManagement(), sender);
+            OpenChildfrom(new AdminViewServiceDetails(), sender);
 
         }
 
-        private void btnStaffManagement_Click(object sender, EventArgs e)
+        private void btnStaff_Click(object sender, EventArgs e)
         {
-            OpenChildfrom(new Admin.StaffManagement(), sender);
+            OpenChildfrom(new StaffManagement(), sender);
 
-        }
-
-        private void btnCart_Click(object sender, EventArgs e)
-        {
-
-            OpenChildfrom(new Admin.StaffOrderManagement(), sender);
         }
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            OpenChildfrom(new Login(), sender);
+            this.Close();
+
+            // Create and show a new instance of MainMenu
+            MainMenu newMainMenu = new MainMenu();
+            newMainMenu.Show();
+
+        }
 
 
-        }*/
+
+
+        /* private void lbTitle_Click(object sender, EventArgs e)
+         {
+
+         }
+
+         private void btnCustomerManagement_Click(object sender, EventArgs e)
+         {
+             OpenChildfrom(new Admin.frmCustomerManagement(), sender);
+
+         }
+
+         private void btnStaffManagement_Click(object sender, EventArgs e)
+         {
+             OpenChildfrom(new Admin.StaffManagement(), sender);
+
+         }
+
+         private void btnCart_Click(object sender, EventArgs e)
+         {
+
+             OpenChildfrom(new Admin.StaffOrderManagement(), sender);
+         }
+
+         private void btnLogOut_Click(object sender, EventArgs e)
+         {
+             OpenChildfrom(new Login(), sender);
+
+
+         }*/
 
         /*
       

@@ -34,9 +34,9 @@
             lbTitle = new Label();
             panelMenu = new Panel();
             btnLogOut = new Button();
-            btnCart = new Button();
-            btnStaffManagement = new Button();
-            btnCustomerManagement = new Button();
+            btnStaff = new Button();
+            btnAdminViewServiceDetails = new Button();
+            btnAssignServicetoStaff = new Button();
             panelTitleBar.SuspendLayout();
             panelMenu.SuspendLayout();
             SuspendLayout();
@@ -46,16 +46,18 @@
             panelLogo.BackColor = SystemColors.AppWorkspace;
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
+            panelLogo.Margin = new Padding(3, 2, 3, 2);
             panelLogo.Name = "panelLogo";
-            panelLogo.Size = new Size(250, 71);
+            panelLogo.Size = new Size(219, 53);
             panelLogo.TabIndex = 0;
             // 
             // panelDesktop
             // 
             panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(250, 71);
+            panelDesktop.Location = new Point(219, 53);
+            panelDesktop.Margin = new Padding(3, 2, 3, 2);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(1143, 634);
+            panelDesktop.Size = new Size(1000, 476);
             panelDesktop.TabIndex = 6;
             // 
             // panelTitleBar
@@ -63,9 +65,10 @@
             panelTitleBar.BackColor = SystemColors.ControlDark;
             panelTitleBar.Controls.Add(lbTitle);
             panelTitleBar.Dock = DockStyle.Top;
-            panelTitleBar.Location = new Point(250, 0);
+            panelTitleBar.Location = new Point(219, 0);
+            panelTitleBar.Margin = new Padding(3, 2, 3, 2);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(1143, 71);
+            panelTitleBar.Size = new Size(1000, 53);
             panelTitleBar.TabIndex = 5;
             // 
             // lbTitle
@@ -73,9 +76,9 @@
             lbTitle.Anchor = AnchorStyles.None;
             lbTitle.AutoSize = true;
             lbTitle.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            lbTitle.Location = new Point(545, 9);
+            lbTitle.Location = new Point(477, 7);
             lbTitle.Name = "lbTitle";
-            lbTitle.Size = new Size(87, 35);
+            lbTitle.Size = new Size(69, 28);
             lbTitle.TabIndex = 0;
             lbTitle.Text = "HOME";
             // 
@@ -83,14 +86,15 @@
             // 
             panelMenu.BackColor = SystemColors.ActiveCaption;
             panelMenu.Controls.Add(btnLogOut);
-            panelMenu.Controls.Add(btnCart);
-            panelMenu.Controls.Add(btnStaffManagement);
-            panelMenu.Controls.Add(btnCustomerManagement);
+            panelMenu.Controls.Add(btnStaff);
+            panelMenu.Controls.Add(btnAdminViewServiceDetails);
+            panelMenu.Controls.Add(btnAssignServicetoStaff);
             panelMenu.Controls.Add(panelLogo);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
+            panelMenu.Margin = new Padding(3, 2, 3, 2);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(250, 705);
+            panelMenu.Size = new Size(219, 529);
             panelMenu.TabIndex = 4;
             // 
             // btnLogOut
@@ -99,62 +103,71 @@
             btnLogOut.FlatAppearance.BorderSize = 0;
             btnLogOut.FlatStyle = FlatStyle.Flat;
             btnLogOut.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogOut.Location = new Point(0, 431);
+            btnLogOut.Location = new Point(0, 323);
+            btnLogOut.Margin = new Padding(3, 2, 3, 2);
             btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(250, 115);
+            btnLogOut.Size = new Size(219, 86);
             btnLogOut.TabIndex = 4;
             btnLogOut.Text = "LogOut";
             btnLogOut.UseVisualStyleBackColor = true;
+            btnLogOut.Click += btnLogOut_Click;
             // 
-            // btnCart
+            // btnStaff
             // 
-            btnCart.Dock = DockStyle.Top;
-            btnCart.FlatAppearance.BorderSize = 0;
-            btnCart.FlatStyle = FlatStyle.Flat;
-            btnCart.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCart.Location = new Point(0, 316);
-            btnCart.Name = "btnCart";
-            btnCart.Size = new Size(250, 115);
-            btnCart.TabIndex = 3;
-            btnCart.Text = "Staff Order Management";
-            btnCart.UseVisualStyleBackColor = true;
+            btnStaff.Dock = DockStyle.Top;
+            btnStaff.FlatAppearance.BorderSize = 0;
+            btnStaff.FlatStyle = FlatStyle.Flat;
+            btnStaff.ImageAlign = ContentAlignment.MiddleLeft;
+            btnStaff.Location = new Point(0, 237);
+            btnStaff.Margin = new Padding(3, 2, 3, 2);
+            btnStaff.Name = "btnStaff";
+            btnStaff.Size = new Size(219, 86);
+            btnStaff.TabIndex = 3;
+            btnStaff.Text = "Staff";
+            btnStaff.UseVisualStyleBackColor = true;
+            btnStaff.Click += btnStaff_Click;
             // 
-            // btnStaffManagement
+            // btnAdminViewServiceDetails
             // 
-            btnStaffManagement.Dock = DockStyle.Top;
-            btnStaffManagement.FlatAppearance.BorderSize = 0;
-            btnStaffManagement.FlatStyle = FlatStyle.Flat;
-            btnStaffManagement.ImageAlign = ContentAlignment.MiddleLeft;
-            btnStaffManagement.Location = new Point(0, 201);
-            btnStaffManagement.Name = "btnStaffManagement";
-            btnStaffManagement.Size = new Size(250, 115);
-            btnStaffManagement.TabIndex = 2;
-            btnStaffManagement.Text = "Staff Management";
-            btnStaffManagement.UseVisualStyleBackColor = true;
+            btnAdminViewServiceDetails.Dock = DockStyle.Top;
+            btnAdminViewServiceDetails.FlatAppearance.BorderSize = 0;
+            btnAdminViewServiceDetails.FlatStyle = FlatStyle.Flat;
+            btnAdminViewServiceDetails.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdminViewServiceDetails.Location = new Point(0, 151);
+            btnAdminViewServiceDetails.Margin = new Padding(3, 2, 3, 2);
+            btnAdminViewServiceDetails.Name = "btnAdminViewServiceDetails";
+            btnAdminViewServiceDetails.Size = new Size(219, 86);
+            btnAdminViewServiceDetails.TabIndex = 2;
+            btnAdminViewServiceDetails.Text = "AdminViewServiceDetails";
+            btnAdminViewServiceDetails.UseVisualStyleBackColor = true;
+            btnAdminViewServiceDetails.Click += btnAdminViewServiceDetails_Click;
             // 
-            // btnCustomerManagement
+            // btnAssignServicetoStaff
             // 
-            btnCustomerManagement.BackColor = SystemColors.ActiveCaption;
-            btnCustomerManagement.Dock = DockStyle.Top;
-            btnCustomerManagement.FlatAppearance.BorderSize = 0;
-            btnCustomerManagement.FlatStyle = FlatStyle.Flat;
-            btnCustomerManagement.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCustomerManagement.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCustomerManagement.Location = new Point(0, 71);
-            btnCustomerManagement.Name = "btnCustomerManagement";
-            btnCustomerManagement.Size = new Size(250, 130);
-            btnCustomerManagement.TabIndex = 1;
-            btnCustomerManagement.Text = "Customer Managment";
-            btnCustomerManagement.UseVisualStyleBackColor = false;
+            btnAssignServicetoStaff.BackColor = SystemColors.ActiveCaption;
+            btnAssignServicetoStaff.Dock = DockStyle.Top;
+            btnAssignServicetoStaff.FlatAppearance.BorderSize = 0;
+            btnAssignServicetoStaff.FlatStyle = FlatStyle.Flat;
+            btnAssignServicetoStaff.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAssignServicetoStaff.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAssignServicetoStaff.Location = new Point(0, 53);
+            btnAssignServicetoStaff.Margin = new Padding(3, 2, 3, 2);
+            btnAssignServicetoStaff.Name = "btnAssignServicetoStaff";
+            btnAssignServicetoStaff.Size = new Size(219, 98);
+            btnAssignServicetoStaff.TabIndex = 1;
+            btnAssignServicetoStaff.Text = "AssignServicetoStaff";
+            btnAssignServicetoStaff.UseVisualStyleBackColor = false;
+            btnAssignServicetoStaff.Click += btnAssignServicetoStaff_Click;
             // 
             // MainMenuAdmincs
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1393, 705);
+            ClientSize = new Size(1219, 529);
             Controls.Add(panelDesktop);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "MainMenuAdmincs";
             Text = "MainMenuAdmincs";
             panelTitleBar.ResumeLayout(false);
@@ -173,9 +186,9 @@
         private Button btnLogin;
         private Button btnResgiter;
         private Button btnAboutus;
-        private Button btnCart;
-        private Button btnStaffManagement;
-        private Button btnCustomerManagement;
+        private Button btnStaff;
+        private Button btnAdminViewServiceDetails;
+        private Button btnAssignServicetoStaff;
         private Button btnLogOut;
     }
 }

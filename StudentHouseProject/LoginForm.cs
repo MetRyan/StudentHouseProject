@@ -47,15 +47,31 @@ namespace StudentHouseProject
                 {
                     //admin thanh cong
 
-                    this.Hide();
-                    Admin getAdminbyEmail = repository_Admin.getAdminbyEmail(email);
-                    MainMenuAdmincs f = new MainMenuAdmincs()
+                    /*this.Hide();
                     {
                         getAdmin = getAdminbyEmail,
                     };
                     f.ShowDialog();
                     f.Close();
 
+*/
+
+                    this.Close();
+
+                    Admin getAdminbyEmail = repository_Admin.getAdminbyEmail(email);
+                    MainMenuAdmincs f = new MainMenuAdmincs();
+                    f.btnHomepage_Click(null, null);
+                    /*     UserHome userHome = new UserHome()
+
+                         {
+                             getCustomer = getCustomerbyEmail,
+                         };*/
+
+                    // Trong class khác
+
+                    f.ShowDialog();
+
+                    f.Close();
                 }
                 else
                 {
