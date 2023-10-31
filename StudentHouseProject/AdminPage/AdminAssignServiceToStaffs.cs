@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StudentHouseProject.Staff
+namespace StudentHouseProject.AdminAPage
 {
-    public partial class StaffViewServiceDetails : Form
+    public partial class AdminAssignServiceToStaffs : Form
     {
-        public StaffViewServiceDetails()
+        public AdminAssignServiceToStaffs()
         {
             InitializeComponent();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

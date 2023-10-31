@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace BusinessObjects
 {
@@ -13,21 +16,23 @@ namespace BusinessObjects
         {
         }
 
-        public virtual DbSet<Admin> Admins { get; set; }
-        public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
-        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
-        public virtual DbSet<Payment> Payments { get; set; }
-        public virtual DbSet<Service> Services { get; set; }
-        public virtual DbSet<StaffOrder> StaffOrders { get; set; }
-        public virtual DbSet<staff> staff { get; set; }
+        public virtual DbSet<Admin> Admins { get; set; } = null!;
+        public virtual DbSet<Customer> Customers { get; set; } = null!;
+        public virtual DbSet<Order> Orders { get; set; } = null!;
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; } = null!;
+        public virtual DbSet<Payment> Payments { get; set; } = null!;
+        public virtual DbSet<Service> Services { get; set; } = null!;
+        public virtual DbSet<StaffOrder> StaffOrders { get; set; } = null!;
+        public virtual DbSet<staff> staff { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server= DESKTOP-IDK73G0\\SQLEXPRESS;Database=StudentHouseMembership; Uid=sa; Pwd=1234567890");
+                optionsBuilder.UseSqlServer("Server=LAPTOP-RFJCRS8T;Database=StudentHouseMembership; Uid=sa; Pwd=sa");
+                //optionsBuilder.UseSqlServer("Server= DESKTOP-IDK73G0\\SQLEXPRESS;Database=StudentHouseMembership; Uid=sa; Pwd=1234567890");
+
             }
         }
 
@@ -41,9 +46,7 @@ namespace BusinessObjects
                     .ValueGeneratedNever()
                     .HasColumnName("AdminID");
 
-                entity.Property(e => e.AdminName)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                entity.Property(e => e.AdminName).HasMaxLength(50);
 
                 entity.Property(e => e.Dob)
                     .HasColumnType("date")
@@ -51,13 +54,14 @@ namespace BusinessObjects
 
                 entity.Property(e => e.Email).HasMaxLength(50);
 
+                entity.Property(e => e.Password).HasMaxLength(10);
+
                 entity.Property(e => e.Phone)
                     .HasMaxLength(13)
                     .IsUnicode(false);
 
                 entity.Property(e => e.Sex)
-                    .HasMaxLength(5)
-                    .IsUnicode(false)
+                    .HasMaxLength(10)
                     .HasColumnName("sex");
 
                 entity.Property(e => e.Status)
@@ -81,25 +85,21 @@ namespace BusinessObjects
                     .HasColumnName("dob");
 
                 entity.Property(e => e.Email)
-                    .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("email");
 
                 entity.Property(e => e.FirstName)
-                    .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("firstName");
 
                 entity.Property(e => e.LastName)
-                    .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("lastName");
 
                 entity.Property(e => e.Password)
-                    .IsRequired()
                     .HasMaxLength(50)
                     .IsUnicode(false)
                     .HasColumnName("password");
@@ -109,7 +109,9 @@ namespace BusinessObjects
                     .IsUnicode(false)
                     .HasColumnName("phone");
 
-                entity.Property(e => e.Sex).HasColumnName("sex");
+                entity.Property(e => e.Sex)
+                    .HasMaxLength(20)
+                    .HasColumnName("sex");
 
                 entity.Property(e => e.Status)
                     .HasMaxLength(20)
@@ -134,7 +136,7 @@ namespace BusinessObjects
                     .WithMany(p => p.Orders)
                     .HasForeignKey(d => d.CustomerId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Order__CustomerI__5165187F");
+                    .HasConstraintName("FK__Order__CustomerI__2B3F6F97");
             });
 
             modelBuilder.Entity<OrderDetail>(entity =>
@@ -160,12 +162,12 @@ namespace BusinessObjects
                 entity.HasOne(d => d.Order)
                     .WithMany()
                     .HasForeignKey(d => d.OrderId)
-                    .HasConstraintName("FK__OrderDeta__Order__619B8048");
+                    .HasConstraintName("FK__OrderDeta__Order__2D27B809");
 
                 entity.HasOne(d => d.Service)
                     .WithMany()
                     .HasForeignKey(d => d.ServiceId)
-                    .HasConstraintName("FK__OrderDeta__Servi__628FA481");
+                    .HasConstraintName("FK__OrderDeta__Servi__2E1BDC42");
             });
 
             modelBuilder.Entity<Payment>(entity =>
@@ -185,7 +187,7 @@ namespace BusinessObjects
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.Payments)
                     .HasForeignKey(d => d.OrderId)
-                    .HasConstraintName("FK__Payment__OrderID__5BE2A6F2");
+                    .HasConstraintName("FK__Payment__OrderID__36B12243");
             });
 
             modelBuilder.Entity<Service>(entity =>
@@ -200,9 +202,7 @@ namespace BusinessObjects
 
                 entity.Property(e => e.LatestUpdate).HasColumnType("date");
 
-                entity.Property(e => e.ServiceName)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                entity.Property(e => e.ServiceName).HasMaxLength(50);
 
                 entity.Property(e => e.Status)
                     .HasMaxLength(10)
@@ -211,7 +211,7 @@ namespace BusinessObjects
                 entity.HasOne(d => d.Admin)
                     .WithMany(p => p.Services)
                     .HasForeignKey(d => d.AdminId)
-                    .HasConstraintName("FK__Service__AdminID__5EBF139D");
+                    .HasConstraintName("FK__Service__AdminID__286302EC");
             });
 
             modelBuilder.Entity<StaffOrder>(entity =>
@@ -233,12 +233,12 @@ namespace BusinessObjects
                 entity.HasOne(d => d.Order)
                     .WithMany()
                     .HasForeignKey(d => d.OrderId)
-                    .HasConstraintName("FK__StaffOrde__Order__68487DD7");
+                    .HasConstraintName("FK__StaffOrde__Order__33D4B598");
 
                 entity.HasOne(d => d.Staff)
                     .WithMany()
                     .HasForeignKey(d => d.StaffId)
-                    .HasConstraintName("FK__StaffOrde__Staff__6754599E");
+                    .HasConstraintName("FK__StaffOrde__Staff__32E0915F");
             });
 
             modelBuilder.Entity<staff>(entity =>
@@ -255,6 +255,8 @@ namespace BusinessObjects
 
                 entity.Property(e => e.Email).HasMaxLength(50);
 
+                entity.Property(e => e.Password).HasMaxLength(10);
+
                 entity.Property(e => e.Phone)
                     .HasMaxLength(13)
                     .IsUnicode(false);
@@ -262,13 +264,10 @@ namespace BusinessObjects
                 entity.Property(e => e.ServiceId).HasColumnName("ServiceID");
 
                 entity.Property(e => e.Sex)
-                    .HasMaxLength(5)
-                    .IsUnicode(false)
+                    .HasMaxLength(50)
                     .HasColumnName("sex");
 
-                entity.Property(e => e.StaffName)
-                    .IsRequired()
-                    .HasMaxLength(50);
+                entity.Property(e => e.StaffName).HasMaxLength(50);
 
                 entity.Property(e => e.Status)
                     .HasMaxLength(10)
@@ -278,7 +277,7 @@ namespace BusinessObjects
                 entity.HasOne(d => d.Service)
                     .WithMany(p => p.staff)
                     .HasForeignKey(d => d.ServiceId)
-                    .HasConstraintName("FK__Staff__ServiceID__656C112C");
+                    .HasConstraintName("FK__Staff__ServiceID__30F848ED");
             });
 
             OnModelCreatingPartial(modelBuilder);

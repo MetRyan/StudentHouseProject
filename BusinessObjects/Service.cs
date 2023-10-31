@@ -11,14 +11,14 @@ namespace BusinessObjects
         }
 
         public int ServiceId { get; set; }
-        public string ServiceName { get; set; }
+        public string ServiceName { get; set; } = null!;
         public DateTime? LatestUpdate { get; set; }
         public int? AmountOfTime { get; set; }
         public double? Price { get; set; }
-        public string Status { get; set; }
+        public string? Status { get; set; }
         public int? AdminId { get; set; }
 
-        public virtual Admin Admin { get; set; }
+        public virtual Admin? Admin { get; set; }
         public virtual ICollection<staff> staff { get; set; }
     }
 }

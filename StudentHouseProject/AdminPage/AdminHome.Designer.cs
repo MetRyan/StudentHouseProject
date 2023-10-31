@@ -1,4 +1,4 @@
-﻿namespace StudentHouseProject
+﻿namespace StudentHouseProject.AdminAPage
 {
     partial class AdminHome
     {

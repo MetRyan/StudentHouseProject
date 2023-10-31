@@ -1,6 +1,6 @@
 ﻿using BusinessObjects;
 
-namespace Repositories
+namespace Repositories.Interface
 {
     public interface IAdminRepository
     {
@@ -9,6 +9,8 @@ namespace Repositories
         public void AddAdmin(Admin admin);
         public void UpdateAdmin(Admin admin);
         public void DeleteAdmin(Admin admin);
+        public Boolean CheckloginforAdmin(String email, string password);
+        public Admin getAdminbyEmail(String email);
 
     }
 }

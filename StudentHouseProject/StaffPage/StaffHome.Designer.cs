@@ -1,4 +1,4 @@
-﻿namespace StudentHouseProject.Staff
+﻿namespace StudentHouseProject.StaffPage
 {
     partial class StaffHome
     {

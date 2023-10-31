@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StudentHouseProject
+namespace StudentHouseProject.AdminAPage
 {
-    public partial class AdminHome : Form
+    public partial class AdminViewServiceDetails : Form
     {
-        public AdminHome()
+        public AdminViewServiceDetails()
         {
             InitializeComponent();
         }

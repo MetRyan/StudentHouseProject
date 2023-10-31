@@ -1,4 +1,4 @@
-﻿namespace StudentHouseProject.Admin
+﻿namespace StudentHouseProject.AdminAPage
 {
     partial class AdminAssignServiceToStaffs
     {

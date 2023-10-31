@@ -1,6 +1,6 @@
 ﻿using BusinessObjects;
 
-namespace Repositories
+namespace Repositories.Interface
 {
     public interface IStaffRepository
     {
@@ -9,5 +9,9 @@ namespace Repositories
         public void AddStaff(staff staff);
         public void UpdateStaff(staff staff);
         public void DeleteStaff(staff staff);
+        public Boolean CheckloginforStaff(String email, string password);
+        public staff getStaffbyEmails(String email);
+
+
     }
 }

@@ -108,5 +108,49 @@ namespace DataAccessObjects
                 throw e;
             }
         }
+        public static Boolean CheckLoginforStaff(String email, String password)
+        {
+            try
+            {
+                using (var Context = new StudentHouseMembershipContext())
+                {
+                    var temp = Context.Admins.SingleOrDefault(p => p.Email == email
+                    && p.Password == password);
+                    if (temp != null)
+                    { return true; }
+
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + "");
+
+            }
+
+
+
+
+        }
+        public static staff GetstaffbyEmail(String email)
+        {
+            staff getStaff = new staff();
+            try
+            {
+                using (var context = new StudentHouseMembershipContext())
+                {
+
+                    getStaff = context.staff.SingleOrDefault(m => m.Email == email);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return getStaff;
+        }
     }
 }

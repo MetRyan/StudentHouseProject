@@ -1,5 +1,6 @@
 ﻿using BusinessObjects;
 using DataAccessObjects;
+using Repositories.Interface;
 
 namespace Repositories
 {
@@ -13,6 +14,9 @@ namespace Repositories
         public List<Customer> GetCustomers() => CustomerDAO.Instance.GetCustomers();
 
         public void UpdateCustomer(Customer customer) => CustomerDAO.Instance.UpdateCustomer(customer);
+        public Boolean CheckloginforCustomer(string email, string password) => CustomerDAO.CheckLoginforCustomer(email, password);
+
+        public Customer getCustomerbyEmail(string email) => CustomerDAO.GetCustomerbyEmail(email);
     }
 
 }

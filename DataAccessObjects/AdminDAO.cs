@@ -97,5 +97,49 @@ namespace DataAccessObjects
             }
 
         }
+        public static Boolean CheckLoginforAdmin(String email, String password)
+        {
+            try
+            {
+                using (var Context = new StudentHouseMembershipContext())
+                {
+                    var temp = Context.Admins.SingleOrDefault(p => p.Email == email
+                    && p.Password == password);
+                    if (temp != null)
+                    { return true; }
+
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message + "");
+
+            }
+
+
+
+
+        }
+        public static Admin GetAdminbyEmail(String email)
+        {
+            Admin Admins = new Admin();
+            try
+            {
+                using (var context = new StudentHouseMembershipContext())
+                {
+
+                    Admins = context.Admins.SingleOrDefault(m => m.Email == email);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            return Admins;
+        }
     }
 }
