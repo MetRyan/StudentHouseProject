@@ -89,7 +89,7 @@ namespace UI
 
 
         }
-     
+
 
         private void OpenChildfrom(Form childform, object btnSender)
         {
@@ -197,6 +197,11 @@ namespace UI
             // Create and show a new instance of MainMenu
             MainMenu newMainMenu = new MainMenu();
             newMainMenu.Show();
+        }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

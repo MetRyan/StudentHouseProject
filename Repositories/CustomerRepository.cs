@@ -1,6 +1,5 @@
 ﻿using BusinessObjects;
 using DataAccessObjects;
-using Repositories.Interface;
 
 namespace Repositories
 {

@@ -1,6 +1,5 @@
 ﻿using BusinessObjects;
 using DataAccessObjects;
-using Repositories.Interface;
 
 namespace Repositories
 {
@@ -8,7 +7,7 @@ namespace Repositories
     {
         public void AddAdmin(Admin admin) => AdminDAO.Instance.AddAdmin(admin);
 
-        public Boolean CheckloginforAdmin(string email, string password)=>AdminDAO.CheckLoginforAdmin(email, password);
+        public Boolean CheckloginforAdmin(string email, string password) => AdminDAO.CheckLoginforAdmin(email, password);
 
         public void DeleteAdmin(Admin admin) => AdminDAO.Instance.DeleteAdmin(admin);
 

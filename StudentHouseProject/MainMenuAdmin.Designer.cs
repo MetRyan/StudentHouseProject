@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class MainMenuAdmincs
+    partial class MainMenuAdmin
     {
         /// <summary>
         /// Required designer variable.

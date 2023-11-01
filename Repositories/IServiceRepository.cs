@@ -1,6 +1,6 @@
 ﻿using BusinessObjects;
 
-namespace Repositories.Interface
+namespace Repositories
 {
     public interface IServiceRepository
     {

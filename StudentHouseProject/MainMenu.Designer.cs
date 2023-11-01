@@ -181,6 +181,7 @@
             panelDesktop.Name = "panelDesktop";
             panelDesktop.Size = new Size(993, 824);
             panelDesktop.TabIndex = 3;
+            panelDesktop.Paint += panelDesktop_Paint;
             // 
             // MainMenu
             // 

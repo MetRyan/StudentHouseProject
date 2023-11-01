@@ -13,14 +13,14 @@ using UI.AdminPage;
 
 namespace UI
 {
-    public partial class MainMenuAdmincs : Form
+    public partial class MainMenuAdmin : Form
     {
         private Button currentButton;
         private Random random;
         private int tempIndex;
         private Form activeForm;
         public Admin getAdmin { get; set; }
-        public MainMenuAdmincs()
+        public MainMenuAdmin()
         {
             InitializeComponent();
             random = new Random();

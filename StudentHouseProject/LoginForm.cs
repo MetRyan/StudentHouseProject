@@ -1,9 +1,6 @@
 using BusinessObjects;
-using Microsoft.EntityFrameworkCore;
 using Repositories;
-using Repositories.Interface;
 using UI;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace StudentHouseProject
 {
@@ -59,7 +56,7 @@ namespace StudentHouseProject
                     this.Close();
 
                     Admin getAdminbyEmail = repository_Admin.getAdminbyEmail(email);
-                    MainMenuAdmincs f = new MainMenuAdmincs();
+                    MainMenuAdmin f = new MainMenuAdmin();
                     f.btnHomepage_Click(null, null);
                     /*     UserHome userHome = new UserHome()
 
@@ -97,7 +94,7 @@ namespace StudentHouseProject
 
                         if (checkCustomer)
                         {
-                            this.Close(); 
+                            this.Close();
 
                             Customer getCustomerbyEmail = repository_Customer.getCustomerbyEmail(email);
                             MainMenu f = new MainMenu() { getCustomer = getCustomerbyEmail, };
@@ -109,9 +106,9 @@ namespace StudentHouseProject
                                  };*/
 
                             // Trong class khác
-                  
+
                             f.ShowDialog();
-                           
+
                             f.Close();
 
                         }

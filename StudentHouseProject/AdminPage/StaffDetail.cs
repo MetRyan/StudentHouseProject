@@ -1,15 +1,5 @@
-﻿using BussinenssObject;
-using Repository.IRepository;
-using Repository.Repository;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BusinessObjects;
+using Repositories;
 
 namespace UI.AdminPage
 {
@@ -44,7 +34,7 @@ namespace UI.AdminPage
             {
 
 
-                staff getStaff = repository.getStaffbyId(getStaffId);
+                staff getStaff = repository.GetStaffById(getStaffId);
 
                 txtStaffId.DataBindings.Add("Text", getStaff, "StaffId");
                 txtStaffName.DataBindings.Add("Text", getStaff, "StaffName");

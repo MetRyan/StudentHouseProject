@@ -1,6 +1,6 @@
 ﻿using BusinessObjects;
 
-namespace Repositories.Interface
+namespace Repositories
 {
     public interface ICustomerRepository
     {
@@ -9,8 +9,8 @@ namespace Repositories.Interface
         public void AddCustomer(Customer customer);
         public void UpdateCustomer(Customer customer);
         public void DeleteCustomer(Customer customer);
-        public Boolean CheckloginforCustomer(String email, string password);
-        public Customer getCustomerbyEmail (String email);
+        public bool CheckloginforCustomer(string email, string password);
+        public Customer getCustomerbyEmail(string email);
 
 
 
