@@ -20,6 +20,7 @@ namespace BusinessObjects
         public DateTime? Dob { get; set; }
         public string? Sex { get; set; }
         public string? Status { get; set; }
+        public string? Adress { get; set; }
 
         public virtual ICollection<Order> Orders { get; set; }
     }

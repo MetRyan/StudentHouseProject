@@ -13,6 +13,7 @@ namespace BusinessObjects
         public DateTime? EndDate { get; set; }
         public string? Address { get; set; }
         public string? PaymentMethod { get; set; }
+        public bool? Pending { get; set; }
 
         public virtual Order? Order { get; set; }
         public virtual Service? Service { get; set; }
