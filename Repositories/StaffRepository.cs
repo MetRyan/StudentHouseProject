@@ -17,5 +17,7 @@ namespace Repositories
         public List<staff> GetStaffs() => StaffDAO.Instance.GetStaffs();
         public void UpdateStaff(staff staff) => StaffDAO.Instance.UpdateStaff(staff);
         public staff getStaffbyEmails(string email) => StaffDAO.GetstaffbyEmail(email);
+
+        public bool StaffIdExists(int id) => StaffDAO.StaffIdExists(id);
     }
 }

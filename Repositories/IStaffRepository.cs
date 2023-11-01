@@ -11,7 +11,7 @@ namespace Repositories
         public void DeleteStaff(staff staff);
         public bool CheckloginforStaff(string email, string password);
         public staff getStaffbyEmails(string email);
-
+        public Boolean StaffIdExists (int id);
 
     }
 }

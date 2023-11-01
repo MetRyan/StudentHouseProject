@@ -40,9 +40,9 @@ namespace UI.AdminPage
                 txtEmail.DataBindings.Add("Text", getStaff, "Email");
                 txtPhone.DataBindings.Add("Text", getStaff, "Phone");
                 dtpdob.DataBindings.Add("Text", getStaff, "Dob");
-                cbSex.DataBindings.Add("Text", getStaff, "ManufaSexcturerId");
+                cbSex.DataBindings.Add("Text", getStaff, "Sex");
                 cbStatus.DataBindings.Add("Text", getStaff, "Status");
-                txtAdress.DataBindings.Add("Text", getStaff, "Address");
+                // txtAdress.DataBindings.Add("Text", getStaff, "Address");
                 txtPassword.DataBindings.Add("Text", getStaff, "Password");
 
                 // validatoin -> khi input bi loi khong hien new input
@@ -52,7 +52,7 @@ namespace UI.AdminPage
                 txtPhone.CausesValidation = false;
                 dtpdob.CausesValidation = false;
                 cbStatus.CausesValidation = false;
-                txtAdress.CausesValidation = false;
+                //   txtAdress.CausesValidation = false;
                 txtPassword.CausesValidation = false;
                 cbSex.CausesValidation = false;
 
@@ -70,8 +70,15 @@ namespace UI.AdminPage
             }
         }
 
+
+        // Get a list of existing staff IDs
+
+        // Generate a new unique StaffId
+
+
         private void btnSave_Click(object sender, EventArgs e)
         {
+
             /* txtStaffId.DataBindings.Add("Text", getStaff, "StaffId");
              txtStaffName.DataBindings.Add("Text", getStaff, "StaffName");
              txtEmail.DataBindings.Add("Text", getStaff, "Email");
@@ -83,96 +90,84 @@ namespace UI.AdminPage
              txtPassword.DataBindings.Add("Text", getStaff, "Password");*/
             try
             {
-                if (txtStaffName.Text == ""
+                if (
+                    txtStaffId.Text == "" &&
+                    txtStaffName.Text == ""
                     || txtEmail.Text == "" || txtPhone.Text == "" || dtpdob.Text == ""
-                    || cbSex.Text == "" || cbStatus.Text == "" || txtAdress.Text == ""
-                    || txtPassword.Text == "")
+                    || cbSex.Text == "" || cbStatus.Text == "" || txtPassword.Text == "")
                 {
                     MessageBox.Show("All fields are required!", "Staff Management",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    String StaffName;
-                    String Email;
-                    String Phone;
-                    DateTime dob;
-                    String txtAdress;
-                    String status;
-                    /*
-                        if (!int.TryParse(txtNumberOfDoor.Text, out numberOfDoors))
-                        {
-                            MessageBox.Show("Number of Doors must be an integer.", "Car Management",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else if (!byte.TryParse(txtCarStatus.Text, out carStatus) || (carStatus != 1 && carStatus != 0))
-                        {
-                            MessageBox.Show("Car Status must be 1 or 0", "Car Management",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else if (!decimal.TryParse(txtCarRenting.Text, out carRentingPrice))
-                        {
-                            MessageBox.Show("Car Renting Price must be a valid numeric value.", "Car Management",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else if (!int.TryParse(txtSupplierID.Text, out supplierId))
-                        {
-                            MessageBox.Show("Supplier ID must be an integer.", "Car Management",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                        else if (!int.TryParse(txtManufacturer.Text, out manufacturerId))
-                        {
-                            MessageBox.Show("Manufacturer ID must be an integer.", "Car Management",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                    int staffId = int.Parse(txtStaffId.Text); // Parse the StaffId from the text box
 
-                        else if (!int.TryParse(txtYear.Text, out year) || year < 1900 || year > DateTime.Now.Year)
+                    if (InserorUpdate == false) { 
+                        bool staffIdExists = repository.StaffIdExists(staffId);
+                    if (staffIdExists)
+                    {
+                        MessageBox.Show("Staff with the same ID already exists in the database.", "Staff Management",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                    int staffIdd;
+
+                if (!int.TryParse(txtStaffId.Text, out staffIdd))
+                    {
+                        MessageBox.Show("StaffId must be a valid integer.", "Staff Management",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else if (staffId < 1)
+                    {
+                        MessageBox.Show("StaffId must be a positive integer.", "Staff Management",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                   
+                    else if (!txtEmail.Text.EndsWith("@gmail.com"))
+                    {
+                        MessageBox.Show("Email must end with @gmail.com.", "Staff Management",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    else
+                    {
+
+
+                        staff p = new staff
                         {
-                            MessageBox.Show("Year must be a valid year.", "Car Management",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            StaffId = int.Parse(txtStaffId.Text),
+                            StaffName = txtStaffName.Text,
+                            Email = txtEmail.Text,
+                            Phone = txtPhone.Text,
+                            Dob = dtpdob.Value,
+                            Sex = cbSex.Text,
+                            Status = cbStatus.Text,
+                            ServiceId = int.Parse(txtServiceId.Text),
+                            Password = txtPassword.Text,
+
+                        };
+
+
+
+                        if (InserorUpdate == false)
+                        {
+
+
+                            repository.AddStaff(p);
+                            MessageBox.Show("Success", "Customer Management", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            Close();
                         }
                         else
                         {
-                            var p = new CarInformation
-                            {
-                                CarName = txtCarName.Text,
-                                CarDescription = txtCarDescription.Text,
-                                NumberOfDoors = int.Parse(txtNumberOfDoor.Text),
-                                SeatingCapacity = int.Parse(txtSeatingCapacity.Text),
-                                FuelType = cbFuelType.Text,
-                                Year = year,
-                                ManufacturerId = manufacturerId,
-                                SupplierId = supplierId,
-                                CarStatus = carStatus,
-                                CarRentingPricePerDay = carRentingPrice
-                            };
+                            p.StaffId = getStaffId;
 
-                             CarName = txtCustomerName.Text,
-                              CarDescription = DateTime.Parse(txtCustomerBirthday.Text),
-                              CustomerStatus = byte.Parse(txtCustomerStatus.Text),
-                              Email = txtEmail.Text,
-                              Password = txtPassword.Text,
-                              Telephone = txtTelephone.Text,
-                    if (InserorUpdate == false)
-                    {
-
-
-                        repository.AddCar(p);
-                        MessageBox.Show("Success", "Customer Management", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                        Close();
+                            repository.UpdateStaff(p);
+                            Close();
+                        }
                     }
-                    else
-                    {
-                        p.CarId = getCarID;
-
-                        repository.UpdateCar(p);
-                        Close();
-                    }
-
                 }
-            }
-                
             }
             catch (Exception ex)
             {
@@ -180,13 +175,11 @@ namespace UI.AdminPage
             MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-        */
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error");
-            }
+        }
+
+        private void txtServiceId_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

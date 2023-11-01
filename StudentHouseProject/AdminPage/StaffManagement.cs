@@ -10,6 +10,8 @@ namespace UI.AdminPage
             InitializeComponent();
         }
         IStaffRepository repository = new StaffRepository();
+        BindingSource source;
+
 
         public void LoadStaffList()
         {
@@ -20,7 +22,7 @@ namespace UI.AdminPage
             txtdob.Enabled = false;
             txtSex.Enabled = false;
             txtStatus.Enabled = false;
-            txtAdress.Enabled = false;
+            txtServiceId.Enabled = false;
 
             btnDelete.Enabled = true;
             btnUpdate.Enabled = true;
@@ -31,26 +33,26 @@ namespace UI.AdminPage
                 source.DataSource = StaffList;
 
                 txtStaffId.DataBindings.Clear();
-
                 txtStaffName.DataBindings.Clear();
                 txtEmail.DataBindings.Clear();
                 txtPhone.DataBindings.Clear();
                 txtdob.DataBindings.Clear();
                 txtSex.DataBindings.Clear();
                 txtStatus.DataBindings.Clear();
-                txtAdress.DataBindings.Clear();
+                txtServiceId.DataBindings.Clear();
 
 
 
-                txtStaffId.DataBindings.Add("Text", source, "CustomerId");
-                txtStaffName.DataBindings.Add("Text", source, "CustomerName");
-                txtEmail.DataBindings.Add("Text", source, "CustomerBirthday");
-                txtPhone.DataBindings.Add("Text", source, "CustomerStatus");
-                txtdob.DataBindings.Add("Text", source, "Email");
-                txtSex.DataBindings.Add("Text", source, "Telephone");
+                txtStaffId.DataBindings.Add("Text", source, "StaffId");
+                txtStaffName.DataBindings.Add("Text", source, "StaffName");
+                txtEmail.DataBindings.Add("Text", source, "Email");
+                txtPhone.DataBindings.Add("Text", source, "Phone");
+                txtdob.DataBindings.Add("Text", source, "Dob");
+                txtSex.DataBindings.Add("Text", source, "Sex");
+                txtStatus.DataBindings.Add("Text", source, "Status");
+                txtServiceId.DataBindings.Add("Text", source, "Service");
 
-                txtStatus.DataBindings.Add("Text", source, "Email");
-                txtAdress.DataBindings.Add("Text", source, "Telephone");
+                // txtAdress.DataBindings.Add("Text", source, "Telephone");
 
                 dgv.DataSource = null;
                 dgv.DataSource = source;
@@ -77,7 +79,7 @@ namespace UI.AdminPage
             txtdob.Enabled = false;
             txtSex.Enabled = false;
             txtStatus.Enabled = false;
-            txtAdress.Enabled = false;
+            txtServiceId.Enabled = false;
 
 
             btnDelete.Enabled = false;
@@ -92,12 +94,12 @@ namespace UI.AdminPage
             txtdob.Text = "";
             txtSex.Text = "";
             txtPhone.Text = "";
-            txtAdress.Text = "";
+            txtServiceId.Text = "";
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-
+            LoadStaffList();
 
 
         }
