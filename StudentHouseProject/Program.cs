@@ -1,4 +1,5 @@
 using BusinessObjects;
+using UI;
 using UI.AdminPage;
 
 namespace StudentHouseProject
@@ -14,7 +15,7 @@ namespace StudentHouseProject
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new StaffManagement());
+            Application.Run(new MainMenu());
         }
     }
 }
