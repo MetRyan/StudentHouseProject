@@ -50,10 +50,10 @@ namespace StudentHouseProject
                 listitems[i].OnAddToCart += (item) =>
                 {
                    // string serviceName = ServiceList.Find(service => service.ServiceId == serviceId)?.ServiceName;
-                   UserViewServicesDetails f = new UserViewServicesDetails() { 
+                  /* UserViewServicesDetails f = new UserViewServicesDetails() { 
                    
                    
-                   }
+                   }*/
                     // Lấy dữ liệu từ item được click
                   //  MessageBox.Show(serviceName);
 
