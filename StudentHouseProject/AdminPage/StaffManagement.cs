@@ -1,15 +1,5 @@
-﻿using BussinenssObject;
-using Repository.IRepository;
-using Repository.Repository;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BusinessObjects;
+using Repositories;
 
 namespace UI.AdminPage
 {
@@ -36,7 +26,7 @@ namespace UI.AdminPage
             btnUpdate.Enabled = true;
             try
             {
-                var StaffList = repository.getStaffs();
+                var StaffList = repository.GetStaffs();
                 BindingSource source = new BindingSource();
                 source.DataSource = StaffList;
 
@@ -133,7 +123,7 @@ namespace UI.AdminPage
         }
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            List<staff> CustomerList = repository.getStaffs().ToList();
+            List<staff> CustomerList = repository.GetStaffs().ToList();
             DialogResult d;
             if (CustomerList.Count == 0)
             {
@@ -147,8 +137,8 @@ namespace UI.AdminPage
             {
 
                 var StaffId = GetselecttedStaffId();
-                staff staffObject = repository.getStaffbyId(StaffId);
-                repository.deleteStaff(staffObject);
+                staff staffObject = repository.GetStaffById(StaffId);
+                repository.DeleteStaff(staffObject);
                 LoadStaffList();
             }
         }
