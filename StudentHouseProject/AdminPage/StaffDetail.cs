@@ -1,6 +1,5 @@
 ﻿using BusinessObjects;
 using Repositories;
-
 namespace UI.AdminPage
 {
     public partial class StaffDetail : Form
