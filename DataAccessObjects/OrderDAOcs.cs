@@ -11,6 +11,9 @@ namespace DataAccessObjects
 
     public class OrderDAOs
     {
+
+        public static List<CartItems> shoppingCart = new List<CartItems>();
+
         private static OrderDAOs instance;
         private static object instanceLock = new object();
         public static OrderDAOs Instance
@@ -226,96 +229,145 @@ namespace DataAccessObjects
         }
 
 
-  /*      public Boolean removeServicesFromCartById(int ProductId, int OrderId)
-        {
+        /*      public Boolean removeServicesFromCartById(int ProductId, int OrderId)
+              {
 
+                  try
+                  {
+                      using (var context = new StudentHouseMembershipContext())
+                      {
+                          OrderDetail p1 = context.OrderDetails.Where(p => p.OrderId == OrderId).ToList()
+                          .SingleOrDefault(p => p.ServiceId == ProductId);
+                          if (p1 != null)
+                          {
+                              context.OrderDetails.Remove(p1);
+                              context.SaveChanges();
+                              return true;
+
+                          }
+                          else
+                          {
+                              return false;
+
+                          }
+                      }
+                  }
+                  catch (Exception ex)
+                  {
+                      throw new Exception(ex.Message);
+                  }
+
+
+              }*/
+        /*  public Boolean removeServicesFromCartById(int ProductId)
+          {
+
+              try
+              {
+                  using (var context = new StudentHouseMembershipContext())
+                  {
+                      OrderDetail p1 = context.OrderDetails.SingleOrDefault(p => p.ServiceId == ProductId);
+                      if (p1 != null)
+                      {
+                          context.OrderDetails.Remove(p1);
+                          context.SaveChanges();
+                          return true;
+
+                      }
+                      else
+                      {
+                          return false;
+
+                      }
+                  }
+              }
+              catch (Exception ex)
+              {
+                  throw new Exception(ex.Message);
+              }
+
+
+          }
+          public Boolean AddServicetoCart(int ProductId)
+          {
+
+              try
+              {
+
+
+                  using (var context = new StudentHouseMembershipContext())
+                  {
+                      OrderDetail p1 = context.OrderDetails.SingleOrDefault(p => p.ServiceId == ProductId);
+                      if (p1 == null)
+                      {
+                          context.OrderDetails.Add(p1);
+                          context.SaveChanges();
+                          return true;
+
+                      }
+                      else
+                      {
+                          return false;
+
+                      }
+                  }
+              }
+              catch (Exception ex)
+              {
+                  throw new Exception(ex.Message);
+              }
+
+
+          }*/
+
+        //Luu vao bo nho tam thoi
+        public static bool AddToCart(Service service)
+        {
+            // Check if the product is already in the cart
+            CartItems existingItem = shoppingCart.FirstOrDefault(item => item.ServiceId == service.ServiceId);
+
+            if (existingItem != null)
+            {
+                // If it's in the cart, increase the quantity
+                return false;
+            }
+            else
+            {
+                // If it's not in the cart, add a new item
+                shoppingCart.Add(new CartItems { ServiceId = service.ServiceId,
+                    Price = (float)service.Price, // Convert the double price to a float
+                    ServiceName = service.ServiceName,
+                });
+            }
+
+            return true;
+        }
+
+        public static bool RemoveFromCart(int productId)
+        {
+            CartItems itemToRemove = shoppingCart.FirstOrDefault(item => item.ServiceId == productId);
+
+            if (itemToRemove != null)
+            {
+                shoppingCart.Remove(itemToRemove);
+                return true;
+            }
+
+            return false;
+        }
+        public static List<CartItems> getCartsSession()
+        {
             try
             {
-                using (var context = new StudentHouseMembershipContext())
-                {
-                    OrderDetail p1 = context.OrderDetails.Where(p => p.OrderId == OrderId).ToList()
-                    .SingleOrDefault(p => p.ServiceId == ProductId);
-                    if (p1 != null)
-                    {
-                        context.OrderDetails.Remove(p1);
-                        context.SaveChanges();
-                        return true;
 
-                    }
-                    else
-                    {
-                        return false;
-
-                    }
-                }
+                return shoppingCart;
             }
             catch (Exception ex)
             {
-                throw new Exception(ex.Message);
-            }
-
-
-        }*/
-        public Boolean removeServicesFromCartById(int ProductId)
-        {
-
-            try
-            {
-                using (var context = new StudentHouseMembershipContext())
-                {
-                    OrderDetail p1 = context.OrderDetails.SingleOrDefault(p => p.ServiceId == ProductId);
-                    if (p1 != null)
-                    {
-                        context.OrderDetails.Remove(p1);
-                        context.SaveChanges();
-                        return true;
-
-                    }
-                    else
-                    {
-                        return false;
-
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
+                throw new Exception("Cart empty ");
             }
 
 
         }
-        public Boolean AddServicetoCart(int ProductId)
-        {
-
-            try
-            {
-
-
-                using (var context = new StudentHouseMembershipContext())
-                {
-                    OrderDetail p1 = context.OrderDetails.SingleOrDefault(p => p.ServiceId == ProductId);
-                    if (p1 == null)
-                    {
-                        context.OrderDetails.Add(p1);
-                        context.SaveChanges();
-                        return true;
-
-                    }
-                    else
-                    {
-                        return false;
-
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
-
-
-        }
-
     }
 }

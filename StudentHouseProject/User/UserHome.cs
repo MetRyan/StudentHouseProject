@@ -26,6 +26,9 @@ namespace StudentHouseProject
             populateItems();
 
         }
+        IOrderRepository repository_Order = new OrderRepository();
+        IServiceRepository repository_Service = new ServiceRepository();
+
         private void populateItems()
         {
             List<Service> ServiceList = repositorty.GetServices();
@@ -49,13 +52,26 @@ namespace StudentHouseProject
 
                 listitems[i].OnAddToCart += (item) =>
                 {
+                    Service serviceObject = repository_Service.GetServiceById(serviceId);
+                    Boolean addItems = repository_Order.AddToCartSession(serviceObject);
+                    if (addItems)
+                    {
+                        MessageBox.Show("success");
+
+
+                    }
+                    else {
+
+                        MessageBox.Show("AlredyInYourCart");
+                    
+                    }
                    // string serviceName = ServiceList.Find(service => service.ServiceId == serviceId)?.ServiceName;
-                  /* UserViewServicesDetails f = new UserViewServicesDetails() { 
-                   
-                   
-                   }*/
+                    /* UserViewServicesDetails f = new UserViewServicesDetails() { 
+
+
+                     }*/
                     // Lấy dữ liệu từ item được click
-                  //  MessageBox.Show(serviceName);
+                    //  MessageBox.Show(serviceName);
 
                 };
 
@@ -66,18 +82,6 @@ namespace StudentHouseProject
 
             }
 
-        }
-
-        private void AddtoCartButton_Click(object sender, EventArgs e)
-        {
-            if (sender is Button button && button.Tag is int serviceId)
-            {
-                // Add the ServiceId to the cart
-                //cart.Add(serviceId);
-
-                // Update the cart details label
-                MessageBox.Show("sđs");
-            }
         }
 
 

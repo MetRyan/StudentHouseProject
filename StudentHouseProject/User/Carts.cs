@@ -1,0 +1,96 @@
+﻿using BusinessObjects;
+using Repositories;
+using StudentHouseProject.Properties;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using UI;
+
+namespace StudentHouseProject.User
+{
+    public partial class Carts : Form
+    {
+        IOrderRepository repository = new OrderRepository();
+        public Carts()
+        {
+            InitializeComponent();
+        }
+        private void populateItems()
+        {
+            List<CartItems> cartlist = repository.getCartsSession();
+            CartsUser[] listitems = new CartsUser[20];
+            //for (int i = 0; i < ServiceList.Count; i++)
+            for (int i = 0; i < cartlist.Count(); i++)
+            {
+
+
+                listitems[i] = new CartsUser();
+                listitems[i].icon = Resources._2;
+
+                // listitems[i].icon = Resources.ResourceManager.GetObject($"_{1}") as Image;
+                listitems[i].Title = "Title:  " + cartlist[i].ServiceName;
+                listitems[i].Price = "Price:  " + cartlist[i].Price.ToString();
+                //int serviceId = ServiceList[i].ServiceId;
+                int serviceId = cartlist[i].ServiceId;
+
+
+                listitems[i].RemoveCart += (item) =>
+                {
+                    // string serviceName = ServiceList.Find(service => service.ServiceId == serviceId)?.ServiceName;
+                    /* UserViewServicesDetails f = new UserViewServicesDetails() { 
+                    
+
+                     }*/
+                    // Lấy dữ liệu từ item được click
+                    //  MessageBox.Show(serviceName);
+                    bool cartRemove = repository.RemoveFromCartSession(serviceId);
+                    if (cartRemove)
+                    {
+                        this.Hide(); // Hide the old MainMenu form
+                        MessageBox.Show("Success");
+                        MainMenu f = new MainMenu();
+                        f.button1_Click("btnCart", null);
+
+                        this.Hide(); // Hide the old MainMenu form
+                        /*     UserHome userHome = new UserHome()
+
+                             {
+                                 getCustomer = getCustomerbyEmail,
+                             };*/
+
+                        // Trong class khác
+                        f.Show();
+                        f.Close();
+
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Fail");
+                    }
+
+
+                };
+
+                flowLayoutPanel1.Controls.Add(listitems[i]);
+                //}
+
+
+
+            }
+
+        }
+
+        private void Carts_Load(object sender, EventArgs e)
+        {
+            populateItems();
+        }
+    }
+}
