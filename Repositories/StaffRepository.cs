@@ -1,6 +1,6 @@
 ﻿using BusinessObjects;
 using DataAccessObjects;
-using Repositories.Interface;
+
 
 namespace Repositories
 {
@@ -8,7 +8,7 @@ namespace Repositories
     {
         public void AddStaff(staff staff) => StaffDAO.Instance.AddStaff(staff);
 
-        public Boolean CheckloginforStaff(string email, string password)=> StaffDAO.CheckLoginforStaff(email, password);
+        public Boolean CheckloginforStaff(string email, string password) => StaffDAO.CheckLoginforStaff(email, password);
 
         public void DeleteStaff(staff staff) => StaffDAO.Instance.DeleteStaff(staff);
 

@@ -69,7 +69,7 @@ namespace StudentHouseProject.User
                     Dob = dateOfBirth,
                     Phone = txtPhone.Text,
                     Password = txtPassword.Text,
-                    Sex = cbGender.SelectedItem.ToString(),
+                    Sex = cbGender.Text
 
                 };
                 repository.AddCustomer(p);

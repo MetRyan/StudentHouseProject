@@ -57,7 +57,7 @@ namespace StudentHouseProject
 
                     Admin getAdminbyEmail = repository_Admin.getAdminbyEmail(email);
                     MainMenuAdmin f = new MainMenuAdmin();
-                    f.btnHomepage_Click(null, null);
+                    f.ShowDialog();
                     /*     UserHome userHome = new UserHome()
 
                          {
