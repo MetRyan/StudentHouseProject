@@ -13,6 +13,8 @@ namespace Repositories
 
         public List<Service> GetServices() => ServiceDAO.Instance.GetServices();
 
+        public bool ServicesIdExist(int id) => ServiceDAO.ServicesIdExists(id);
+
         public void UpdateService(Service service) => ServiceDAO.Instance.UpdateService(service);
     }
 }
