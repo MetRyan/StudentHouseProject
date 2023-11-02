@@ -19,7 +19,8 @@ namespace StudentHouseProject.AdminAPage
         {
 
         }
-        private void btnAssign_Click(object sender, EventArgs e)
+
+        private void btnAssign_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -37,6 +38,12 @@ namespace StudentHouseProject.AdminAPage
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            AdminServiceDetail admin = new AdminServiceDetail();
+            admin.Show();
         }
     }
 }
