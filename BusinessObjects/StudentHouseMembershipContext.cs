@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace BusinessObjects
 {
@@ -218,9 +215,11 @@ namespace BusinessObjects
 
             modelBuilder.Entity<StaffOrder>(entity =>
             {
-                entity.HasNoKey();
 
                 entity.ToTable("StaffOrder");
+                entity.Property(e => e.StaffId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("StaffID");
 
                 entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
