@@ -18,7 +18,6 @@ namespace StudentHouseProject.User
     public partial class Carts : Form
     {
         IOrderRepository repository = new OrderRepository();
-        public   List<CartItems> listitems {  get; set; }
         public Customer getCustomer { get; set; }
         public Carts()
         {
@@ -60,7 +59,6 @@ namespace StudentHouseProject.User
                         MainMenu f = new MainMenu()
                         {
                             getCustomer = getCustomer,
-                            listitems = listitems
 
                         };
                         f.button1_Click(null, null);
