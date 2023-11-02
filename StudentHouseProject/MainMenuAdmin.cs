@@ -119,12 +119,10 @@ namespace UI
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Close();
 
             // Create and show a new instance of MainMenu
-            getAdmin= null;
-
-            LoginForm f = new LoginForm();
+            getAdmin = null;
+            MainMenu f = new MainMenu();
             f.Show();
 
         }
@@ -135,7 +133,19 @@ namespace UI
 
         }
 
+        public void CloseChildForms()
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                childForm.Close();
+            }
+        }
 
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CloseChildForms();
+
+        }
 
 
         /* private void lbTitle_Click(object sender, EventArgs e)

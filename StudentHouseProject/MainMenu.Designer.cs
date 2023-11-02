@@ -187,6 +187,7 @@
             Controls.Add(panelMenu);
             Name = "MainMenu";
             Text = "MainMenu";
+            FormClosed += MainMenu_FormClosed;
             Load += MainMenu_Load;
             panelMenu.ResumeLayout(false);
             panelTitleBar.ResumeLayout(false);

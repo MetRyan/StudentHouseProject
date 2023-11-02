@@ -195,22 +195,36 @@ namespace UI
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Close();
+            CloseChildForms();
 
             getCustomer = null;
             //     this.Close();
 
 
-            this.Refresh();
             // Create and show a new instance of MainMenu
             MainMenu f = new MainMenu();
             // newMainMenu.ShowDialog();
+
             f.Show();
+            CloseChildForms();
 
         }
 
         private void panelDesktop_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+        public void CloseChildForms()
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                childForm.Close();
+            }
+        }
+
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CloseChildForms();
 
         }
     }
