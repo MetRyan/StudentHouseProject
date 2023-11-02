@@ -38,42 +38,47 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(405, 27);
+            label1.Location = new Point(354, 20);
             label1.Name = "label1";
-            label1.Size = new Size(287, 38);
+            label1.Size = new Size(224, 30);
             label1.TabIndex = 1;
             label1.Text = "Welcome back Staff!";
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(37, 173);
+            dataGridView1.Location = new Point(32, 130);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(1009, 365);
+            dataGridView1.Size = new Size(883, 274);
             dataGridView1.TabIndex = 2;
             // 
             // btnViewDetails
             // 
             btnViewDetails.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnViewDetails.Location = new Point(923, 119);
+            btnViewDetails.Location = new Point(808, 89);
+            btnViewDetails.Margin = new Padding(3, 2, 3, 2);
             btnViewDetails.Name = "btnViewDetails";
-            btnViewDetails.Size = new Size(123, 36);
+            btnViewDetails.Size = new Size(108, 27);
             btnViewDetails.TabIndex = 3;
             btnViewDetails.Text = "View Details";
             btnViewDetails.UseVisualStyleBackColor = true;
+            btnViewDetails.Click += btnViewDetails_Click;
             // 
             // StaffHome
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1076, 550);
+            ClientSize = new Size(942, 412);
             Controls.Add(btnViewDetails);
             Controls.Add(dataGridView1);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "StaffHome";
             Text = "Home (Staff)";
+            Load += StaffHome_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();

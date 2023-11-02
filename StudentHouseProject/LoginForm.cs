@@ -2,6 +2,7 @@ using BusinessObjects;
 using Microsoft.EntityFrameworkCore;
 using Repositories;
 using Repositories.Interface;
+using StudentHouseProject.StaffPage;
 using UI;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
@@ -80,16 +81,12 @@ namespace StudentHouseProject
                     if (checkStaff)
                     {
                         //staff thanh cong 
-                        /*
-                                                this.Hide();
-                                                staff getstaffbyEmail = repository_Staff.getStaffbyEmails(email);
-                                                MainMenuAdmincs f = new MainMenuAdmincs()
-                                                {
-                                                    getStaff = getstaffbyEmail,
-                                                };
-                                                f.ShowDialog();
-                                                f.Close();
-                        */
+                        staff staff = repository_Staff.getStaffbyEmails(email);
+                        StaffHome staffHomePage = new StaffHome(staff);
+                        staffHomePage.Show();
+
+                        this.Hide();
+
                     }
                     else
                     {

@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using DataAccessObjects.ResponseModel;
 
 namespace Repositories.Interface
 {
@@ -12,6 +13,7 @@ namespace Repositories.Interface
         public Boolean CheckloginforStaff(String email, string password);
         public staff getStaffbyEmails(String email);
 
-
+        public List<StaffOrderModel> GetStaffOrder(int staffId);
+        public List<OrderDetail> GetStaffOrderDetails(int orderId);
     }
 }

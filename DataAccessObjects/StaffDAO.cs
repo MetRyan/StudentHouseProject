@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using DataAccessObjects.ResponseModel;
 
 namespace DataAccessObjects
 {
@@ -151,6 +152,60 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
             return getStaff;
+        }
+
+        public static List<StaffOrderModel> GetStaffOrder(int staffId)
+        {
+            try
+            {
+                using(var context = new StudentHouseMembershipContext())
+                {
+                    List<StaffOrderModel> result = null;
+
+                    List<StaffOrder> ordersOfStaff = context.StaffOrders.Where(x => x.StaffId == staffId).ToList();
+
+                    foreach(var orderOfStaff in ordersOfStaff)
+                    {
+                        StaffOrderModel staffOrderModel = null;
+
+                        Order order = context.Orders.Where(x => x.OrderId == orderOfStaff.OrderId).FirstOrDefault();
+                        if (order != null)
+                        {
+                            staffOrderModel.StaffId = staffId;
+                            staffOrderModel.OrderId = orderOfStaff.OrderId;
+                            staffOrderModel.WorkDate = orderOfStaff.WorkDate;
+                            staffOrderModel.Status = orderOfStaff.Status;
+                            staffOrderModel.Description = order.Description;
+                            staffOrderModel.orderDetails = context.OrderDetails.Where(x => x.OrderId == order.OrderId).ToList();
+                        }
+
+                        if(staffOrderModel != null)
+                        {
+                            result.Add(staffOrderModel);
+                        }
+                    }
+
+                    return result;
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public static List<OrderDetail> GetStaffOrderDetails(int orderId)
+        {
+            try
+            {
+                using (var context = new StudentHouseMembershipContext())
+                {
+                    return context.OrderDetails.Where(x => x.OrderId == orderId).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }
