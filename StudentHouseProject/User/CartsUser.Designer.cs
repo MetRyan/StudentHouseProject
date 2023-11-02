@@ -40,18 +40,18 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(24, 17);
+            pictureBox1.Location = new Point(21, 13);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(118, 97);
+            pictureBox1.Size = new Size(103, 73);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
             // Remove
             // 
-            Remove.Location = new Point(668, 31);
-            Remove.Margin = new Padding(3, 4, 3, 4);
+            Remove.Location = new Point(530, 23);
             Remove.Name = "Remove";
-            Remove.Size = new Size(127, 52);
+            Remove.Size = new Size(111, 39);
             Remove.TabIndex = 12;
             Remove.Text = "Remove";
             Remove.UseVisualStyleBackColor = true;
@@ -60,25 +60,24 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.BackColor = SystemColors.GradientActiveCaption;
-            flowLayoutPanel1.Location = new Point(-1, 119);
-            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
+            flowLayoutPanel1.Location = new Point(-1, 89);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(821, 13);
+            flowLayoutPanel1.Size = new Size(718, 10);
             flowLayoutPanel1.TabIndex = 11;
             // 
             // lbPrice
             // 
-            lbPrice.Location = new Point(203, 54);
+            lbPrice.Location = new Point(178, 40);
             lbPrice.Name = "lbPrice";
-            lbPrice.Size = new Size(446, 29);
+            lbPrice.Size = new Size(390, 22);
             lbPrice.TabIndex = 8;
             lbPrice.Text = "Price";
             // 
             // lbTitle
             // 
-            lbTitle.Location = new Point(203, 15);
+            lbTitle.Location = new Point(178, 11);
             lbTitle.Name = "lbTitle";
-            lbTitle.Size = new Size(446, 39);
+            lbTitle.Size = new Size(390, 29);
             lbTitle.TabIndex = 7;
             lbTitle.Text = "Title";
             // 
@@ -87,21 +86,23 @@
             panel1.BackColor = SystemColors.ActiveCaption;
             panel1.Controls.Add(pictureBox1);
             panel1.Location = new Point(0, -2);
+            panel1.Margin = new Padding(3, 2, 3, 2);
             panel1.Name = "panel1";
-            panel1.Size = new Size(163, 134);
+            panel1.Size = new Size(143, 100);
             panel1.TabIndex = 10;
             // 
             // CartsUser
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(Remove);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(lbPrice);
             Controls.Add(lbTitle);
             Controls.Add(panel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "CartsUser";
-            Size = new Size(828, 133);
+            Size = new Size(673, 100);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);

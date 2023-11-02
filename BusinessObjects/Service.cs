@@ -7,6 +7,7 @@ namespace BusinessObjects
     {
         public Service()
         {
+            OrderDetails = new HashSet<OrderDetail>();
             staff = new HashSet<staff>();
         }
 
@@ -19,6 +20,7 @@ namespace BusinessObjects
         public int? AdminId { get; set; }
 
         public virtual Admin? Admin { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual ICollection<staff> staff { get; set; }
     }
 }

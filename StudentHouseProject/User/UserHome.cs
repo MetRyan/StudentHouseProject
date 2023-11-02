@@ -60,12 +60,13 @@ namespace StudentHouseProject
 
 
                     }
-                    else {
+                    else
+                    {
 
                         MessageBox.Show("AlredyInYourCart");
-                    
+
                     }
-                   // string serviceName = ServiceList.Find(service => service.ServiceId == serviceId)?.ServiceName;
+                    // string serviceName = ServiceList.Find(service => service.ServiceId == serviceId)?.ServiceName;
                     /* UserViewServicesDetails f = new UserViewServicesDetails() { 
 
 

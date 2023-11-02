@@ -94,8 +94,8 @@ namespace StudentHouseProject
 
                         if (checkCustomer)
                         {
-                            this.Close();
-
+                            //this.Close();
+                            this.Hide();
                             Customer getCustomerbyEmail = repository_Customer.getCustomerbyEmail(email);
                             MainMenu f = new MainMenu() { getCustomer = getCustomerbyEmail, };
                             f.btnHomepage_Click(null, null);
@@ -106,10 +106,11 @@ namespace StudentHouseProject
                                  };*/
 
                             // Trong class khác
-
+                            this.Hide();
                             f.ShowDialog();
 
                             f.Close();
+
 
                         }
                         else

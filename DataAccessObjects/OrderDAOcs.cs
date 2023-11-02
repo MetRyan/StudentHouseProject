@@ -148,13 +148,13 @@ namespace DataAccessObjects
             }
 
         }
-
         //
-        private int LastOrderId = GetOrders().Count();
 
 
-        private int GenerateNewOrderId()
+        public static int GenerateNewOrderId()
         {
+            int LastOrderId = getOrderDetails().Count();
+
             int newOrderId = LastOrderId + 1;
             return newOrderId;
         }
@@ -183,26 +183,46 @@ namespace DataAccessObjects
 
          }*/
 
-        public static void AddOrder(OrderDetail order, int productId)
+        /*    public static void AddOrder(OrderDetail order, int productId)
+            {
+
+                try
+                {
+                    using (var context = new StudentHouseMembershipContext())
+                    {
+                        Boolean Checkexist;
+
+                        Checkexist = context.OrderDetails.Any(o => o.OrderId == order.OrderId && o.ServiceId == productId);
+
+                        if (Checkexist)
+                        {
+                            context.OrderDetails.Add(order);
+                            context.SaveChanges();
+                        }
+                        else
+                        {
+                            throw new Exception("services have been exist at your cart");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message);
+                }
+            }*/
+                //add Order 
+        public static int AddOrder(Order p)
         {
 
             try
             {
                 using (var context = new StudentHouseMembershipContext())
                 {
-                    Boolean Checkexist;
+                    context.Orders.Add(p);
+                    context.SaveChanges();
+                    int newOrderId = p.Id;
 
-                    Checkexist = context.OrderDetails.Any(o => o.OrderId == order.OrderId && o.ServiceId == productId);
-
-                    if (Checkexist)
-                    {
-                        context.OrderDetails.Add(order);
-                        context.SaveChanges();
-                    }
-                    else
-                    {
-                        throw new Exception("services have been exist at your cart");
-                    }
+                    return newOrderId;
                 }
             }
             catch (Exception ex)
@@ -211,13 +231,50 @@ namespace DataAccessObjects
             }
         }
 
-        public List<OrderDetail> GetOrderDetails(int OrderId)
+
+        //addorderDetails
+        public static void AddOrder(OrderDetail p)
+        {
+
+            try
+            {
+                using (var context = new StudentHouseMembershipContext())
+                {
+                    context.OrderDetails.Add(p);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public static List<OrderDetail> getOrderDetails()
+        {
+
+
+
+            try
+            {
+                using (var context = new StudentHouseMembershipContext())
+                {
+                 return   context.OrderDetails.ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public static OrderDetail GetOrderDetailsbyOrderId(int OrderId)
         {
             try
             {
                 using (var context = new StudentHouseMembershipContext())
                 {
-                    return context.OrderDetails.Where(p => p.OrderId == OrderId).ToList();
+                    return context.OrderDetails.SingleOrDefault(p => p.OrderId == OrderId);
                 }
             }
             catch (Exception ex)

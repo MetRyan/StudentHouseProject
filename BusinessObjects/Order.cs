@@ -7,6 +7,7 @@ namespace BusinessObjects
     {
         public Order()
         {
+            OrderDetails = new HashSet<OrderDetail>();
             Payments = new HashSet<Payment>();
         }
 
@@ -17,6 +18,7 @@ namespace BusinessObjects
         public string? Status { get; set; }
 
         public virtual Customer Customer { get; set; } = null!;
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual ICollection<Payment> Payments { get; set; }
     }
 }

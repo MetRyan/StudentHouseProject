@@ -191,12 +191,19 @@ namespace UI
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            getCustomer = null;
             this.Close();
 
+            getCustomer = null;
+            //     this.Close();
+           
+
+            this.Refresh();
             // Create and show a new instance of MainMenu
-            MainMenu newMainMenu = new MainMenu();
-            newMainMenu.Show();
+            MainMenu f = new MainMenu();
+            f.MdiParent = UserHome.ActiveForm;
+            // newMainMenu.ShowDialog();
+            f.Show();
+
         }
 
         private void panelDesktop_Paint(object sender, PaintEventArgs e)

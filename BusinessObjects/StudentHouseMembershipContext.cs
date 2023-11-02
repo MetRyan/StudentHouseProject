@@ -106,7 +106,6 @@ namespace BusinessObjects
 
                 entity.Property(e => e.Phone)
                     .HasMaxLength(20)
-                    .IsUnicode(false)
                     .HasColumnName("phone");
 
                 entity.Property(e => e.Sex)
@@ -141,8 +140,6 @@ namespace BusinessObjects
 
             modelBuilder.Entity<OrderDetail>(entity =>
             {
-                entity.HasNoKey();
-
                 entity.Property(e => e.Address).HasMaxLength(50);
 
                 entity.Property(e => e.CreateDate).HasColumnType("date");
@@ -155,17 +152,21 @@ namespace BusinessObjects
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Phone)
+                    .HasMaxLength(20)
+                    .HasColumnName("phone");
+
                 entity.Property(e => e.ServiceId).HasColumnName("ServiceID");
 
                 entity.Property(e => e.ServiceName).HasMaxLength(50);
 
                 entity.HasOne(d => d.Order)
-                    .WithMany()
+                    .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.OrderId)
                     .HasConstraintName("FK__OrderDeta__Order__2D27B809");
 
                 entity.HasOne(d => d.Service)
-                    .WithMany()
+                    .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.ServiceId)
                     .HasConstraintName("FK__OrderDeta__Servi__2E1BDC42");
             });
@@ -220,6 +221,8 @@ namespace BusinessObjects
 
                 entity.ToTable("StaffOrder");
 
+                entity.Property(e => e.Id).ValueGeneratedOnAdd();
+
                 entity.Property(e => e.OrderId).HasColumnName("OrderID");
 
                 entity.Property(e => e.StaffId).HasColumnName("StaffID");
@@ -238,6 +241,7 @@ namespace BusinessObjects
                 entity.HasOne(d => d.Staff)
                     .WithMany()
                     .HasForeignKey(d => d.StaffId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__StaffOrde__Staff__32E0915F");
             });
 

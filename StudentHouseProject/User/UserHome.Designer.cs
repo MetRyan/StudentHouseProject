@@ -36,17 +36,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(298, 22);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Location = new Point(293, 9);
             label1.Name = "label1";
-            label1.Size = new Size(90, 25);
+            label1.Size = new Size(119, 32);
             label1.TabIndex = 0;
             label1.Text = "Welcome";
             // 
             // lbNotification
             // 
             lbNotification.AutoSize = true;
-            lbNotification.Location = new Point(242, 54);
+            lbNotification.Location = new Point(261, 41);
             lbNotification.Name = "lbNotification";
             lbNotification.Size = new Size(193, 15);
             lbNotification.TabIndex = 2;
@@ -55,10 +56,10 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Location = new Point(-2, 94);
+            flowLayoutPanel1.Location = new Point(33, 71);
             flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(703, 464);
+            flowLayoutPanel1.Size = new Size(668, 487);
             flowLayoutPanel1.TabIndex = 5;
             // 
             // UserHome

@@ -14,6 +14,8 @@ namespace BusinessObjects
         public string? Address { get; set; }
         public string? PaymentMethod { get; set; }
         public bool? Pending { get; set; }
+        public int Id { get; set; }
+        public string? Phone { get; set; }
 
         public virtual Order? Order { get; set; }
         public virtual Service? Service { get; set; }

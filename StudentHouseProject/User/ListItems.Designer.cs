@@ -87,12 +87,12 @@
             flowLayoutPanel1.BackColor = SystemColors.GradientActiveCaption;
             flowLayoutPanel1.Location = new Point(-1, 133);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(718, 14);
+            flowLayoutPanel1.Size = new Size(669, 14);
             flowLayoutPanel1.TabIndex = 5;
             // 
             // AddtoCart
             // 
-            AddtoCart.Location = new Point(532, 45);
+            AddtoCart.Location = new Point(514, 45);
             AddtoCart.Name = "AddtoCart";
             AddtoCart.Size = new Size(133, 39);
             AddtoCart.TabIndex = 6;
@@ -112,7 +112,7 @@
             Controls.Add(panel1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "ListItems";
-            Size = new Size(698, 147);
+            Size = new Size(667, 147);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             ResumeLayout(false);
