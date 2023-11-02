@@ -53,13 +53,15 @@
             btnLoad = new Button();
             btnUpdate = new Button();
             cbSearch = new ComboBox();
+            label1 = new Label();
+            txtAdress = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvlistview).BeginInit();
             SuspendLayout();
             // 
             // lbCustomerId
             // 
             lbCustomerId.AutoSize = true;
-            lbCustomerId.Location = new Point(69, 38);
+            lbCustomerId.Location = new Point(176, 112);
             lbCustomerId.Name = "lbCustomerId";
             lbCustomerId.Size = new Size(85, 20);
             lbCustomerId.TabIndex = 0;
@@ -68,7 +70,7 @@
             // DateCreated
             // 
             DateCreated.AutoSize = true;
-            DateCreated.Location = new Point(73, 103);
+            DateCreated.Location = new Point(176, 177);
             DateCreated.Name = "DateCreated";
             DateCreated.Size = new Size(97, 20);
             DateCreated.TabIndex = 1;
@@ -77,7 +79,7 @@
             // lbEmail
             // 
             lbEmail.AutoSize = true;
-            lbEmail.Location = new Point(377, 175);
+            lbEmail.Location = new Point(466, 249);
             lbEmail.Name = "lbEmail";
             lbEmail.Size = new Size(46, 20);
             lbEmail.TabIndex = 2;
@@ -86,7 +88,7 @@
             // lbFirstName
             // 
             lbFirstName.AutoSize = true;
-            lbFirstName.Location = new Point(359, 106);
+            lbFirstName.Location = new Point(466, 180);
             lbFirstName.Name = "lbFirstName";
             lbFirstName.Size = new Size(76, 20);
             lbFirstName.TabIndex = 3;
@@ -95,7 +97,7 @@
             // lbLastName
             // 
             lbLastName.AutoSize = true;
-            lbLastName.Location = new Point(660, 106);
+            lbLastName.Location = new Point(767, 180);
             lbLastName.Name = "lbLastName";
             lbLastName.Size = new Size(72, 20);
             lbLastName.TabIndex = 4;
@@ -104,7 +106,7 @@
             // lbPhone
             // 
             lbPhone.AutoSize = true;
-            lbPhone.Location = new Point(352, 38);
+            lbPhone.Location = new Point(459, 112);
             lbPhone.Name = "lbPhone";
             lbPhone.Size = new Size(50, 20);
             lbPhone.TabIndex = 5;
@@ -113,7 +115,7 @@
             // lbdateofbirth
             // 
             lbdateofbirth.AutoSize = true;
-            lbdateofbirth.Location = new Point(650, 38);
+            lbdateofbirth.Location = new Point(757, 112);
             lbdateofbirth.Name = "lbdateofbirth";
             lbdateofbirth.Size = new Size(96, 20);
             lbdateofbirth.TabIndex = 6;
@@ -122,7 +124,7 @@
             // lbSex
             // 
             lbSex.AutoSize = true;
-            lbSex.Location = new Point(79, 168);
+            lbSex.Location = new Point(176, 242);
             lbSex.Name = "lbSex";
             lbSex.Size = new Size(32, 20);
             lbSex.TabIndex = 7;
@@ -130,56 +132,56 @@
             // 
             // txtCustomerID
             // 
-            txtCustomerID.Location = new Point(193, 38);
+            txtCustomerID.Location = new Point(300, 112);
             txtCustomerID.Name = "txtCustomerID";
             txtCustomerID.Size = new Size(153, 27);
             txtCustomerID.TabIndex = 8;
             // 
             // txtDateCreated
             // 
-            txtDateCreated.Location = new Point(193, 103);
+            txtDateCreated.Location = new Point(300, 177);
             txtDateCreated.Name = "txtDateCreated";
             txtDateCreated.Size = new Size(153, 27);
             txtDateCreated.TabIndex = 9;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(459, 168);
+            txtEmail.Location = new Point(561, 242);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(238, 27);
+            txtEmail.Size = new Size(176, 27);
             txtEmail.TabIndex = 10;
             // 
             // txtFirstName
             // 
-            txtFirstName.Location = new Point(454, 103);
+            txtFirstName.Location = new Point(561, 177);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.Size = new Size(176, 27);
             txtFirstName.TabIndex = 11;
             // 
             // txtLastname
             // 
-            txtLastname.Location = new Point(784, 106);
+            txtLastname.Location = new Point(877, 180);
             txtLastname.Name = "txtLastname";
-            txtLastname.Size = new Size(200, 27);
+            txtLastname.Size = new Size(332, 27);
             txtLastname.TabIndex = 12;
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(454, 38);
+            txtPhone.Location = new Point(561, 112);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(176, 27);
             txtPhone.TabIndex = 13;
             // 
             // txtDateOfBirth
             // 
-            txtDateOfBirth.Location = new Point(770, 38);
+            txtDateOfBirth.Location = new Point(877, 112);
             txtDateOfBirth.Name = "txtDateOfBirth";
-            txtDateOfBirth.Size = new Size(214, 27);
+            txtDateOfBirth.Size = new Size(332, 27);
             txtDateOfBirth.TabIndex = 14;
             // 
             // txtSex
             // 
-            txtSex.Location = new Point(193, 168);
+            txtSex.Location = new Point(300, 242);
             txtSex.Name = "txtSex";
             txtSex.Size = new Size(153, 27);
             txtSex.TabIndex = 15;
@@ -187,7 +189,7 @@
             // dgvlistview
             // 
             dgvlistview.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvlistview.Location = new Point(42, 337);
+            dgvlistview.Location = new Point(149, 411);
             dgvlistview.Name = "dgvlistview";
             dgvlistview.RowHeadersWidth = 51;
             dgvlistview.RowTemplate.Height = 29;
@@ -197,7 +199,7 @@
             // lbSearch
             // 
             lbSearch.AutoSize = true;
-            lbSearch.Location = new Point(74, 270);
+            lbSearch.Location = new Point(181, 344);
             lbSearch.Name = "lbSearch";
             lbSearch.Size = new Size(53, 20);
             lbSearch.TabIndex = 17;
@@ -205,14 +207,14 @@
             // 
             // txtSearch
             // 
-            txtSearch.Location = new Point(167, 271);
+            txtSearch.Location = new Point(274, 345);
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(247, 27);
             txtSearch.TabIndex = 18;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(564, 269);
+            btnSearch.Location = new Point(671, 343);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(94, 29);
             btnSearch.TabIndex = 19;
@@ -222,7 +224,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(215, 593);
+            btnDelete.Location = new Point(322, 667);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(94, 29);
             btnDelete.TabIndex = 20;
@@ -232,7 +234,7 @@
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(351, 594);
+            btnCreate.Location = new Point(458, 668);
             btnCreate.Name = "btnCreate";
             btnCreate.Size = new Size(94, 29);
             btnCreate.TabIndex = 21;
@@ -241,7 +243,7 @@
             // 
             // btnLoad
             // 
-            btnLoad.Location = new Point(484, 593);
+            btnLoad.Location = new Point(591, 667);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new Size(94, 29);
             btnLoad.TabIndex = 22;
@@ -251,7 +253,7 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(619, 594);
+            btnUpdate.Location = new Point(726, 668);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(94, 29);
             btnUpdate.TabIndex = 23;
@@ -263,16 +265,36 @@
             // 
             cbSearch.FormattingEnabled = true;
             cbSearch.Items.AddRange(new object[] { "Phone", "Name" });
-            cbSearch.Location = new Point(459, 270);
+            cbSearch.Location = new Point(566, 344);
             cbSearch.Name = "cbSearch";
             cbSearch.Size = new Size(73, 28);
             cbSearch.TabIndex = 24;
             // 
-            // frmCustomerManagement
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(767, 252);
+            label1.Name = "label1";
+            label1.Size = new Size(62, 20);
+            label1.TabIndex = 25;
+            label1.Text = "Address";
+            // 
+            // txtAdress
+            // 
+            txtAdress.Location = new Point(877, 242);
+            txtAdress.Multiline = true;
+            txtAdress.Name = "txtAdress";
+            txtAdress.Size = new Size(332, 42);
+            txtAdress.TabIndex = 26;
+            txtAdress.TextChanged += textBox1_TextChanged;
+            // 
+            // CustomerManagement
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1071, 725);
+            ClientSize = new Size(1387, 878);
+            Controls.Add(txtAdress);
+            Controls.Add(label1);
             Controls.Add(cbSearch);
             Controls.Add(btnUpdate);
             Controls.Add(btnLoad);
@@ -298,7 +320,7 @@
             Controls.Add(lbEmail);
             Controls.Add(DateCreated);
             Controls.Add(lbCustomerId);
-            Name = "frmCustomerManagement";
+            Name = "CustomerManagement";
             Text = "CustomerManagement";
             Load += frmCustomerManagement_Load;
             ((System.ComponentModel.ISupportInitialize)dgvlistview).EndInit();
@@ -333,5 +355,7 @@
         private Button btnLoad;
         private Button btnUpdate;
         private ComboBox cbSearch;
+        private Label label1;
+        private TextBox txtAdress;
     }
 }

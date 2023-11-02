@@ -19,5 +19,6 @@ namespace Repositories
         public staff getStaffbyEmails(string email) => StaffDAO.GetstaffbyEmail(email);
 
         public bool StaffIdExists(int id) => StaffDAO.StaffIdExists(id);
+        public List<staff> GetStaffbyStatus(string Status) =>StaffDAO.SearchbyStatus(Status);
     }
 }

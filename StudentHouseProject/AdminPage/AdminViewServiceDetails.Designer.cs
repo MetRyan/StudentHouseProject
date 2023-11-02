@@ -43,6 +43,7 @@
             label4 = new Label();
             dgv = new DataGridView();
             txtStatus = new TextBox();
+            btnLoad = new Button();
             ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
             SuspendLayout();
             // 
@@ -184,11 +185,23 @@
             txtStatus.Size = new Size(180, 27);
             txtStatus.TabIndex = 30;
             // 
+            // btnLoad
+            // 
+            btnLoad.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnLoad.Location = new Point(197, 520);
+            btnLoad.Name = "btnLoad";
+            btnLoad.Size = new Size(148, 42);
+            btnLoad.TabIndex = 31;
+            btnLoad.Text = "Load";
+            btnLoad.UseVisualStyleBackColor = true;
+            btnLoad.Click += btnLoad_Click_1;
+            // 
             // AdminViewServiceDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(834, 586);
+            Controls.Add(btnLoad);
             Controls.Add(txtStatus);
             Controls.Add(dgv);
             Controls.Add(label4);
@@ -228,5 +241,6 @@
         private Label label4;
         private DataGridView dgv;
         private TextBox txtStatus;
+        private Button btnLoad;
     }
 }

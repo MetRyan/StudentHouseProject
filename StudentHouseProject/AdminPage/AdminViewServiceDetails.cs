@@ -97,12 +97,7 @@ namespace StudentHouseProject.AdminAPage
             txtStatus.Text = "";
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
-        {
-            LoadStaffList();
-
-
-        }
+       
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
@@ -161,6 +156,12 @@ namespace StudentHouseProject.AdminAPage
                 LoadStaffList();
 
             }
+
+        }
+
+        private void btnLoad_Click_1(object sender, EventArgs e)
+        {
+            LoadStaffList();
 
         }
     }

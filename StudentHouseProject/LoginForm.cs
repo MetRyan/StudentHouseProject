@@ -56,8 +56,8 @@ namespace StudentHouseProject
                     this.Close();
 
                     Admin getAdminbyEmail = repository_Admin.getAdminbyEmail(email);
-                    MainMenuAdmin f = new MainMenuAdmin() { getAdmin = getAdminbyEmail};
-                    f.ShowDialog();
+                    MainMenuAdmin f = new MainMenuAdmin() { getAdmin = getAdminbyEmail };
+                    //  f.ShowDialog();
                     /*     UserHome userHome = new UserHome()
 
                          {
@@ -65,6 +65,9 @@ namespace StudentHouseProject
                          };*/
 
                     // Trong class khác
+                    f.WindowState = FormWindowState.Maximized;
+
+                    this.Dispose();
 
                     f.ShowDialog();
 
@@ -95,10 +98,11 @@ namespace StudentHouseProject
                         if (checkCustomer)
                         {
                             //this.Close();
+
                             this.Hide();
                             Customer getCustomerbyEmail = repository_Customer.getCustomerbyEmail(email);
                             MainMenu f = new MainMenu() { getCustomer = getCustomerbyEmail, };
-                            f.btnHomepage_Click(null, null);
+                            //f.btnHomepage_Click(null, null);
                             /*     UserHome userHome = new UserHome()
 
                                  {
@@ -106,11 +110,16 @@ namespace StudentHouseProject
                                  };*/
 
                             // Trong class khác
-                            this.Hide();
+                         
+
+                           // f.ShowDialog(); f.Close();  
+                            //  Application.run(f);
+                            f.WindowState = FormWindowState.Maximized;
+
                             f.ShowDialog();
 
-                            f.Close();
 
+                          
 
                         }
                         else
@@ -136,6 +145,10 @@ namespace StudentHouseProject
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
         }
     }
 }

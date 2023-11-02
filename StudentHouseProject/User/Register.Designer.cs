@@ -45,6 +45,8 @@
             label2 = new Label();
             btnReset = new Button();
             dtpDob = new DateTimePicker();
+            txtAddress = new TextBox();
+            label10 = new Label();
             SuspendLayout();
             // 
             // btnRegister
@@ -79,7 +81,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(136, 167);
+            txtEmail.Location = new Point(136, 380);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Enter Your Email";
             txtEmail.Size = new Size(300, 27);
@@ -89,7 +91,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(136, 132);
+            label3.Location = new Point(136, 345);
             label3.Name = "label3";
             label3.Size = new Size(46, 20);
             label3.TabIndex = 9;
@@ -109,8 +111,7 @@
             // 
             txtLastName.Location = new Point(501, 167);
             txtLastName.Name = "txtLastName";
-            txtLastName.PasswordChar = '*';
-            txtLastName.PlaceholderText = "Enter Your Password";
+            txtLastName.PlaceholderText = "Enter Your Last Name";
             txtLastName.Size = new Size(300, 27);
             txtLastName.TabIndex = 17;
             // 
@@ -126,9 +127,9 @@
             // 
             // txtFirstName
             // 
-            txtFirstName.Location = new Point(136, 365);
+            txtFirstName.Location = new Point(136, 167);
             txtFirstName.Name = "txtFirstName";
-            txtFirstName.PlaceholderText = "Enter Your Email";
+            txtFirstName.PlaceholderText = "Enter Your First Name";
             txtFirstName.Size = new Size(300, 27);
             txtFirstName.TabIndex = 15;
             // 
@@ -136,7 +137,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(136, 331);
+            label6.Location = new Point(136, 133);
             label6.Name = "label6";
             label6.Size = new Size(79, 20);
             label6.TabIndex = 14;
@@ -144,9 +145,9 @@
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(501, 259);
+            txtPhone.Location = new Point(501, 270);
             txtPhone.Name = "txtPhone";
-            txtPhone.PlaceholderText = "Enter Your Email";
+            txtPhone.PlaceholderText = "Enter Your Phone";
             txtPhone.Size = new Size(300, 27);
             txtPhone.TabIndex = 19;
             // 
@@ -154,7 +155,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(509, 224);
+            label8.Location = new Point(509, 235);
             label8.Name = "label8";
             label8.Size = new Size(53, 20);
             label8.TabIndex = 18;
@@ -176,7 +177,7 @@
             cbGender.Items.AddRange(new object[] { "Female", "Male" });
             cbGender.Location = new Point(136, 475);
             cbGender.Name = "cbGender";
-            cbGender.Size = new Size(151, 28);
+            cbGender.Size = new Size(207, 28);
             cbGender.TabIndex = 24;
             // 
             // label2
@@ -198,6 +199,7 @@
             btnReset.TabIndex = 26;
             btnReset.Text = "Reset";
             btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += btnReset_Click;
             // 
             // dtpDob
             // 
@@ -207,11 +209,31 @@
             dtpDob.Size = new Size(292, 27);
             dtpDob.TabIndex = 27;
             // 
+            // txtAddress
+            // 
+            txtAddress.Location = new Point(509, 462);
+            txtAddress.Multiline = true;
+            txtAddress.Name = "txtAddress";
+            txtAddress.Size = new Size(292, 45);
+            txtAddress.TabIndex = 29;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(509, 439);
+            label10.Name = "label10";
+            label10.Size = new Size(63, 20);
+            label10.TabIndex = 30;
+            label10.Text = "Address";
+            // 
             // Register
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1062, 741);
+            Controls.Add(label10);
+            Controls.Add(txtAddress);
             Controls.Add(dtpDob);
             Controls.Add(btnReset);
             Controls.Add(label2);
@@ -255,5 +277,7 @@
         private Label label2;
         private Button btnReset;
         private DateTimePicker dtpDob;
+        private TextBox txtAddress;
+        private Label label10;
     }
 }
