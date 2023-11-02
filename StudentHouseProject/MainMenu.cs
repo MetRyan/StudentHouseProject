@@ -108,7 +108,6 @@ namespace UI
             childform.BringToFront();
             childform.Show();
             lbTitle.Text = childform.Text;
-
         }
 
         public void btnHomepage_Click(object sender, EventArgs e)
@@ -147,9 +146,7 @@ namespace UI
 
         public void btnLogin_Click(object sender, EventArgs e)
         {
-            OpenChildfrom(new LoginForm(), sender);
-
-
+            OpenChildfrom(new LoginForm(this), sender);
         }
 
         public void btnRegister_Click(object sender, EventArgs e)
@@ -188,7 +185,7 @@ namespace UI
 
         public void MainMenu_Load(object sender, EventArgs e)
         {
-
+            CloseChildForms();
             // Hide and disable the LogOut button
             UpdateUIForUserLoggedIn();
         }
@@ -207,6 +204,7 @@ namespace UI
 
             f.Show();
             CloseChildForms();
+            this.Close();
 
         }
 
@@ -214,18 +212,20 @@ namespace UI
         {
 
         }
+
         public void CloseChildForms()
         {
             foreach (Form childForm in this.MdiChildren)
             {
                 childForm.Close();
             }
+            //this.Close();
         }
 
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             CloseChildForms();
-
+            this.Close();
         }
     }
 }

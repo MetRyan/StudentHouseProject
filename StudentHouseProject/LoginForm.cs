@@ -7,9 +7,17 @@ namespace StudentHouseProject
 {
     public partial class LoginForm : Form
     {
+        private Form _previousForm = null;
+
         public LoginForm()
         {
             InitializeComponent();
+        }
+
+        public LoginForm(Form previousForm)
+        {
+            InitializeComponent();
+            _previousForm = previousForm;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -65,8 +73,9 @@ namespace StudentHouseProject
                              getCustomer = getCustomerbyEmail,
                          };*/
 
-                    // Trong class kh�c
+                    ClosePreviousForm();
 
+                    // Trong class kh�c
                     f.ShowDialog();
 
                     f.Close();
@@ -80,6 +89,8 @@ namespace StudentHouseProject
                         //staff thanh cong 
                         staff staff = repository_Staff.getStaffbyEmails(email);
                         StaffHome staffHomePage = new StaffHome(staff);
+                        ClosePreviousForm();
+
                         staffHomePage.Show();
 
                         this.Hide();
@@ -101,14 +112,13 @@ namespace StudentHouseProject
                                  {
                                      getCustomer = getCustomerbyEmail,
                                  };*/
+                            ClosePreviousForm();
 
                             // Trong class kh�c
                             this.Hide();
                             f.ShowDialog();
 
                             f.Close();
-
-
                         }
                         else
                         {
@@ -133,6 +143,15 @@ namespace StudentHouseProject
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void ClosePreviousForm()
+        {
+            if (_previousForm != null)
+            {
+                _previousForm.Hide();
+                _previousForm = null;
+            }
         }
     }
 }
