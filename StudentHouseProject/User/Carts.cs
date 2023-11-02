@@ -18,6 +18,8 @@ namespace StudentHouseProject.User
     public partial class Carts : Form
     {
         IOrderRepository repository = new OrderRepository();
+
+        public Customer getCustomer { get; set; }
         public Carts()
         {
             InitializeComponent();
@@ -56,7 +58,7 @@ namespace StudentHouseProject.User
                         this.Hide(); // Hide the old MainMenu form
                         MessageBox.Show("Success");
                         MainMenu f = new MainMenu();
-                        f.button1_Click("btnCart", null);
+                        f.button1_Click(null, null);
 
                         this.Hide(); // Hide the old MainMenu form
                         /*     UserHome userHome = new UserHome()
@@ -78,7 +80,7 @@ namespace StudentHouseProject.User
 
 
                 };
-
+                txtTotal.Text = CalculateTotal().ToString();
                 flowLayoutPanel1.Controls.Add(listitems[i]);
                 //}
 
@@ -87,10 +89,87 @@ namespace StudentHouseProject.User
             }
 
         }
+        private float CalculateTotal()
+        {
+            List<CartItems> cartlist = repository.getCartsSession();
+
+            float total = 0.0f;
+            if (cartlist.Count > 0)
+            {
+                foreach (var item in cartlist)
+                {
+                    MessageBox.Show(item.Price.ToString());
+                    total += item.Price;
+                }
+            }
+
+            return total; // Return total as a float
+        }
 
         private void Carts_Load(object sender, EventArgs e)
         {
+            if (getCustomer != null)
+            {
+                txtAdress.Text = getCustomer.Adress;
+                txtPhone.Text = getCustomer.Phone;
+            }
+            else
+            {
+
+                MessageBox.Show("you have not login yet , please Login or Register");
+
+            }
             populateItems();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+
+
+            List<CartItems> cartlist = repository.getCartsSession();
+            Order listOrder = new Order
+            {
+                CustomerId = getCustomer.CustomerId,
+                Price = CalculateTotal(),
+                Description = txtNote.Text,
+                Status = "false",
+
+
+            };
+            int OrderId = repository.addOrder_getOrderId(listOrder);
+
+            for (int i = 0; i < cartlist.Count(); i++)
+            {
+
+                OrderDetail listOrderDetail = new OrderDetail
+                {
+                    OrderId = OrderId,
+                    Address = txtAdress.Text,
+                    PaymentMethod =cbPayment.Text,
+                    Pending= false,
+                    Phone= txtPhone.Text,
+                    Price = cartlist[i].Price,
+                    ServiceId = cartlist[i].ServiceId,
+                    ServiceName = cartlist[i].ServiceName,
+                    CreateDate= DateTime.Now,
+                    EndDate= null,
+                };
+               repository.AddOrder(listOrderDetail);
+                MessageBox.Show("Order has been placed successfully.");
+                cartlist.Clear();
+
+
+
+
+            }
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

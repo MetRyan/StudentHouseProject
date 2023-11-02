@@ -136,8 +136,12 @@ namespace UI
 
 
         public void button1_Click(object sender, EventArgs e)
+
         {
-            OpenChildfrom(new Carts(), sender);
+
+
+
+            OpenChildfrom(new Carts() { getCustomer = getCustomer }, sender);
 
         }
 
@@ -195,7 +199,7 @@ namespace UI
 
             getCustomer = null;
             //     this.Close();
-           
+
 
             this.Refresh();
             // Create and show a new instance of MainMenu

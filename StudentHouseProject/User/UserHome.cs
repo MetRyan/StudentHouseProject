@@ -52,20 +52,28 @@ namespace StudentHouseProject
 
                 listitems[i].OnAddToCart += (item) =>
                 {
-                    Service serviceObject = repository_Service.GetServiceById(serviceId);
-                    Boolean addItems = repository_Order.AddToCartSession(serviceObject);
-                    if (addItems)
+                    if (getCustomer != null)
                     {
-                        MessageBox.Show("success");
+                        Service serviceObject = repository_Service.GetServiceById(serviceId);
+                        Boolean addItems = repository_Order.AddToCartSession(serviceObject);
+                        if (addItems)
+                        {
+                            MessageBox.Show("success");
 
 
+                        }
+                        else
+                        {
+
+                            MessageBox.Show("AlredyInYourCart");
+
+                        }
                     }
                     else
                     {
-
-                        MessageBox.Show("AlredyInYourCart");
-
+                        MessageBox.Show("Please login before buy Services");
                     }
+
                     // string serviceName = ServiceList.Find(service => service.ServiceId == serviceId)?.ServiceName;
                     /* UserViewServicesDetails f = new UserViewServicesDetails() { 
 

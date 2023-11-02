@@ -220,7 +220,7 @@ namespace DataAccessObjects
                 {
                     context.Orders.Add(p);
                     context.SaveChanges();
-                    int newOrderId = p.Id;
+                    int newOrderId = p.OrderId;
 
                     return newOrderId;
                 }
@@ -412,6 +412,7 @@ namespace DataAccessObjects
 
             return false;
         }
+       
         public static List<CartItems> getCartsSession()
         {
             try
