@@ -1,6 +1,6 @@
 ﻿using BusinessObjects;
 using DataAccessObjects.ResponseModel;
-using Repositories.Interface;
+using Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

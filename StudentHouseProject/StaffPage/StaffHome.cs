@@ -1,5 +1,4 @@
-﻿using Repositories.Interface;
-using Repositories;
+﻿using Repositories;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,24 +37,19 @@ namespace StudentHouseProject.StaffPage
             ordersOfStaff = order;
 
             //Show data in dataGridView
-            dataGridView1.DataSource = order;
+            dgvStaff.DataSource = order;
         }
 
         private void btnViewDetails_Click(object sender, EventArgs e)
         {
-            if(dataGridView1.SelectedRows.Count > 0)
+            if(dgvStaff.SelectedRows.Count > 0)
             {
-                var orderId = (int)dataGridView1.SelectedRows[0].Cells[1].Value;
+                var orderId = (int)dgvStaff.SelectedRows[0].Cells[1].Value;
 
                 StaffViewServiceDetails staffViewServiceDetails = new StaffViewServiceDetails(orderId, _staff);
                 staffViewServiceDetails.Show();
                 this.Hide();
             }
-        }
-
-        private void StaffHome_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

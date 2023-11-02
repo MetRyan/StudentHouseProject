@@ -10,8 +10,6 @@ namespace Repositories
         public void AddStaff(staff staff);
         public void UpdateStaff(staff staff);
         public void DeleteStaff(staff staff);
-        public Boolean CheckloginforStaff(String email, string password);
-        public staff getStaffbyEmails(String email);
 
         public List<StaffOrderModel> GetStaffOrder(int staffId);
         public List<OrderDetail> GetStaffOrderDetails(int orderId);

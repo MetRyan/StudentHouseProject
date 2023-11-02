@@ -1,7 +1,6 @@
 ﻿using BusinessObjects;
 using DataAccessObjects;
 using DataAccessObjects.ResponseModel;
-using Repositories.Interface;
 
 
 namespace Repositories
@@ -25,6 +24,7 @@ namespace Repositories
         public List<StaffOrderModel> GetStaffOrder(int staffId) => StaffDAO.GetStaffOrder(staffId);
 
         public List<OrderDetail> GetStaffOrderDetails(int orderId) => StaffDAO.GetStaffOrderDetails(orderId);
+
         public bool StaffIdExists(int id) => StaffDAO.StaffIdExists(id);
     }
 }
