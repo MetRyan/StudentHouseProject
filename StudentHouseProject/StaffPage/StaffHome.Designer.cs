@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             label1 = new Label();
-            dataGridView1 = new DataGridView();
+            dgvStaff = new DataGridView();
             btnViewDetails = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvStaff).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -44,16 +44,15 @@
             label1.TabIndex = 1;
             label1.Text = "Welcome back Staff!";
             // 
-            // dataGridView1
+            // dgvStaff
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(32, 130);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(883, 274);
-            dataGridView1.TabIndex = 2;
+            dgvStaff.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStaff.Location = new Point(37, 173);
+            dgvStaff.Name = "dgvStaff";
+            dgvStaff.RowHeadersWidth = 51;
+            dgvStaff.RowTemplate.Height = 29;
+            dgvStaff.Size = new Size(1009, 365);
+            dgvStaff.TabIndex = 2;
             // 
             // btnViewDetails
             // 
@@ -71,15 +70,15 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(942, 412);
+            ClientSize = new Size(1076, 606);
             Controls.Add(btnViewDetails);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvStaff);
             Controls.Add(label1);
             Margin = new Padding(3, 2, 3, 2);
             Name = "StaffHome";
             Text = "Home (Staff)";
             Load += StaffHome_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvStaff).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -87,7 +86,7 @@
         #endregion
 
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dgvStaff;
         private Button btnViewDetails;
     }
 }

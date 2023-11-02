@@ -56,13 +56,12 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(250, 895);
+            panelMenu.Size = new Size(250, 857);
             panelMenu.TabIndex = 1;
             // 
             // btnLogOut
             // 
             btnLogOut.Dock = DockStyle.Top;
-            btnLogOut.FlatAppearance.BorderSize = 0;
             btnLogOut.FlatStyle = FlatStyle.Flat;
             btnLogOut.ImageAlign = ContentAlignment.MiddleLeft;
             btnLogOut.Location = new Point(0, 662);
@@ -76,7 +75,6 @@
             // btnRegister
             // 
             btnRegister.Dock = DockStyle.Top;
-            btnRegister.FlatAppearance.BorderSize = 0;
             btnRegister.FlatStyle = FlatStyle.Flat;
             btnRegister.ImageAlign = ContentAlignment.MiddleLeft;
             btnRegister.Location = new Point(0, 547);
@@ -90,7 +88,6 @@
             // btnLogin
             // 
             btnLogin.Dock = DockStyle.Top;
-            btnLogin.FlatAppearance.BorderSize = 0;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.ImageAlign = ContentAlignment.MiddleLeft;
             btnLogin.Location = new Point(0, 432);
@@ -104,7 +101,6 @@
             // btnCart
             // 
             btnCart.Dock = DockStyle.Top;
-            btnCart.FlatAppearance.BorderSize = 0;
             btnCart.FlatStyle = FlatStyle.Flat;
             btnCart.ImageAlign = ContentAlignment.MiddleLeft;
             btnCart.Location = new Point(0, 317);
@@ -118,7 +114,6 @@
             // btnProfile
             // 
             btnProfile.Dock = DockStyle.Top;
-            btnProfile.FlatAppearance.BorderSize = 0;
             btnProfile.FlatStyle = FlatStyle.Flat;
             btnProfile.ImageAlign = ContentAlignment.MiddleLeft;
             btnProfile.Location = new Point(0, 202);
@@ -132,7 +127,6 @@
             // 
             btnHomepage.BackColor = SystemColors.ActiveCaption;
             btnHomepage.Dock = DockStyle.Top;
-            btnHomepage.FlatAppearance.BorderSize = 0;
             btnHomepage.FlatStyle = FlatStyle.Flat;
             btnHomepage.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             btnHomepage.ImageAlign = ContentAlignment.MiddleLeft;
@@ -160,7 +154,7 @@
             panelTitleBar.Dock = DockStyle.Top;
             panelTitleBar.Location = new Point(250, 0);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(993, 71);
+            panelTitleBar.Size = new Size(829, 71);
             panelTitleBar.TabIndex = 2;
             // 
             // lbTitle
@@ -168,7 +162,7 @@
             lbTitle.Anchor = AnchorStyles.None;
             lbTitle.AutoSize = true;
             lbTitle.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            lbTitle.Location = new Point(448, 25);
+            lbTitle.Location = new Point(366, 25);
             lbTitle.Name = "lbTitle";
             lbTitle.Size = new Size(87, 35);
             lbTitle.TabIndex = 0;
@@ -179,19 +173,21 @@
             panelDesktop.Dock = DockStyle.Fill;
             panelDesktop.Location = new Point(250, 71);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(993, 824);
+            panelDesktop.Size = new Size(829, 786);
             panelDesktop.TabIndex = 3;
+            panelDesktop.Paint += panelDesktop_Paint;
             // 
             // MainMenu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1243, 895);
+            ClientSize = new Size(1079, 857);
             Controls.Add(panelDesktop);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             Name = "MainMenu";
             Text = "MainMenu";
+            FormClosed += MainMenu_FormClosed;
             Load += MainMenu_Load;
             panelMenu.ResumeLayout(false);
             panelTitleBar.ResumeLayout(false);

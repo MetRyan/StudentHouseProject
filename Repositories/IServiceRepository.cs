@@ -1,6 +1,6 @@
 ﻿using BusinessObjects;
 
-namespace Repositories.Interface
+namespace Repositories
 {
     public interface IServiceRepository
     {
@@ -9,5 +9,6 @@ namespace Repositories.Interface
         public void AddService(Service service);
         public void UpdateService(Service service);
         public void DeleteService(Service service);
+        public bool ServicesIdExist(int id);
     }
 }

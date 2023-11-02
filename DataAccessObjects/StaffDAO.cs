@@ -205,6 +205,11 @@ namespace DataAccessObjects
             catch (Exception e)
             {
                 throw e;
+        public static bool StaffIdExists(int staffId)
+        {
+            using (var context = new StudentHouseMembershipContext()) // Replace with your actual DbContext
+            {
+                return context.staff.Any(s => s.StaffId == staffId);
             }
         }
     }

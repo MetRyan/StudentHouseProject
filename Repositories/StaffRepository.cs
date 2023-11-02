@@ -3,13 +3,14 @@ using DataAccessObjects;
 using DataAccessObjects.ResponseModel;
 using Repositories.Interface;
 
+
 namespace Repositories
 {
     public class StaffRepository : IStaffRepository
     {
         public void AddStaff(staff staff) => StaffDAO.Instance.AddStaff(staff);
 
-        public Boolean CheckloginforStaff(string email, string password)=> StaffDAO.CheckLoginforStaff(email, password);
+        public Boolean CheckloginforStaff(string email, string password) => StaffDAO.CheckLoginforStaff(email, password);
 
         public void DeleteStaff(staff staff) => StaffDAO.Instance.DeleteStaff(staff);
 
@@ -24,5 +25,6 @@ namespace Repositories
         public List<StaffOrderModel> GetStaffOrder(int staffId) => StaffDAO.GetStaffOrder(staffId);
 
         public List<OrderDetail> GetStaffOrderDetails(int orderId) => StaffDAO.GetStaffOrderDetails(orderId);
+        public bool StaffIdExists(int id) => StaffDAO.StaffIdExists(id);
     }
 }

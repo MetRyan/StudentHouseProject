@@ -166,7 +166,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "UserViewServicesDetails";
-            Text = "Service Details";
+            Text = "S";
             Load += UserViewServicesDetails_Load;
             ResumeLayout(false);
             PerformLayout();

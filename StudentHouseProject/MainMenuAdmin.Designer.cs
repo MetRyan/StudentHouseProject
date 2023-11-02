@@ -1,6 +1,6 @@
 ﻿namespace UI
 {
-    partial class MainMenuAdmincs
+    partial class MainMenuAdmin
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,8 @@
             panelTitleBar = new Panel();
             lbTitle = new Label();
             panelMenu = new Panel();
-            btnLogOut = new Button();
+            button1 = new Button();
+            btnCustomerManagent = new Button();
             btnStaff = new Button();
             btnAdminViewServiceDetails = new Button();
             btnAssignServicetoStaff = new Button();
@@ -85,7 +86,8 @@
             // panelMenu
             // 
             panelMenu.BackColor = SystemColors.ActiveCaption;
-            panelMenu.Controls.Add(btnLogOut);
+            panelMenu.Controls.Add(button1);
+            panelMenu.Controls.Add(btnCustomerManagent);
             panelMenu.Controls.Add(btnStaff);
             panelMenu.Controls.Add(btnAdminViewServiceDetails);
             panelMenu.Controls.Add(btnAssignServicetoStaff);
@@ -97,25 +99,37 @@
             panelMenu.Size = new Size(219, 529);
             panelMenu.TabIndex = 4;
             // 
-            // btnLogOut
+            // button1
             // 
-            btnLogOut.Dock = DockStyle.Top;
-            btnLogOut.FlatAppearance.BorderSize = 0;
-            btnLogOut.FlatStyle = FlatStyle.Flat;
-            btnLogOut.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogOut.Location = new Point(0, 323);
-            btnLogOut.Margin = new Padding(3, 2, 3, 2);
-            btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(219, 86);
-            btnLogOut.TabIndex = 4;
-            btnLogOut.Text = "LogOut";
-            btnLogOut.UseVisualStyleBackColor = true;
-            btnLogOut.Click += btnLogOut_Click;
+            button1.Dock = DockStyle.Top;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(0, 409);
+            button1.Margin = new Padding(3, 2, 3, 2);
+            button1.Name = "button1";
+            button1.Size = new Size(219, 86);
+            button1.TabIndex = 5;
+            button1.Text = "LogOut";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += btnLogOut_Click;
+            // 
+            // btnCustomerManagent
+            // 
+            btnCustomerManagent.Dock = DockStyle.Top;
+            btnCustomerManagent.FlatStyle = FlatStyle.Flat;
+            btnCustomerManagent.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCustomerManagent.Location = new Point(0, 323);
+            btnCustomerManagent.Margin = new Padding(3, 2, 3, 2);
+            btnCustomerManagent.Name = "btnCustomerManagent";
+            btnCustomerManagent.Size = new Size(219, 86);
+            btnCustomerManagent.TabIndex = 4;
+            btnCustomerManagent.Text = "Customer Managment";
+            btnCustomerManagent.UseVisualStyleBackColor = true;
+            btnCustomerManagent.Click += btnCustomerManagent_Click;
             // 
             // btnStaff
             // 
             btnStaff.Dock = DockStyle.Top;
-            btnStaff.FlatAppearance.BorderSize = 0;
             btnStaff.FlatStyle = FlatStyle.Flat;
             btnStaff.ImageAlign = ContentAlignment.MiddleLeft;
             btnStaff.Location = new Point(0, 237);
@@ -123,14 +137,13 @@
             btnStaff.Name = "btnStaff";
             btnStaff.Size = new Size(219, 86);
             btnStaff.TabIndex = 3;
-            btnStaff.Text = "Staff";
+            btnStaff.Text = "Staff Management";
             btnStaff.UseVisualStyleBackColor = true;
             btnStaff.Click += btnStaff_Click;
             // 
             // btnAdminViewServiceDetails
             // 
             btnAdminViewServiceDetails.Dock = DockStyle.Top;
-            btnAdminViewServiceDetails.FlatAppearance.BorderSize = 0;
             btnAdminViewServiceDetails.FlatStyle = FlatStyle.Flat;
             btnAdminViewServiceDetails.ImageAlign = ContentAlignment.MiddleLeft;
             btnAdminViewServiceDetails.Location = new Point(0, 151);
@@ -138,7 +151,7 @@
             btnAdminViewServiceDetails.Name = "btnAdminViewServiceDetails";
             btnAdminViewServiceDetails.Size = new Size(219, 86);
             btnAdminViewServiceDetails.TabIndex = 2;
-            btnAdminViewServiceDetails.Text = "AdminViewServiceDetails";
+            btnAdminViewServiceDetails.Text = "ServiceDetails";
             btnAdminViewServiceDetails.UseVisualStyleBackColor = true;
             btnAdminViewServiceDetails.Click += btnAdminViewServiceDetails_Click;
             // 
@@ -146,9 +159,8 @@
             // 
             btnAssignServicetoStaff.BackColor = SystemColors.ActiveCaption;
             btnAssignServicetoStaff.Dock = DockStyle.Top;
-            btnAssignServicetoStaff.FlatAppearance.BorderSize = 0;
             btnAssignServicetoStaff.FlatStyle = FlatStyle.Flat;
-            btnAssignServicetoStaff.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAssignServicetoStaff.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAssignServicetoStaff.ImageAlign = ContentAlignment.MiddleLeft;
             btnAssignServicetoStaff.Location = new Point(0, 53);
             btnAssignServicetoStaff.Margin = new Padding(3, 2, 3, 2);
@@ -159,7 +171,7 @@
             btnAssignServicetoStaff.UseVisualStyleBackColor = false;
             btnAssignServicetoStaff.Click += btnAssignServicetoStaff_Click;
             // 
-            // MainMenuAdmincs
+            // MainMenuAdmin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -168,8 +180,9 @@
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "MainMenuAdmincs";
+            Name = "MainMenuAdmin";
             Text = "MainMenuAdmincs";
+            FormClosed += MainMenu_FormClosed;
             panelTitleBar.ResumeLayout(false);
             panelTitleBar.PerformLayout();
             panelMenu.ResumeLayout(false);
@@ -189,6 +202,7 @@
         private Button btnStaff;
         private Button btnAdminViewServiceDetails;
         private Button btnAssignServicetoStaff;
-        private Button btnLogOut;
+        private Button btnCustomerManagent;
+        private Button button1;
     }
 }

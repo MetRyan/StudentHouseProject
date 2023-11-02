@@ -1,6 +1,5 @@
 ﻿using BusinessObjects;
 using DataAccessObjects;
-using Repositories.Interface;
 
 namespace Repositories
 {
@@ -17,6 +16,8 @@ namespace Repositories
         public Boolean CheckloginforCustomer(string email, string password) => CustomerDAO.CheckLoginforCustomer(email, password);
 
         public Customer getCustomerbyEmail(string email) => CustomerDAO.GetCustomerbyEmail(email);
+
+        public List<Customer> SearchCustomerbyType(string keyword, string type) => CustomerDAO.SearchByType(keyword, type); 
     }
 
 }

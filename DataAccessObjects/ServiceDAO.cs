@@ -72,5 +72,12 @@ namespace DataAccessObjects
                 context.SaveChanges();
             }
         }
+        public static bool ServicesIdExists(int staffId)
+        {
+            using (var context = new StudentHouseMembershipContext()) // Replace with your actual DbContext
+            {
+                return context.staff.Any(s => s.StaffId == staffId);
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace StudentHouseProject.AdminAPage
 {
-    partial class AdminUpdateService
+    partial class AdminServiceDetail
     {
         /// <summary>
         /// Required designer variable.
@@ -32,23 +32,21 @@
             btnReturn = new Button();
             txtServicePrice = new TextBox();
             label5 = new Label();
-            txtAssignedStaff = new TextBox();
-            label4 = new Label();
             txtAmountOfTime = new TextBox();
             label3 = new Label();
             txtServiceName = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            txtStartedDate = new DateTimePicker();
-            txtEndedDate = new DateTimePicker();
+            cbStatus = new ComboBox();
+            label8 = new Label();
+            txtServiceId = new TextBox();
+            label9 = new Label();
             SuspendLayout();
             // 
             // btnUpdateService
             // 
             btnUpdateService.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUpdateService.Location = new Point(479, 523);
+            btnUpdateService.Location = new Point(348, 456);
             btnUpdateService.Name = "btnUpdateService";
             btnUpdateService.Size = new Size(148, 42);
             btnUpdateService.TabIndex = 32;
@@ -58,7 +56,7 @@
             // btnReturn
             // 
             btnReturn.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnReturn.Location = new Point(633, 523);
+            btnReturn.Location = new Point(540, 456);
             btnReturn.Name = "btnReturn";
             btnReturn.Size = new Size(148, 42);
             btnReturn.TabIndex = 30;
@@ -82,26 +80,9 @@
             label5.TabIndex = 28;
             label5.Text = "Price (VNĐ)";
             // 
-            // txtAssignedStaff
-            // 
-            txtAssignedStaff.Location = new Point(409, 231);
-            txtAssignedStaff.Name = "txtAssignedStaff";
-            txtAssignedStaff.Size = new Size(279, 27);
-            txtAssignedStaff.TabIndex = 27;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(95, 234);
-            label4.Name = "label4";
-            label4.Size = new Size(40, 20);
-            label4.TabIndex = 26;
-            label4.Text = "Staff";
-            // 
             // txtAmountOfTime
             // 
-            txtAmountOfTime.Location = new Point(409, 163);
+            txtAmountOfTime.Location = new Point(409, 217);
             txtAmountOfTime.Name = "txtAmountOfTime";
             txtAmountOfTime.Size = new Size(279, 27);
             txtAmountOfTime.TabIndex = 25;
@@ -110,15 +91,15 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(95, 166);
+            label3.Location = new Point(95, 220);
             label3.Name = "label3";
-            label3.Size = new Size(308, 20);
+            label3.Size = new Size(104, 20);
             label3.TabIndex = 24;
-            label3.Text = "Time length to complete the service (Hours)";
+            label3.Text = "Time (minute)";
             // 
             // txtServiceName
             // 
-            txtServiceName.Location = new Point(409, 96);
+            txtServiceName.Location = new Point(409, 157);
             txtServiceName.Name = "txtServiceName";
             txtServiceName.Size = new Size(279, 27);
             txtServiceName.TabIndex = 23;
@@ -127,7 +108,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(95, 96);
+            label2.Location = new Point(95, 157);
             label2.Name = "label2";
             label2.Size = new Size(104, 20);
             label2.TabIndex = 22;
@@ -143,61 +124,61 @@
             label1.TabIndex = 21;
             label1.Text = "Update Service";
             // 
-            // label7
+            // cbStatus
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(95, 438);
-            label7.Name = "label7";
-            label7.Size = new Size(88, 20);
-            label7.TabIndex = 34;
-            label7.Text = "Ended Date";
+            cbStatus.FormattingEnabled = true;
+            cbStatus.Items.AddRange(new object[] { "True", "False" });
+            cbStatus.Location = new Point(416, 360);
+            cbStatus.Name = "cbStatus";
+            cbStatus.Size = new Size(272, 28);
+            cbStatus.TabIndex = 46;
             // 
-            // label6
+            // label8
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(95, 369);
-            label6.Name = "label6";
-            label6.Size = new Size(94, 20);
-            label6.TabIndex = 33;
-            label6.Text = "Started Date";
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(98, 368);
+            label8.Name = "label8";
+            label8.Size = new Size(50, 20);
+            label8.TabIndex = 45;
+            label8.Text = "Status";
             // 
-            // txtStartedDate
+            // txtServiceId
             // 
-            txtStartedDate.Location = new Point(409, 369);
-            txtStartedDate.Name = "txtStartedDate";
-            txtStartedDate.Size = new Size(279, 27);
-            txtStartedDate.TabIndex = 35;
+            txtServiceId.Location = new Point(409, 110);
+            txtServiceId.Name = "txtServiceId";
+            txtServiceId.Size = new Size(279, 27);
+            txtServiceId.TabIndex = 44;
             // 
-            // txtEndedDate
+            // label9
             // 
-            txtEndedDate.Location = new Point(409, 438);
-            txtEndedDate.Name = "txtEndedDate";
-            txtEndedDate.Size = new Size(279, 27);
-            txtEndedDate.TabIndex = 36;
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label9.Location = new Point(98, 113);
+            label9.Name = "label9";
+            label9.Size = new Size(76, 20);
+            label9.TabIndex = 43;
+            label9.Text = "Service Id";
             // 
-            // AdminUpdateService
+            // AdminServiceDetail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 602);
-            Controls.Add(txtEndedDate);
-            Controls.Add(txtStartedDate);
-            Controls.Add(label7);
-            Controls.Add(label6);
+            ClientSize = new Size(1260, 602);
+            Controls.Add(cbStatus);
+            Controls.Add(label8);
+            Controls.Add(txtServiceId);
+            Controls.Add(label9);
             Controls.Add(btnUpdateService);
             Controls.Add(btnReturn);
             Controls.Add(txtServicePrice);
             Controls.Add(label5);
-            Controls.Add(txtAssignedStaff);
-            Controls.Add(label4);
             Controls.Add(txtAmountOfTime);
             Controls.Add(label3);
             Controls.Add(txtServiceName);
             Controls.Add(label2);
             Controls.Add(label1);
-            Name = "AdminUpdateService";
+            Name = "AdminServiceDetail";
             Text = "Update Service";
             ResumeLayout(false);
             PerformLayout();
@@ -216,9 +197,9 @@
         private TextBox txtServiceName;
         private Label label2;
         private Label label1;
-        private Label label7;
-        private Label label6;
-        private DateTimePicker txtStartedDate;
-        private DateTimePicker txtEndedDate;
+        private ComboBox cbStatus;
+        private Label label8;
+        private TextBox txtServiceId;
+        private Label label9;
     }
 }

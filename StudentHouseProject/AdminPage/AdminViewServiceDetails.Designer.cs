@@ -30,68 +30,51 @@
         {
             txtServicePrice = new TextBox();
             label5 = new Label();
-            txtAssignedStaff = new TextBox();
-            label4 = new Label();
             txtAmountOfTime = new TextBox();
             label3 = new Label();
             txtServiceName = new TextBox();
             label2 = new Label();
             label1 = new Label();
-            btnReturn = new Button();
+            btnAdd = new Button();
             btnDeleteService = new Button();
             btnUpdateService = new Button();
-            label6 = new Label();
-            txtStartedDate = new TextBox();
-            label7 = new Label();
-            txtEndedDate = new TextBox();
+            txtServiceId = new TextBox();
+            label8 = new Label();
+            label4 = new Label();
+            dgv = new DataGridView();
+            txtStatus = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
             SuspendLayout();
             // 
             // txtServicePrice
             // 
-            txtServicePrice.Location = new Point(447, 300);
+            txtServicePrice.Location = new Point(635, 70);
             txtServicePrice.Name = "txtServicePrice";
-            txtServicePrice.Size = new Size(279, 27);
+            txtServicePrice.Size = new Size(180, 27);
             txtServicePrice.TabIndex = 17;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(133, 303);
+            label5.Location = new Point(539, 70);
             label5.Name = "label5";
             label5.Size = new Size(90, 20);
             label5.TabIndex = 16;
             label5.Text = "Price (VNĐ)";
             // 
-            // txtAssignedStaff
-            // 
-            txtAssignedStaff.Location = new Point(447, 235);
-            txtAssignedStaff.Name = "txtAssignedStaff";
-            txtAssignedStaff.Size = new Size(279, 27);
-            txtAssignedStaff.TabIndex = 15;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(133, 238);
-            label4.Name = "label4";
-            label4.Size = new Size(40, 20);
-            label4.TabIndex = 14;
-            label4.Text = "Staff";
-            // 
             // txtAmountOfTime
             // 
-            txtAmountOfTime.Location = new Point(447, 167);
+            txtAmountOfTime.Location = new Point(343, 177);
             txtAmountOfTime.Name = "txtAmountOfTime";
-            txtAmountOfTime.Size = new Size(279, 27);
+            txtAmountOfTime.Size = new Size(149, 27);
             txtAmountOfTime.TabIndex = 13;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(133, 170);
+            label3.Location = new Point(37, 184);
             label3.Name = "label3";
             label3.Size = new Size(308, 20);
             label3.TabIndex = 12;
@@ -99,16 +82,16 @@
             // 
             // txtServiceName
             // 
-            txtServiceName.Location = new Point(447, 100);
+            txtServiceName.Location = new Point(147, 125);
             txtServiceName.Name = "txtServiceName";
-            txtServiceName.Size = new Size(279, 27);
+            txtServiceName.Size = new Size(345, 27);
             txtServiceName.TabIndex = 11;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(133, 100);
+            label2.Location = new Point(37, 132);
             label2.Name = "label2";
             label2.Size = new Size(104, 20);
             label2.TabIndex = 10;
@@ -124,15 +107,16 @@
             label1.TabIndex = 9;
             label1.Text = "Service Details";
             // 
-            // btnReturn
+            // btnAdd
             // 
-            btnReturn.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnReturn.Location = new Point(667, 520);
-            btnReturn.Name = "btnReturn";
-            btnReturn.Size = new Size(148, 42);
-            btnReturn.TabIndex = 18;
-            btnReturn.Text = "Return to Home";
-            btnReturn.UseVisualStyleBackColor = true;
+            btnAdd.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnAdd.Location = new Point(667, 520);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(148, 42);
+            btnAdd.TabIndex = 18;
+            btnAdd.Text = "Add Service";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnCreate_Click;
             // 
             // btnDeleteService
             // 
@@ -143,6 +127,7 @@
             btnDeleteService.TabIndex = 19;
             btnDeleteService.Text = "Remove Service";
             btnDeleteService.UseVisualStyleBackColor = true;
+            btnDeleteService.Click += btnDelete_Click;
             // 
             // btnUpdateService
             // 
@@ -153,57 +138,67 @@
             btnUpdateService.TabIndex = 20;
             btnUpdateService.Text = "Update Service";
             btnUpdateService.UseVisualStyleBackColor = true;
+            btnUpdateService.Click += btnUpdate_Click;
             // 
-            // label6
+            // txtServiceId
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(133, 372);
-            label6.Name = "label6";
-            label6.Size = new Size(94, 20);
-            label6.TabIndex = 21;
-            label6.Text = "Started Date";
+            txtServiceId.Location = new Point(144, 70);
+            txtServiceId.Name = "txtServiceId";
+            txtServiceId.Size = new Size(345, 27);
+            txtServiceId.TabIndex = 26;
             // 
-            // txtStartedDate
+            // label8
             // 
-            txtStartedDate.Location = new Point(447, 365);
-            txtStartedDate.Name = "txtStartedDate";
-            txtStartedDate.Size = new Size(279, 27);
-            txtStartedDate.TabIndex = 22;
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label8.Location = new Point(37, 73);
+            label8.Name = "label8";
+            label8.Size = new Size(76, 20);
+            label8.TabIndex = 25;
+            label8.Text = "Service Id";
             // 
-            // label7
+            // label4
             // 
-            label7.AutoSize = true;
-            label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label7.Location = new Point(133, 441);
-            label7.Name = "label7";
-            label7.Size = new Size(88, 20);
-            label7.TabIndex = 23;
-            label7.Text = "Ended Date";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(539, 132);
+            label4.Name = "label4";
+            label4.Size = new Size(50, 20);
+            label4.TabIndex = 27;
+            label4.Text = "Status";
             // 
-            // txtEndedDate
+            // dgv
             // 
-            txtEndedDate.Location = new Point(447, 434);
-            txtEndedDate.Name = "txtEndedDate";
-            txtEndedDate.Size = new Size(279, 27);
-            txtEndedDate.TabIndex = 24;
+            dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv.Location = new Point(37, 254);
+            dgv.Name = "dgv";
+            dgv.RowHeadersWidth = 51;
+            dgv.RowTemplate.Height = 29;
+            dgv.Size = new Size(743, 205);
+            dgv.TabIndex = 29;
+            // 
+            // txtStatus
+            // 
+            txtStatus.Location = new Point(635, 125);
+            txtStatus.Name = "txtStatus";
+            txtStatus.Size = new Size(180, 27);
+            txtStatus.TabIndex = 30;
             // 
             // AdminViewServiceDetails
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(834, 586);
-            Controls.Add(txtEndedDate);
-            Controls.Add(label7);
-            Controls.Add(txtStartedDate);
-            Controls.Add(label6);
+            Controls.Add(txtStatus);
+            Controls.Add(dgv);
+            Controls.Add(label4);
+            Controls.Add(txtServiceId);
+            Controls.Add(label8);
             Controls.Add(btnUpdateService);
             Controls.Add(btnDeleteService);
-            Controls.Add(btnReturn);
+            Controls.Add(btnAdd);
             Controls.Add(txtServicePrice);
             Controls.Add(label5);
-            Controls.Add(txtAssignedStaff);
-            Controls.Add(label4);
             Controls.Add(txtAmountOfTime);
             Controls.Add(label3);
             Controls.Add(txtServiceName);
@@ -211,6 +206,7 @@
             Controls.Add(label1);
             Name = "AdminViewServiceDetails";
             Text = "Service Details";
+            ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -219,19 +215,18 @@
 
         private TextBox txtServicePrice;
         private Label label5;
-        private TextBox txtAssignedStaff;
-        private Label label4;
         private TextBox txtAmountOfTime;
         private Label label3;
         private TextBox txtServiceName;
         private Label label2;
         private Label label1;
-        private Button btnReturn;
+        private Button btnAdd;
         private Button btnDeleteService;
         private Button btnUpdateService;
-        private Label label6;
-        private TextBox txtStartedDate;
-        private Label label7;
-        private TextBox txtEndedDate;
+        private TextBox txtServiceId;
+        private Label label8;
+        private Label label4;
+        private DataGridView dgv;
+        private TextBox txtStatus;
     }
 }

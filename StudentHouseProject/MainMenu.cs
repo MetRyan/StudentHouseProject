@@ -89,7 +89,7 @@ namespace UI
 
 
         }
-     
+
 
         private void OpenChildfrom(Form childform, object btnSender)
         {
@@ -136,8 +136,12 @@ namespace UI
 
 
         public void button1_Click(object sender, EventArgs e)
+
         {
-            OpenChildfrom(new UserViewServicesDetails(), sender);
+
+
+
+            OpenChildfrom(new Carts() { getCustomer = getCustomer }, sender);
 
         }
 
@@ -191,12 +195,37 @@ namespace UI
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
+            CloseChildForms();
+
             getCustomer = null;
-            this.Close();
+            //     this.Close();
+
 
             // Create and show a new instance of MainMenu
-            MainMenu newMainMenu = new MainMenu();
-            newMainMenu.Show();
+            MainMenu f = new MainMenu();
+            // newMainMenu.ShowDialog();
+
+            f.Show();
+            CloseChildForms();
+
+        }
+
+        private void panelDesktop_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        public void CloseChildForms()
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                childForm.Close();
+            }
+        }
+
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CloseChildForms();
+
         }
     }
 }

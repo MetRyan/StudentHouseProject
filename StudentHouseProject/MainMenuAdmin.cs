@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using StudentHouseProject;
 using StudentHouseProject.AdminAPage;
 using System;
 using System.Collections.Generic;
@@ -13,14 +14,14 @@ using UI.AdminPage;
 
 namespace UI
 {
-    public partial class MainMenuAdmincs : Form
+    public partial class MainMenuAdmin : Form
     {
         private Button currentButton;
         private Random random;
         private int tempIndex;
         private Form activeForm;
         public Admin getAdmin { get; set; }
-        public MainMenuAdmincs()
+        public MainMenuAdmin()
         {
             InitializeComponent();
             random = new Random();
@@ -118,15 +119,33 @@ namespace UI
 
         private void btnLogOut_Click(object sender, EventArgs e)
         {
-            this.Close();
 
             // Create and show a new instance of MainMenu
-            MainMenu newMainMenu = new MainMenu();
-            newMainMenu.Show();
+            getAdmin = null;
+            MainMenu f = new MainMenu();
+            f.Show();
 
         }
 
+        private void btnCustomerManagent_Click(object sender, EventArgs e)
+        {
+            OpenChildfrom(new CustomerManagement(), sender);
 
+        }
+
+        public void CloseChildForms()
+        {
+            foreach (Form childForm in this.MdiChildren)
+            {
+                childForm.Close();
+            }
+        }
+
+        private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CloseChildForms();
+
+        }
 
 
         /* private void lbTitle_Click(object sender, EventArgs e)

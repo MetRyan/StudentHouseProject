@@ -1,6 +1,5 @@
 ﻿using BusinessObjects;
 using DataAccessObjects;
-using Repositories.Interface;
 
 namespace Repositories
 {
@@ -13,6 +12,8 @@ namespace Repositories
         public Service GetServiceById(int id) => ServiceDAO.Instance.GetServiceById(id);
 
         public List<Service> GetServices() => ServiceDAO.Instance.GetServices();
+
+        public bool ServicesIdExist(int id) => ServiceDAO.ServicesIdExists(id);
 
         public void UpdateService(Service service) => ServiceDAO.Instance.UpdateService(service);
     }

@@ -52,5 +52,10 @@ namespace StudentHouseProject.StaffPage
                 this.Hide();
             }
         }
+
+        private void StaffHome_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

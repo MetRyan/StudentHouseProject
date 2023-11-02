@@ -1,10 +1,8 @@
 using BusinessObjects;
-using Microsoft.EntityFrameworkCore;
 using Repositories;
 using Repositories.Interface;
 using StudentHouseProject.StaffPage;
 using UI;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace StudentHouseProject
 {
@@ -60,15 +58,15 @@ namespace StudentHouseProject
                     this.Close();
 
                     Admin getAdminbyEmail = repository_Admin.getAdminbyEmail(email);
-                    MainMenuAdmincs f = new MainMenuAdmincs();
-                    f.btnHomepage_Click(null, null);
+                    MainMenuAdmin f = new MainMenuAdmin() { getAdmin = getAdminbyEmail};
+                    f.ShowDialog();
                     /*     UserHome userHome = new UserHome()
 
                          {
                              getCustomer = getCustomerbyEmail,
                          };*/
 
-                    // Trong class khác
+                    // Trong class khï¿½c
 
                     f.ShowDialog();
 
@@ -94,8 +92,8 @@ namespace StudentHouseProject
 
                         if (checkCustomer)
                         {
-                            this.Close(); 
-
+                            //this.Close();
+                            this.Hide();
                             Customer getCustomerbyEmail = repository_Customer.getCustomerbyEmail(email);
                             MainMenu f = new MainMenu() { getCustomer = getCustomerbyEmail, };
                             f.btnHomepage_Click(null, null);
@@ -105,11 +103,12 @@ namespace StudentHouseProject
                                      getCustomer = getCustomerbyEmail,
                                  };*/
 
-                            // Trong class khác
-                  
+                            // Trong class khï¿½c
+                            this.Hide();
                             f.ShowDialog();
-                           
+
                             f.Close();
+
 
                         }
                         else
