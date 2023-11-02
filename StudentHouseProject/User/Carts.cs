@@ -18,7 +18,7 @@ namespace StudentHouseProject.User
     public partial class Carts : Form
     {
         IOrderRepository repository = new OrderRepository();
-
+        public   List<CartItems> listitems {  get; set; }
         public Customer getCustomer { get; set; }
         public Carts()
         {
@@ -57,7 +57,12 @@ namespace StudentHouseProject.User
                     {
                         this.Hide(); // Hide the old MainMenu form
                         MessageBox.Show("Success");
-                        MainMenu f = new MainMenu();
+                        MainMenu f = new MainMenu()
+                        {
+                            getCustomer = getCustomer,
+                            listitems = listitems
+
+                        };
                         f.button1_Click(null, null);
 
                         this.Hide(); // Hide the old MainMenu form
@@ -98,7 +103,6 @@ namespace StudentHouseProject.User
             {
                 foreach (var item in cartlist)
                 {
-                    MessageBox.Show(item.Price.ToString());
                     total += item.Price;
                 }
             }
@@ -108,6 +112,9 @@ namespace StudentHouseProject.User
 
         private void Carts_Load(object sender, EventArgs e)
         {
+
+            MessageBox.Show(getCustomer.Phone);
+
             if (getCustomer != null)
             {
                 txtAdress.Text = getCustomer.Adress;
@@ -146,16 +153,16 @@ namespace StudentHouseProject.User
                 {
                     OrderId = OrderId,
                     Address = txtAdress.Text,
-                    PaymentMethod =cbPayment.Text,
-                    Pending= false,
-                    Phone= txtPhone.Text,
+                    PaymentMethod = cbPayment.Text,
+                    Pending = false,
+                    Phone = txtPhone.Text,
                     Price = cartlist[i].Price,
                     ServiceId = cartlist[i].ServiceId,
                     ServiceName = cartlist[i].ServiceName,
-                    CreateDate= DateTime.Now,
-                    EndDate= null,
+                    CreateDate = DateTime.Now,
+                    EndDate = null,
                 };
-               repository.AddOrder(listOrderDetail);
+                repository.AddOrder(listOrderDetail);
                 MessageBox.Show("Order has been placed successfully.");
                 cartlist.Clear();
 

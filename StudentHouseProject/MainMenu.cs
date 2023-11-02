@@ -204,7 +204,6 @@ namespace UI
             this.Refresh();
             // Create and show a new instance of MainMenu
             MainMenu f = new MainMenu();
-            f.MdiParent = UserHome.ActiveForm;
             // newMainMenu.ShowDialog();
             f.Show();
 
