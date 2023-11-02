@@ -1,5 +1,4 @@
-﻿using BusinessObjects;
-using Repositories.Interface;
+﻿using Repositories.Interface;
 using Repositories;
 using System;
 using System.Collections.Generic;
@@ -11,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccessObjects.ResponseModel;
+using BusinessObjects;
 
 namespace StudentHouseProject.StaffPage
 {
