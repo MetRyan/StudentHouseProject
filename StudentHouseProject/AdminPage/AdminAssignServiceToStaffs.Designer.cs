@@ -97,6 +97,7 @@
             btnAssign.TabIndex = 6;
             btnAssign.Text = "Assign";
             btnAssign.UseVisualStyleBackColor = true;
+            btnAssign.Click += btnAssign_Click_1;
             // 
             // btnReturn
             // 
@@ -108,6 +109,7 @@
             btnReturn.TabIndex = 7;
             btnReturn.Text = "Return";
             btnReturn.UseVisualStyleBackColor = true;
+            btnReturn.Click += btnReturn_Click;
             // 
             // lbWorkDate
             // 

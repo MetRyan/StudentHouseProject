@@ -1,5 +1,6 @@
 using BusinessObjects;
 using Repositories;
+using StudentHouseProject.StaffPage;
 using UI;
 
 namespace StudentHouseProject
@@ -64,10 +65,11 @@ namespace StudentHouseProject
                              getCustomer = getCustomerbyEmail,
                          };*/
 
-                    // Trong class khác
+                    // Trong class khï¿½c
                     f.WindowState = FormWindowState.Maximized;
 
                     this.Dispose();
+                    // Trong class khï¿½c
 
                     f.ShowDialog();
 
@@ -80,16 +82,12 @@ namespace StudentHouseProject
                     if (checkStaff)
                     {
                         //staff thanh cong 
-                        /*
-                                                this.Hide();
-                                                staff getstaffbyEmail = repository_Staff.getStaffbyEmails(email);
-                                                MainMenuAdmincs f = new MainMenuAdmincs()
-                                                {
-                                                    getStaff = getstaffbyEmail,
-                                                };
-                                                f.ShowDialog();
-                                                f.Close();
-                        */
+                        staff staff = repository_Staff.getStaffbyEmails(email);
+                        StaffHome staffHomePage = new StaffHome(staff);
+                        staffHomePage.Show();
+
+                        this.Hide();
+
                     }
                     else
                     {
@@ -109,13 +107,15 @@ namespace StudentHouseProject
                                      getCustomer = getCustomerbyEmail,
                                  };*/
 
-                            // Trong class khác
+                            // Trong class khï¿½c
                          
 
                            // f.ShowDialog(); f.Close();  
                             //  Application.run(f);
                             f.WindowState = FormWindowState.Maximized;
 
+                            // Trong class khï¿½c
+                            this.Hide();
                             f.ShowDialog();
 
 

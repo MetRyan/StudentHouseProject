@@ -19,25 +19,31 @@ namespace StudentHouseProject.AdminAPage
         {
 
         }
-        private void btnAssign_Click(object sender, EventArgs e)
+
+        private void btnAssign_Click_1(object sender, EventArgs e)
         {
-            StaffOrder staffOrder = new StaffOrder();
-            staffOrder.StaffId = Convert.ToInt32(cbStaff.Text);
-            staffOrder.OrderId = Convert.ToInt32(txtOrderId.Text);
-            staffOrder.WorkDate = Convert.ToDateTime(txtWorkDate.Text);
-            staffOrder.Status = "Assigned";
+            try
+            {
+                StaffOrder staffOrder = new StaffOrder();
+                staffOrder.StaffId = Convert.ToInt32(cbStaff.Text);
+                staffOrder.OrderId = Convert.ToInt32(txtOrderId.Text);
+                staffOrder.WorkDate = Convert.ToDateTime(txtWorkDate.Text);
+                staffOrder.Status = "Assigned";
 
-            StaffOrderDAO staffOrderDAO = new StaffOrderDAO();
-            staffOrderDAO.AddStaffOrder(staffOrder);
-            MessageBox.Show("Assign successfully!");
+                StaffOrderDAO staffOrderDAO = new StaffOrderDAO();
+                staffOrderDAO.AddStaffOrder(staffOrder);
+                MessageBox.Show("Assign successfully!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
-
-
-
-
-
-
-
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            AdminServiceDetail admin = new AdminServiceDetail();
+            admin.Show();
         }
     }
 }

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace BusinessObjects
 {
@@ -30,7 +27,8 @@ namespace BusinessObjects
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Server=LAPTOP-RFJCRS8T;Database=StudentHouseMembership; Uid=sa; Pwd=sa");
+                optionsBuilder.UseSqlServer("Server=MSI\\SERVER1;Database=StudentHouseMembership; Uid=sa; Pwd=12345");
+                //"Server=LAPTOP-RFJCRS8T;Database=StudentHouseMembership; Uid=sa; Pwd=sa"
             }
         }
 
@@ -217,9 +215,11 @@ namespace BusinessObjects
 
             modelBuilder.Entity<StaffOrder>(entity =>
             {
-                entity.HasNoKey();
 
                 entity.ToTable("StaffOrder");
+                entity.Property(e => e.StaffId)
+                    .ValueGeneratedNever()
+                    .HasColumnName("StaffID");
 
                 entity.Property(e => e.Id).ValueGeneratedOnAdd();
 

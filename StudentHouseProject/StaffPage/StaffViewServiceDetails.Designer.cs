@@ -41,61 +41,66 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(627, 311);
+            button1.Location = new Point(549, 233);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(148, 42);
+            button1.Size = new Size(130, 32);
             button1.TabIndex = 20;
             button1.Text = "Return to Home";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // txtServicePrice
             // 
-            txtServicePrice.Location = new Point(418, 238);
+            txtServicePrice.Location = new Point(366, 178);
+            txtServicePrice.Margin = new Padding(3, 2, 3, 2);
             txtServicePrice.Name = "txtServicePrice";
-            txtServicePrice.Size = new Size(279, 27);
+            txtServicePrice.Size = new Size(245, 23);
             txtServicePrice.TabIndex = 19;
             // 
             // txtStartedDate
             // 
             txtStartedDate.AutoSize = true;
             txtStartedDate.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            txtStartedDate.Location = new Point(104, 238);
+            txtStartedDate.Location = new Point(91, 178);
             txtStartedDate.Name = "txtStartedDate";
-            txtStartedDate.Size = new Size(95, 20);
+            txtStartedDate.Size = new Size(75, 15);
             txtStartedDate.TabIndex = 18;
             txtStartedDate.Text = "Started Time";
             // 
             // txtAmountOfTime
             // 
-            txtAmountOfTime.Location = new Point(418, 165);
+            txtAmountOfTime.Location = new Point(366, 124);
+            txtAmountOfTime.Margin = new Padding(3, 2, 3, 2);
             txtAmountOfTime.Name = "txtAmountOfTime";
-            txtAmountOfTime.Size = new Size(279, 27);
+            txtAmountOfTime.Size = new Size(245, 23);
             txtAmountOfTime.TabIndex = 15;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(104, 168);
+            label3.Location = new Point(91, 126);
             label3.Name = "label3";
-            label3.Size = new Size(308, 20);
+            label3.Size = new Size(240, 15);
             label3.TabIndex = 14;
             label3.Text = "Time length to complete the service (Hours)";
             // 
             // txtServiceName
             // 
-            txtServiceName.Location = new Point(418, 98);
+            txtServiceName.Location = new Point(366, 74);
+            txtServiceName.Margin = new Padding(3, 2, 3, 2);
             txtServiceName.Name = "txtServiceName";
-            txtServiceName.Size = new Size(279, 27);
+            txtServiceName.Size = new Size(245, 23);
             txtServiceName.TabIndex = 13;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(104, 98);
+            label2.Location = new Point(91, 74);
             label2.Name = "label2";
-            label2.Size = new Size(104, 20);
+            label2.Size = new Size(80, 15);
             label2.TabIndex = 12;
             label2.Text = "Service Name";
             // 
@@ -103,17 +108,17 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(317, 25);
+            label1.Location = new Point(277, 19);
             label1.Name = "label1";
-            label1.Size = new Size(167, 31);
+            label1.Size = new Size(138, 25);
             label1.TabIndex = 11;
             label1.Text = "Service Details";
             // 
             // StaffViewServiceDetails
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 408);
+            ClientSize = new Size(700, 306);
             Controls.Add(button1);
             Controls.Add(txtServicePrice);
             Controls.Add(txtStartedDate);
@@ -122,8 +127,10 @@
             Controls.Add(txtServiceName);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "StaffViewServiceDetails";
             Text = "Service Details";
+            Load += StaffViewServiceDetails_Load;
             ResumeLayout(false);
             PerformLayout();
         }
