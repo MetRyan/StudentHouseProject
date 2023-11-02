@@ -111,7 +111,6 @@ namespace StudentHouseProject.User
         private void Carts_Load(object sender, EventArgs e)
         {
 
-            MessageBox.Show(getCustomer.Phone);
 
             if (getCustomer != null)
             {

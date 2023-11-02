@@ -11,6 +11,7 @@ namespace Repositories
         public void DeleteCustomer(Customer customer);
         public bool CheckloginforCustomer(string email, string password);
         public Customer getCustomerbyEmail(string email);
+        public List<Customer> SearchCustomerbyType(string keyword , String type);
 
 
 

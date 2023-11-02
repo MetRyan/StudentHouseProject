@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using StudentHouseProject;
 using StudentHouseProject.AdminAPage;
 using System;
 using System.Collections.Generic;
@@ -121,8 +122,16 @@ namespace UI
             this.Close();
 
             // Create and show a new instance of MainMenu
-            MainMenu newMainMenu = new MainMenu();
-            newMainMenu.Show();
+            getAdmin= null;
+
+            LoginForm f = new LoginForm();
+            f.Show();
+
+        }
+
+        private void btnCustomerManagent_Click(object sender, EventArgs e)
+        {
+            OpenChildfrom(new CustomerManagement(), sender);
 
         }
 
