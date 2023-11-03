@@ -52,48 +52,48 @@ namespace StudentHouseProject.User
                      }*/
                     // Lấy dữ liệu từ item được click
                     //  MessageBox.Show(serviceName);
-                    bool cartRemove = repository.RemoveFromCartSession(serviceId);
-                    if (cartRemove)
-                    {
-                        /*this.Hide(); // Hide the old MainMenu form
-                        this.Dispose();
-                        this.Close();*/
-                        MessageBox.Show("Success");
-                        flowLayoutPanel1.Controls.Clear();
-                        populateItems();
+                  
+                        bool cartRemove = repository.RemoveFromCartSession(serviceId);
+                        if (cartRemove)
+                        {
+                            /*this.Hide(); // Hide the old MainMenu form
+                            this.Dispose();
+                            this.Close();*/
 
-                        //flowLayoutPanel1.Controls.Remove(listitems[i]);
+                            MessageBox.Show("Success");
+                            flowLayoutPanel1.Controls.Clear();
+                            populateItems();
+                            //flowLayoutPanel1.Controls.Remove(listitems[i]);
 
-                        // populateItems();
-                        /* MainMenu f = new MainMenu()
-                         {
-                             getCustomer = getCustomer,
-
-                         };*/
-                        //  f.button1_Click.
-                        /*  if (f != null)
-                          {
-                              f.ActivateCartButton();
-                          }*/
-                        // f.btnHomepage_Click(null, null);
-                        //  this.Hide(); // Hide the old MainMenu form
-                        /*     UserHome userHome = new UserHome()
-                        
+                            // populateItems();
+                            /* MainMenu f = new MainMenu()
                              {
-                                 getCustomer = getCustomerbyEmail,
+                                 getCustomer = getCustomer,
+
                              };*/
+                            //  f.button1_Click.
+                            /*  if (f != null)
+                              {
+                                  f.ActivateCartButton();
+                              }*/
+                            // f.btnHomepage_Click(null, null);
+                            //  this.Hide(); // Hide the old MainMenu form
+                            /*     UserHome userHome = new UserHome()
 
-                        // Trong class khác
-                        //f.ShowDialog();
-                        //  f.Close();
+                                 {
+                                     getCustomer = getCustomerbyEmail,
+                                 };*/
 
-                    }
-                    else
-                    {
+                            // Trong class khác
+                            //f.ShowDialog();
+                            //  f.Close();
 
-                        MessageBox.Show("Fail");
-                    }
+                        }
+                        else
+                        {
 
+                            MessageBox.Show("Fail");
+                        }
 
                 };
                 txtTotal.Text = CalculateTotal().ToString();
@@ -143,47 +143,53 @@ namespace StudentHouseProject.User
         {
 
 
-
                 List<CartItems> cartlist = repository.getCartsSession();
+            if (cartlist.Count > 0)
+            {
                 Order listOrder = new Order
                 {
                     CustomerId = getCustomer.CustomerId,
                     Price = CalculateTotal(),
-                    Description = txtNote.Text,
+                    Description = txtNote.Text ?? "N/A",
                     Status = "false",
-
+                    CreateDate = DateTime.Now,
 
                 };
                 int OrderId = repository.addOrder_getOrderId(listOrder);
 
-            for (int i = 0; i < cartlist.Count(); i++)
-            {
-                OrderDetail listOrderDetail = new OrderDetail
+                for (int i = 0; i < cartlist.Count(); i++)
                 {
-                    OrderId = OrderId,
-                    Address = txtAdress.Text,
-                    PaymentMethod = cbPayment.Text,
-                    Pending = false,
-                    Phone = txtPhone.Text,
-                    Price = cartlist[i].Price,
-                    ServiceId = cartlist[i].ServiceId,
-                    ServiceName = cartlist[i].ServiceName,
-                    CreateDate = DateTime.Now,
-                    EndDate = null,
-                };
-                repository.AddOrder(listOrderDetail);
-            }
+                    OrderDetail listOrderDetail = new OrderDetail
+                    {
+                        OrderId = OrderId,
+                        Address = txtAdress.Text,
+                        PaymentMethod = cbPayment.Text,
+                        Pending = false,
+                        Phone = txtPhone.Text,
+                        Price = cartlist[i].Price,
+                        ServiceId = cartlist[i].ServiceId,
+                        ServiceName = cartlist[i].ServiceName,
+                        CreateDate = DateTime.Now,
+                        EndDate = null,
+                    };
+                    repository.AddOrder(listOrderDetail);
+                }
                 MessageBox.Show("Order has been placed successfully.");
-                    cartlist.Clear();
-            flowLayoutPanel1.Controls.Clear();
-            txtNote.Text = "";
-            cbPayment.Text = "";
-            populateItems();
+                cartlist.Clear();
+                flowLayoutPanel1.Controls.Clear();
+                txtNote.Text = "";
+                cbPayment.Text = "";
+                populateItems();
 
 
 
+            }
+            else {
+
+
+                MessageBox.Show("Your Cart is Empty");
+            }
         }
-
 
 
         private void textBox1_TextChanged(object sender, EventArgs e)

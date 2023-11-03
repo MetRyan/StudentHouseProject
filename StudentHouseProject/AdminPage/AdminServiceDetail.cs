@@ -196,6 +196,7 @@ namespace StudentHouseProject.AdminAPage
             this.Close();
         }
 
+
         private void AdminServiceDetail_Load(object sender, EventArgs e)
         {
             ServiceDetails_Load();

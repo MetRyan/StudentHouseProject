@@ -45,6 +45,23 @@ namespace DataAccessObjects
             return listOrder;
         }
 
+        public static List<Order> GetOrderbyCustomer(int CustomerId)
+        {
+
+            List<Order> listOrder = new List<Order>();
+            try
+            {
+                using (var context = new StudentHouseMembershipContext()) //goi toi database
+                {
+                    listOrder = context.Orders.Where(p => p.CustomerId == CustomerId).ToList();
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            return listOrder;
+        }
         public static void DeleteOrder(Order order)
         {
             try

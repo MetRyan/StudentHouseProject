@@ -26,6 +26,7 @@ namespace Repositories
         public List<int> getOrderIdStatusFalse() => OrderDAOs.getOrderIdPending();
         
         public List<Order> GetOrders ()=> OrderDAOs.GetOrders();
+        public List<Order> GetOrdersByCustomerId(int CustomerId) => OrderDAOs.GetOrderbyCustomer(CustomerId);
 
         
     }

@@ -177,6 +177,9 @@ namespace UI
                 // Show and enable the LogOut button
                 btnLogOut.Visible = true;
                 btnLogOut.Enabled = true;
+                btnOrderHis.Visible = true;
+                btnOrderHis.Visible = true;
+
             }
             else
             {
@@ -239,6 +242,14 @@ namespace UI
         private void btnProfile_Click(object sender, EventArgs e)
         {
             OpenChildfrom(new UserProfile() { getCustomer = getCustomer }, sender);
+
+        }
+
+
+
+        private void btnHistoryOrder(object sender, EventArgs e)
+        {
+            OpenChildfrom(new OrderDetails() { getCustomer = getCustomer }, sender);
 
         }
     }

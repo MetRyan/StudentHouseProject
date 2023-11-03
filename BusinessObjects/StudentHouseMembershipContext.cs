@@ -120,6 +120,7 @@ namespace BusinessObjects
             modelBuilder.Entity<Order>(entity =>
             {
                 entity.ToTable("Order");
+                entity.Property(e => e.CreateDate).HasColumnType("date");
 
                 entity.Property(e => e.OrderId).HasColumnName("OrderID");
 

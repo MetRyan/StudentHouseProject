@@ -68,7 +68,7 @@
             // 
             // btnLoad
             // 
-            btnLoad.Location = new Point(1122, 246);
+            btnLoad.Location = new Point(1093, 189);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new Size(163, 50);
             btnLoad.TabIndex = 2;

@@ -69,12 +69,12 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(249, 171);
+            txtEmail.Location = new Point(249, 174);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Enter Your Email";
             txtEmail.Size = new Size(300, 27);
             txtEmail.TabIndex = 3;
-            txtEmail.Text = "Admin@gmail.com";
+            txtEmail.Text = "quang@gmail.com";
             txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // label4
