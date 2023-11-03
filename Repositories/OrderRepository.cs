@@ -24,6 +24,8 @@ namespace Repositories
         public bool RemoveFromCartSession(int productId) => OrderDAOs.RemoveFromCart(productId);
         public Order getOrerById (int productId) => OrderDAOs.GetOrderbyId(productId);
         public List<int> getOrderIdStatusFalse() => OrderDAOs.getOrderIdPending();
+        
+        public List<Order> GetOrders ()=> OrderDAOs.GetOrders();
 
         
     }

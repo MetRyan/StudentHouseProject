@@ -23,6 +23,8 @@ namespace Repositories
 
         public int addOrder_getOrderId(Order p);
         public List<int> getOrderIdStatusFalse( );
+        public List<Order> GetOrders();
+
 
     }
 }
