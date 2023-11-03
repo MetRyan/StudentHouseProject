@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace BusinessObjects
 {
@@ -12,8 +13,12 @@ namespace BusinessObjects
         public DateTime? Dob { get; set; }
         public string? Sex { get; set; }
         public string? Status { get; set; }
+        [Browsable(false)]
         public int? ServiceId { get; set; }
+        [Browsable(false)]
+
         public string? Password { get; set; }
+        [Browsable(false)]
 
         public virtual Service? Service { get; set; }
     }

@@ -55,8 +55,9 @@
             panelMenu.Controls.Add(panelLogo);
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
+            panelMenu.Margin = new Padding(3, 2, 3, 2);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(250, 857);
+            panelMenu.Size = new Size(219, 643);
             panelMenu.TabIndex = 1;
             // 
             // btnLogOut
@@ -64,9 +65,10 @@
             btnLogOut.Dock = DockStyle.Top;
             btnLogOut.FlatStyle = FlatStyle.Flat;
             btnLogOut.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogOut.Location = new Point(0, 662);
+            btnLogOut.Location = new Point(0, 495);
+            btnLogOut.Margin = new Padding(3, 2, 3, 2);
             btnLogOut.Name = "btnLogOut";
-            btnLogOut.Size = new Size(250, 115);
+            btnLogOut.Size = new Size(219, 86);
             btnLogOut.TabIndex = 6;
             btnLogOut.Text = "LogOut";
             btnLogOut.UseVisualStyleBackColor = true;
@@ -77,9 +79,10 @@
             btnRegister.Dock = DockStyle.Top;
             btnRegister.FlatStyle = FlatStyle.Flat;
             btnRegister.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRegister.Location = new Point(0, 547);
+            btnRegister.Location = new Point(0, 409);
+            btnRegister.Margin = new Padding(3, 2, 3, 2);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(250, 115);
+            btnRegister.Size = new Size(219, 86);
             btnRegister.TabIndex = 5;
             btnRegister.Text = "Register";
             btnRegister.UseVisualStyleBackColor = true;
@@ -90,9 +93,10 @@
             btnLogin.Dock = DockStyle.Top;
             btnLogin.FlatStyle = FlatStyle.Flat;
             btnLogin.ImageAlign = ContentAlignment.MiddleLeft;
-            btnLogin.Location = new Point(0, 432);
+            btnLogin.Location = new Point(0, 323);
+            btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(250, 115);
+            btnLogin.Size = new Size(219, 86);
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
@@ -103,9 +107,10 @@
             btnCart.Dock = DockStyle.Top;
             btnCart.FlatStyle = FlatStyle.Flat;
             btnCart.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCart.Location = new Point(0, 317);
+            btnCart.Location = new Point(0, 237);
+            btnCart.Margin = new Padding(3, 2, 3, 2);
             btnCart.Name = "btnCart";
-            btnCart.Size = new Size(250, 115);
+            btnCart.Size = new Size(219, 86);
             btnCart.TabIndex = 3;
             btnCart.Text = "Cart";
             btnCart.UseVisualStyleBackColor = true;
@@ -116,12 +121,14 @@
             btnProfile.Dock = DockStyle.Top;
             btnProfile.FlatStyle = FlatStyle.Flat;
             btnProfile.ImageAlign = ContentAlignment.MiddleLeft;
-            btnProfile.Location = new Point(0, 202);
+            btnProfile.Location = new Point(0, 151);
+            btnProfile.Margin = new Padding(3, 2, 3, 2);
             btnProfile.Name = "btnProfile";
-            btnProfile.Size = new Size(250, 115);
+            btnProfile.Size = new Size(219, 86);
             btnProfile.TabIndex = 2;
             btnProfile.Text = "Profile";
             btnProfile.UseVisualStyleBackColor = true;
+            btnProfile.Click += btnProfile_Click;
             // 
             // btnHomepage
             // 
@@ -130,9 +137,10 @@
             btnHomepage.FlatStyle = FlatStyle.Flat;
             btnHomepage.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             btnHomepage.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHomepage.Location = new Point(0, 71);
+            btnHomepage.Location = new Point(0, 53);
+            btnHomepage.Margin = new Padding(3, 2, 3, 2);
             btnHomepage.Name = "btnHomepage";
-            btnHomepage.Size = new Size(250, 131);
+            btnHomepage.Size = new Size(219, 98);
             btnHomepage.TabIndex = 1;
             btnHomepage.Text = "Homepage";
             btnHomepage.UseVisualStyleBackColor = false;
@@ -143,8 +151,9 @@
             panelLogo.BackColor = SystemColors.AppWorkspace;
             panelLogo.Dock = DockStyle.Top;
             panelLogo.Location = new Point(0, 0);
+            panelLogo.Margin = new Padding(3, 2, 3, 2);
             panelLogo.Name = "panelLogo";
-            panelLogo.Size = new Size(250, 71);
+            panelLogo.Size = new Size(219, 53);
             panelLogo.TabIndex = 0;
             // 
             // panelTitleBar
@@ -152,9 +161,10 @@
             panelTitleBar.BackColor = SystemColors.ControlDark;
             panelTitleBar.Controls.Add(lbTitle);
             panelTitleBar.Dock = DockStyle.Top;
-            panelTitleBar.Location = new Point(250, 0);
+            panelTitleBar.Location = new Point(219, 0);
+            panelTitleBar.Margin = new Padding(3, 2, 3, 2);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(829, 71);
+            panelTitleBar.Size = new Size(725, 53);
             panelTitleBar.TabIndex = 2;
             // 
             // lbTitle
@@ -162,29 +172,31 @@
             lbTitle.Anchor = AnchorStyles.None;
             lbTitle.AutoSize = true;
             lbTitle.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            lbTitle.Location = new Point(366, 25);
+            lbTitle.Location = new Point(320, 19);
             lbTitle.Name = "lbTitle";
-            lbTitle.Size = new Size(87, 35);
+            lbTitle.Size = new Size(69, 28);
             lbTitle.TabIndex = 0;
             lbTitle.Text = "HOME";
             // 
             // panelDesktop
             // 
             panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(250, 71);
+            panelDesktop.Location = new Point(219, 53);
+            panelDesktop.Margin = new Padding(3, 2, 3, 2);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(829, 786);
+            panelDesktop.Size = new Size(725, 590);
             panelDesktop.TabIndex = 3;
             panelDesktop.Paint += panelDesktop_Paint;
             // 
             // MainMenu
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1079, 857);
+            ClientSize = new Size(944, 643);
             Controls.Add(panelDesktop);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "MainMenu";
             Text = "MainMenu";
             FormClosed += MainMenu_FormClosed;

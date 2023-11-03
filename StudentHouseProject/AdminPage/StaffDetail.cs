@@ -165,6 +165,8 @@ namespace UI.AdminPage
                             p.StaffId = getStaffId;
 
                             repository.UpdateStaff(p);
+                            MessageBox.Show("Success", "Customer Management", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                             Close();
                         }
                     }
@@ -172,7 +174,7 @@ namespace UI.AdminPage
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error oddddccurred: {ex.Message}", "Error",
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error",
             MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }

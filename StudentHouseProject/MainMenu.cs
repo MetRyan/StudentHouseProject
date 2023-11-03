@@ -89,10 +89,10 @@ namespace UI
 
 
         }
-    /*    public static void ActivateCartButton(MainMenu form)
-        {
-            form.btnCart.PerformClick();
-        }*/
+        /*    public static void ActivateCartButton(MainMenu form)
+            {
+                form.btnCart.PerformClick();
+            }*/
 
 
         /*ublic void ActivateCartButton()
@@ -144,10 +144,7 @@ namespace UI
 
 
         public void button1_Click(object sender, EventArgs e)
-
         {
-
-
 
             OpenChildfrom(new Carts() { getCustomer = getCustomer }, sender);
 
@@ -175,7 +172,8 @@ namespace UI
                 btnRegister.Enabled = false;
                 btnLogin.Visible = false;
                 btnLogin.Enabled = false;
-
+                btnProfile.Visible = true;
+                btnProfile.Enabled = true;
                 // Show and enable the LogOut button
                 btnLogOut.Visible = true;
                 btnLogOut.Enabled = true;
@@ -187,6 +185,8 @@ namespace UI
                 btnRegister.Enabled = true;
                 btnLogin.Visible = true;
                 btnLogin.Enabled = true;
+                btnProfile.Visible = false;
+                btnProfile.Enabled = false;
 
                 // Hide and disable the LogOut button
                 btnLogOut.Visible = false;
@@ -213,8 +213,8 @@ namespace UI
             MainMenu f = new MainMenu();
             // newMainMenu.ShowDialog();
 
-          //  f.ShowDialog();
-         //   CloseChildForms();
+            //  f.ShowDialog();
+            //   CloseChildForms();
 
         }
 
@@ -233,6 +233,12 @@ namespace UI
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             CloseChildForms();
+
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            OpenChildfrom(new UserProfile() { getCustomer = getCustomer }, sender);
 
         }
     }

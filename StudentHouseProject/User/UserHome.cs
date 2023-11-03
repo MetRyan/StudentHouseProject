@@ -65,7 +65,7 @@ namespace StudentHouseProject
                         else
                         {
 
-                            MessageBox.Show("AlredyInYourCart");
+                            MessageBox.Show("Already In Your Cart ");
 
                         }
                     }

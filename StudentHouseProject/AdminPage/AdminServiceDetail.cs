@@ -165,7 +165,10 @@ namespace StudentHouseProject.AdminAPage
                             p.ServiceId = getService.ServiceId;
 
                             repository.UpdateService(p);
+                            MessageBox.Show("Success", "Services Management", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                             Close();
+
                         }
                     }
                 }

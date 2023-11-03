@@ -17,7 +17,9 @@ namespace Repositories
         public bool CheckloginforStaff(string email, string password);
         public staff getStaffbyEmails(string email);
         public Boolean StaffIdExists (int id);
+
         public List<staff> GetStaffbyStatus(string Status);
+        public List<int> getStaffByAvailable();
 
     }
 }

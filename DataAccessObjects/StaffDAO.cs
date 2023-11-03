@@ -137,7 +137,35 @@ namespace DataAccessObjects
 
 
         }
-        public static List<staff> SearchbyStatus(string Status)
+
+        public static List<int> getStaffAvailable()
+        {
+            try
+            {
+
+                using (var context = new StudentHouseMembershipContext())
+                {
+
+
+                    var staffId = context.staff.Where(p => p.Status == "false")
+                            .Select(p => p.StaffId).ToList();
+                    return staffId;
+
+
+                }
+
+
+
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+
+            }
+        }
+            public static List<staff> SearchbyStatus(string Status)
         {
             try
             {

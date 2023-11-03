@@ -61,6 +61,23 @@ namespace DataAccessObjects
                 throw new Exception(ex.Message);
             }
         }
+
+        public static Order GetOrderbyId(int Id)
+        {
+            try
+            {
+                using (var context = new StudentHouseMembershipContext())
+                {
+                    var p1 = context.Orders.SingleOrDefault(m => m.OrderId == Id);
+                    return p1;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
         /*  public IEnumerable<Order> FilterOrderByServiceName(string serviceName, IEnumerable<Order> searchList)
           {
               using (var context = new StudentHouseMembershipContext())
@@ -158,6 +175,29 @@ namespace DataAccessObjects
             int newOrderId = LastOrderId + 1;
             return newOrderId;
         }
+        public static List<int>  getOrderIdPending()
+        {
+            try {
+
+                using (var context = new StudentHouseMembershipContext()) { 
+                
+                
+                var OrderId= context.Orders.Where(p=> p.Status == "false")
+                        .Select(p => p.OrderId).ToList();
+                    return OrderId;
+                
+                
+                }
+            
+            
+            
+            
+            }catch(Exception e) {
+
+                throw e;
+            
+            }
+        }
         //
 
         /* public Boolean CheckExistServicesID(OrderDetail order, int OrderId)
@@ -210,7 +250,7 @@ namespace DataAccessObjects
                     throw new Exception(ex.Message);
                 }
             }*/
-                //add Order 
+        //add Order 
         public static int AddOrder(Order p)
         {
 
@@ -268,13 +308,16 @@ namespace DataAccessObjects
             }
         }
 
-        public static OrderDetail GetOrderDetailsbyOrderId(int OrderId)
+        public static List<OrderDetail> GetOrderDetailsbyOrderId(int OrderId)
         {
             try
             {
                 using (var context = new StudentHouseMembershipContext())
+
                 {
-                    return context.OrderDetails.SingleOrDefault(p => p.OrderId == OrderId);
+
+                    List<OrderDetail> getOrderDetails = context.OrderDetails.Where(p => p.OrderId == OrderId).ToList();
+                    return getOrderDetails;
                 }
             }
             catch (Exception ex)
@@ -284,6 +327,8 @@ namespace DataAccessObjects
 
 
         }
+
+
 
 
         /*      public Boolean removeServicesFromCartById(int ProductId, int OrderId)

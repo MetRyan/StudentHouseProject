@@ -108,9 +108,9 @@ namespace StudentHouseProject
                                  };*/
 
                             // Trong class kh�c
-                         
 
-                           // f.ShowDialog(); f.Close();  
+
+                            // f.ShowDialog(); f.Close();  
                             //  Application.run(f);
                             f.WindowState = FormWindowState.Maximized;
 
@@ -119,7 +119,7 @@ namespace StudentHouseProject
                             f.ShowDialog();
 
 
-                          
+
 
                         }
                         else

@@ -17,12 +17,7 @@ namespace StudentHouseProject.User
 {
     public partial class Carts : Form
     {
-        protected override void OnLoad(EventArgs e)
-        {
-            MessageBox.Show("sdsd");
-            base.OnLoad(e);
 
-        }
         IOrderRepository repository = new OrderRepository();
         public Customer getCustomer { get; set; }
         public Carts()
@@ -149,21 +144,20 @@ namespace StudentHouseProject.User
 
 
 
-            List<CartItems> cartlist = repository.getCartsSession();
-            Order listOrder = new Order
-            {
-                CustomerId = getCustomer.CustomerId,
-                Price = CalculateTotal(),
-                Description = txtNote.Text,
-                Status = "false",
+                List<CartItems> cartlist = repository.getCartsSession();
+                Order listOrder = new Order
+                {
+                    CustomerId = getCustomer.CustomerId,
+                    Price = CalculateTotal(),
+                    Description = txtNote.Text,
+                    Status = "false",
 
 
-            };
-            int OrderId = repository.addOrder_getOrderId(listOrder);
+                };
+                int OrderId = repository.addOrder_getOrderId(listOrder);
 
             for (int i = 0; i < cartlist.Count(); i++)
             {
-
                 OrderDetail listOrderDetail = new OrderDetail
                 {
                     OrderId = OrderId,
@@ -178,16 +172,19 @@ namespace StudentHouseProject.User
                     EndDate = null,
                 };
                 repository.AddOrder(listOrderDetail);
-                MessageBox.Show("Order has been placed successfully.");
-                cartlist.Clear();
-
-
-
-
             }
+                MessageBox.Show("Order has been placed successfully.");
+                    cartlist.Clear();
+            flowLayoutPanel1.Controls.Clear();
+            txtNote.Text = "";
+            cbPayment.Text = "";
+            populateItems();
+
 
 
         }
+
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

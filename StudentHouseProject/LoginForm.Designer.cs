@@ -74,7 +74,7 @@
             txtEmail.PlaceholderText = "Enter Your Email";
             txtEmail.Size = new Size(300, 27);
             txtEmail.TabIndex = 3;
-            txtEmail.Text = "quang@gmail.com";
+            txtEmail.Text = "Admin@gmail.com";
             txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // label4
@@ -89,7 +89,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(249, 261);
+            txtPassword.Location = new Point(249, 259);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.PlaceholderText = "Enter Your Password";
