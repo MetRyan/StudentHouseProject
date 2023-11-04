@@ -89,8 +89,16 @@ namespace UI
 
 
         }
+    /*    public static void ActivateCartButton(MainMenu form)
+        {
+            form.btnCart.PerformClick();
+        }*/
 
 
+        /*ublic void ActivateCartButton()
+        {
+            btnCart.PerformClick();
+        }*/
         private void OpenChildfrom(Form childform, object btnSender)
         {
 
@@ -197,11 +205,13 @@ namespace UI
             getCustomer = null;
             //     this.Close();
 
-
+            this.Dispose();
             // Create and show a new instance of MainMenu
             MainMenu f = new MainMenu();
             // newMainMenu.ShowDialog();
 
+          //  f.ShowDialog();
+         //   CloseChildForms();
             f.Show();
             CloseChildForms();
             this.Close();

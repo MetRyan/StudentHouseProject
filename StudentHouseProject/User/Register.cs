@@ -1,5 +1,6 @@
 ﻿using BusinessObjects;
 using Repositories;
+using UI;
 
 namespace StudentHouseProject.User
 {
@@ -31,6 +32,13 @@ namespace StudentHouseProject.User
             {
                 MessageBox.Show("All fields are required!", "Registration Management",
                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (repository.getCustomerbyEmail(txtEmail.Text) != null)
+            {
+
+                MessageBox.Show("Email is exitsting", "Registration Management",
+                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             else if (!txtEmail.Text.EndsWith("@gmail.com"))
             {
@@ -69,13 +77,20 @@ namespace StudentHouseProject.User
                     Dob = dateOfBirth,
                     Phone = txtPhone.Text,
                     Password = txtPassword.Text,
-                    Sex = cbGender.Text
+                    Sex = cbGender.Text,
+                    Adress = txtAddress.Text,
+                    
 
                 };
                 repository.AddCustomer(p);
 
-                MessageBox.Show("succesfull", "Register",
-            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MainMenu f = new MainMenu()
+                {
+                    getCustomer = p,
+
+                };
+                f.WindowState = FormWindowState.Maximized;
+                f.Show();
 
 
 
@@ -90,6 +105,11 @@ namespace StudentHouseProject.User
         private void Register_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            reset();
         }
     }
 }

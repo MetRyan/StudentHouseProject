@@ -17,6 +17,12 @@ namespace StudentHouseProject.User
 {
     public partial class Carts : Form
     {
+        protected override void OnLoad(EventArgs e)
+        {
+            MessageBox.Show("sdsd");
+            base.OnLoad(e);
+
+        }
         IOrderRepository repository = new OrderRepository();
         public Customer getCustomer { get; set; }
         public Carts()
@@ -54,25 +60,37 @@ namespace StudentHouseProject.User
                     bool cartRemove = repository.RemoveFromCartSession(serviceId);
                     if (cartRemove)
                     {
-                        this.Hide(); // Hide the old MainMenu form
+                        /*this.Hide(); // Hide the old MainMenu form
+                        this.Dispose();
+                        this.Close();*/
                         MessageBox.Show("Success");
-                        MainMenu f = new MainMenu()
-                        {
-                            getCustomer = getCustomer,
+                        flowLayoutPanel1.Controls.Clear();
+                        populateItems();
 
-                        };
-                        f.button1_Click(null, null);
+                        //flowLayoutPanel1.Controls.Remove(listitems[i]);
 
-                        this.Hide(); // Hide the old MainMenu form
+                        // populateItems();
+                        /* MainMenu f = new MainMenu()
+                         {
+                             getCustomer = getCustomer,
+
+                         };*/
+                        //  f.button1_Click.
+                        /*  if (f != null)
+                          {
+                              f.ActivateCartButton();
+                          }*/
+                        // f.btnHomepage_Click(null, null);
+                        //  this.Hide(); // Hide the old MainMenu form
                         /*     UserHome userHome = new UserHome()
-
+                        
                              {
                                  getCustomer = getCustomerbyEmail,
                              };*/
 
                         // Trong class khác
-                        f.Show();
-                        f.Close();
+                        //f.ShowDialog();
+                        //  f.Close();
 
                     }
                     else
@@ -173,6 +191,12 @@ namespace StudentHouseProject.User
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            populateItems();
 
         }
     }

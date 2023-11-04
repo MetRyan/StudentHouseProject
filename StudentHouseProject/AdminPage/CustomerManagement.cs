@@ -14,16 +14,23 @@ namespace UI.AdminPage
         ICustomerRepository repository = new CustomerRepository();
         public void LoadCustomerList()
         {
-            /*
-                        txtCustomerId.Enabled = false;
-                        txtCustomerName.Enabled = false;
-                        txtCustomerBirhday.Enabled = false;
-                        txtCustomerStatus.Enabled = false;
-                        txtEmail.Enabled = false;
-                        txtTelephone.Enabled = false;
-                        btnDelete.Enabled = true;
-                        btnUpdate.Enabled = true;
-                        */
+
+            txtCustomerID.Enabled = true;
+            txtPhone.Enabled = true;
+            txtDateOfBirth.Enabled = true;
+            txtDateCreated.Enabled = true;
+            txtFirstName.Enabled = true;
+            txtLastname.Enabled = true;
+            txtSex.Enabled = true;
+            txtEmail.Enabled = true;
+
+            btnDelete.Enabled = true;
+            btnUpdate.Enabled = true;
+            cbSearch.Enabled = true;
+            txtSearch.Enabled = true;
+            btnSearch.Enabled = true;
+            txtAdress.Enabled = true;
+
             dgvlistview.ReadOnly = true;
 
             try
@@ -32,13 +39,14 @@ namespace UI.AdminPage
                 BindingSource source = new BindingSource();
                 source.DataSource = CustomerList;
                 txtCustomerID.DataBindings.Clear();
-               /* txtDateCreated.DataBindings.Clear();*/
+                /* txtDateCreated.DataBindings.Clear();*/
                 txtDateOfBirth.DataBindings.Clear();
                 txtEmail.DataBindings.Clear();
                 txtFirstName.DataBindings.Clear();
                 txtLastname.DataBindings.Clear();
                 txtPhone.DataBindings.Clear();
                 txtSex.DataBindings.Clear();
+
 
                 txtCustomerID.DataBindings.Add("Text", source, "CustomerId");
                 /*txtDateCreated.DataBindings.Add("Text", source, "DateCreated");*/
@@ -48,6 +56,8 @@ namespace UI.AdminPage
                 txtLastname.DataBindings.Add("Text", source, "LastName");
                 txtPhone.DataBindings.Add("Text", source, "Phone");
                 txtSex.DataBindings.Add("Text", source, "Sex");
+                txtAdress.DataBindings.Add("Text", source, "Adress");
+
 
                 dgvlistview.DataSource = null;
                 dgvlistview.DataSource = source;
@@ -91,6 +101,8 @@ namespace UI.AdminPage
             txtLastname.Text = "";
             txtPhone.Text = "";
             txtSex.Text = "";
+            txtAdress.Text = "";
+
 
 
         }
@@ -176,28 +188,13 @@ namespace UI.AdminPage
              return repository.SearchCarbyType(keyword, searchBy);
 
          }*/
-        private void frmCarManagement_Load(object sender, EventArgs e)
-        {
-            txtSearch.Enabled = false;
-            btnSearch.Enabled = false;
-            btnDelete.Enabled = false;
-            btnUpdate.Enabled = false;
 
-            txtCustomerID.Enabled = false;
-            txtDateCreated.Enabled = false;
-            txtDateOfBirth.Enabled = false;
-            txtEmail.Enabled = false;
-            txtFirstName.Enabled = false;
-            txtLastname.Enabled = false;
-            txtPhone.Enabled = false;
-            txtSex.Enabled = false;
-
-        }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
             String keyword = txtSearch.Text;
             String searchBy = cbSearch.SelectedItem as string;
+
             DialogResult d;
             if (keyword == null || searchBy == null)
             {
@@ -246,6 +243,24 @@ namespace UI.AdminPage
         }
 
         private void frmCustomerManagement_Load(object sender, EventArgs e)
+        {
+            txtSearch.Enabled = false;
+            btnSearch.Enabled = false;
+            btnDelete.Enabled = false;
+            btnUpdate.Enabled = false;
+            cbSearch.Enabled = false;
+            txtAdress.Enabled = false;
+            txtCustomerID.Enabled = false;
+            txtDateCreated.Enabled = false;
+            txtDateOfBirth.Enabled = false;
+            txtEmail.Enabled = false;
+            txtFirstName.Enabled = false;
+            txtLastname.Enabled = false;
+            txtPhone.Enabled = false;
+            txtSex.Enabled = false;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -48,8 +48,6 @@
             pictureBox1 = new PictureBox();
             btnSave = new Button();
             btnCancel = new Button();
-            label10 = new Label();
-            txtServiceId = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -238,31 +236,11 @@
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label10.Location = new Point(401, 493);
-            label10.Name = "label10";
-            label10.Size = new Size(83, 25);
-            label10.TabIndex = 22;
-            label10.Text = "ServiceId";
-            // 
-            // txtServiceId
-            // 
-            txtServiceId.Location = new Point(541, 494);
-            txtServiceId.Name = "txtServiceId";
-            txtServiceId.Size = new Size(250, 27);
-            txtServiceId.TabIndex = 23;
-            txtServiceId.TextChanged += txtServiceId_TextChanged;
-            // 
             // StaffDetail
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(832, 565);
-            Controls.Add(txtServiceId);
-            Controls.Add(label10);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(pictureBox1);
@@ -313,7 +291,5 @@
         private PictureBox pictureBox1;
         private Button btnSave;
         private Button btnCancel;
-        private Label label10;
-        private TextBox txtServiceId;
     }
 }
