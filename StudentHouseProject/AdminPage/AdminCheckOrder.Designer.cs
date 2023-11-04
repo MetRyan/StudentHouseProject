@@ -78,7 +78,7 @@
             dgvCustomer.Name = "dgvCustomer";
             dgvCustomer.RowHeadersWidth = 51;
             dgvCustomer.RowTemplate.Height = 29;
-            dgvCustomer.Size = new Size(965, 96);
+            dgvCustomer.Size = new Size(965, 109);
             dgvCustomer.TabIndex = 3;
             // 
             // dgvOrderDetails
@@ -88,7 +88,7 @@
             dgvOrderDetails.Name = "dgvOrderDetails";
             dgvOrderDetails.RowHeadersWidth = 51;
             dgvOrderDetails.RowTemplate.Height = 29;
-            dgvOrderDetails.Size = new Size(965, 83);
+            dgvOrderDetails.Size = new Size(965, 134);
             dgvOrderDetails.TabIndex = 4;
             // 
             // label1
