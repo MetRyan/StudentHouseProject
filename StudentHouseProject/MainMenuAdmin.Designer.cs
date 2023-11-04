@@ -75,7 +75,7 @@
             lbTitle.Anchor = AnchorStyles.None;
             lbTitle.AutoSize = true;
             lbTitle.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            lbTitle.Location = new Point(505, 9);
+            lbTitle.Location = new Point(505, 18);
             lbTitle.Name = "lbTitle";
             lbTitle.Size = new Size(87, 35);
             lbTitle.TabIndex = 0;
@@ -106,7 +106,7 @@
             button1.Name = "button1";
             button1.Size = new Size(250, 93);
             button1.TabIndex = 5;
-            button1.Text = "LogOut";
+            button1.Text = "Log Out";
             button1.UseVisualStyleBackColor = true;
             button1.Click += btnLogOut_Click;
             // 
@@ -158,7 +158,7 @@
             btnAdminViewServiceDetails.Name = "btnAdminViewServiceDetails";
             btnAdminViewServiceDetails.Size = new Size(250, 105);
             btnAdminViewServiceDetails.TabIndex = 2;
-            btnAdminViewServiceDetails.Text = "ServiceDetails";
+            btnAdminViewServiceDetails.Text = "Service Details";
             btnAdminViewServiceDetails.UseVisualStyleBackColor = true;
             btnAdminViewServiceDetails.Click += btnAdminViewServiceDetails_Click;
             // 
@@ -173,7 +173,7 @@
             btnAssignServicetoStaff.Name = "btnAssignServicetoStaff";
             btnAssignServicetoStaff.Size = new Size(250, 131);
             btnAssignServicetoStaff.TabIndex = 1;
-            btnAssignServicetoStaff.Text = "AssignServicetoStaff";
+            btnAssignServicetoStaff.Text = "Assign Orders";
             btnAssignServicetoStaff.UseVisualStyleBackColor = false;
             btnAssignServicetoStaff.Click += btnAssignServicetoStaff_Click;
             // 
@@ -186,7 +186,7 @@
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             Name = "MainMenuAdmin";
-            Text = "MainMenuAdmincs";
+            Text = "Admin";
             FormClosed += MainMenu_FormClosed;
             panelTitleBar.ResumeLayout(false);
             panelTitleBar.PerformLayout();

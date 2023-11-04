@@ -79,7 +79,7 @@ namespace StudentHouseProject.User
                     Password = txtPassword.Text,
                     Sex = cbGender.Text,
                     Adress = txtAddress.Text,
-                    
+
 
                 };
                 repository.AddCustomer(p);

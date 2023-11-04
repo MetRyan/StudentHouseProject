@@ -1,5 +1,4 @@
 ﻿using BusinessObjects;
-using Microsoft.VisualBasic.Devices;
 using Repositories;
 
 namespace UI.AdminPage
@@ -53,7 +52,7 @@ namespace UI.AdminPage
                 txtdob.DataBindings.Add("Text", source, "Dob");
                 txtSex.DataBindings.Add("Text", source, "Sex");
                 txtStatus.DataBindings.Add("Text", source, "Status");
-              //  txtServiceId.DataBindings.Add("Text", source, "Service");
+                //  txtServiceId.DataBindings.Add("Text", source, "Service");
 
                 // txtAdress.DataBindings.Add("Text", source, "Telephone");
 
@@ -173,7 +172,7 @@ namespace UI.AdminPage
 
         private void txtSearch_Click(object sender, EventArgs e)
         {
-         
+
 
         }
 

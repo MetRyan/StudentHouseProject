@@ -52,48 +52,48 @@ namespace StudentHouseProject.User
                      }*/
                     // Lấy dữ liệu từ item được click
                     //  MessageBox.Show(serviceName);
-                  
-                        bool cartRemove = repository.RemoveFromCartSession(serviceId);
-                        if (cartRemove)
-                        {
-                            /*this.Hide(); // Hide the old MainMenu form
-                            this.Dispose();
-                            this.Close();*/
 
-                            MessageBox.Show("Success");
-                            flowLayoutPanel1.Controls.Clear();
-                            populateItems();
-                            //flowLayoutPanel1.Controls.Remove(listitems[i]);
+                    bool cartRemove = repository.RemoveFromCartSession(serviceId);
+                    if (cartRemove)
+                    {
+                        /*this.Hide(); // Hide the old MainMenu form
+                        this.Dispose();
+                        this.Close();*/
 
-                            // populateItems();
-                            /* MainMenu f = new MainMenu()
+                        MessageBox.Show("Success");
+                        flowLayoutPanel1.Controls.Clear();
+                        populateItems();
+                        //flowLayoutPanel1.Controls.Remove(listitems[i]);
+
+                        // populateItems();
+                        /* MainMenu f = new MainMenu()
+                         {
+                             getCustomer = getCustomer,
+
+                         };*/
+                        //  f.button1_Click.
+                        /*  if (f != null)
+                          {
+                              f.ActivateCartButton();
+                          }*/
+                        // f.btnHomepage_Click(null, null);
+                        //  this.Hide(); // Hide the old MainMenu form
+                        /*     UserHome userHome = new UserHome()
+
                              {
-                                 getCustomer = getCustomer,
-
+                                 getCustomer = getCustomerbyEmail,
                              };*/
-                            //  f.button1_Click.
-                            /*  if (f != null)
-                              {
-                                  f.ActivateCartButton();
-                              }*/
-                            // f.btnHomepage_Click(null, null);
-                            //  this.Hide(); // Hide the old MainMenu form
-                            /*     UserHome userHome = new UserHome()
 
-                                 {
-                                     getCustomer = getCustomerbyEmail,
-                                 };*/
+                        // Trong class khác
+                        //f.ShowDialog();
+                        //  f.Close();
 
-                            // Trong class khác
-                            //f.ShowDialog();
-                            //  f.Close();
+                    }
+                    else
+                    {
 
-                        }
-                        else
-                        {
-
-                            MessageBox.Show("Fail");
-                        }
+                        MessageBox.Show("Fail");
+                    }
 
                 };
                 txtTotal.Text = CalculateTotal().ToString();
@@ -143,7 +143,7 @@ namespace StudentHouseProject.User
         {
 
 
-                List<CartItems> cartlist = repository.getCartsSession();
+            List<CartItems> cartlist = repository.getCartsSession();
             if (cartlist.Count > 0)
             {
                 Order listOrder = new Order
@@ -184,7 +184,8 @@ namespace StudentHouseProject.User
 
 
             }
-            else {
+            else
+            {
 
 
                 MessageBox.Show("Your Cart is Empty");

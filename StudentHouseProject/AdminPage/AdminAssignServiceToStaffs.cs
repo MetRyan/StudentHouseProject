@@ -77,14 +77,15 @@ namespace StudentHouseProject.AdminAPage
             }
         }
 
-        private void reset() {
+        private void reset()
+        {
             dgvOrder.DataSource = null;
             dgvStaff.DataSource = null;
             cbOrderId.Text = "";
             cbStaff.Text = "";
             txtWorkDate.Text = "";
-        
-        
+
+
         }
 
 

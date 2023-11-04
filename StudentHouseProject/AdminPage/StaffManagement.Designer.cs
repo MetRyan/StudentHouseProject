@@ -70,18 +70,18 @@
             lbStaffId.AutoSize = true;
             lbStaffId.Location = new Point(49, 49);
             lbStaffId.Name = "lbStaffId";
-            lbStaffId.Size = new Size(53, 20);
+            lbStaffId.Size = new Size(57, 20);
             lbStaffId.TabIndex = 1;
-            lbStaffId.Text = "StaffId";
+            lbStaffId.Text = "Staff Id";
             // 
             // lbStaffName
             // 
             lbStaffName.AutoSize = true;
             lbStaffName.Location = new Point(46, 97);
             lbStaffName.Name = "lbStaffName";
-            lbStaffName.Size = new Size(80, 20);
+            lbStaffName.Size = new Size(84, 20);
             lbStaffName.TabIndex = 2;
-            lbStaffName.Text = "StaffName";
+            lbStaffName.Text = "Staff Name";
             lbStaffName.Click += label3_Click;
             // 
             // lbEmail
@@ -105,7 +105,7 @@
             // lbdob
             // 
             lbdob.AutoSize = true;
-            lbdob.Location = new Point(373, 141);
+            lbdob.Location = new Point(373, 97);
             lbdob.Name = "lbdob";
             lbdob.Size = new Size(96, 20);
             lbdob.TabIndex = 5;
@@ -123,7 +123,7 @@
             // lbStatus
             // 
             lbStatus.AutoSize = true;
-            lbStatus.Location = new Point(369, 91);
+            lbStatus.Location = new Point(374, 200);
             lbStatus.Name = "lbStatus";
             lbStatus.Size = new Size(49, 20);
             lbStatus.TabIndex = 7;
@@ -159,14 +159,14 @@
             // 
             // txtStatus
             // 
-            txtStatus.Location = new Point(491, 87);
+            txtStatus.Location = new Point(491, 198);
             txtStatus.Name = "txtStatus";
             txtStatus.Size = new Size(259, 27);
             txtStatus.TabIndex = 12;
             // 
             // txtdob
             // 
-            txtdob.Location = new Point(491, 141);
+            txtdob.Location = new Point(491, 97);
             txtdob.Name = "txtdob";
             txtdob.Size = new Size(259, 27);
             txtdob.TabIndex = 13;
@@ -183,9 +183,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(49, 265);
             label2.Name = "label2";
-            label2.Size = new Size(93, 20);
+            label2.Size = new Size(97, 20);
             label2.TabIndex = 16;
-            label2.Text = "SearchStatus";
+            label2.Text = "Search Status";
             // 
             // cbSearch
             // 
@@ -193,22 +193,22 @@
             cbSearch.Items.AddRange(new object[] { "true", "false" });
             cbSearch.Location = new Point(165, 265);
             cbSearch.Name = "cbSearch";
-            cbSearch.Size = new Size(125, 28);
+            cbSearch.Size = new Size(170, 28);
             cbSearch.TabIndex = 17;
             // 
             // dgv
             // 
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv.Location = new Point(46, 299);
+            dgv.Location = new Point(49, 328);
             dgv.Name = "dgv";
             dgv.RowHeadersWidth = 51;
             dgv.RowTemplate.Height = 29;
-            dgv.Size = new Size(693, 172);
+            dgv.Size = new Size(701, 172);
             dgv.TabIndex = 18;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(328, 265);
+            btnSearch.Location = new Point(362, 265);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(94, 29);
             btnSearch.TabIndex = 19;
@@ -258,7 +258,7 @@
             // 
             // txtServiceId
             // 
-            txtServiceId.Location = new Point(491, 205);
+            txtServiceId.Location = new Point(491, 139);
             txtServiceId.Name = "txtServiceId";
             txtServiceId.Size = new Size(259, 27);
             txtServiceId.TabIndex = 24;
@@ -266,7 +266,7 @@
             // lbServiceId
             // 
             lbServiceId.AutoSize = true;
-            lbServiceId.Location = new Point(373, 212);
+            lbServiceId.Location = new Point(373, 146);
             lbServiceId.Name = "lbServiceId";
             lbServiceId.Size = new Size(69, 20);
             lbServiceId.TabIndex = 25;

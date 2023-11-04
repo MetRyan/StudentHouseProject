@@ -113,7 +113,7 @@ namespace StudentHouseProject.User
                         Password = txtPassword.Text,
                         Sex = cbSex.Text,
                         Adress = txtAddress.Text,
-                        Email=getCustomer.Email,
+                        Email = getCustomer.Email,
 
 
                     };

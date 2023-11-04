@@ -70,7 +70,7 @@
             btnOrderHis.Name = "btnOrderHis";
             btnOrderHis.Size = new Size(250, 115);
             btnOrderHis.TabIndex = 7;
-            btnOrderHis.Text = "HistoryOrder";
+            btnOrderHis.Text = "Order History";
             btnOrderHis.UseVisualStyleBackColor = true;
             btnOrderHis.Click += btnHistoryOrder;
             // 
@@ -83,7 +83,7 @@
             btnLogOut.Name = "btnLogOut";
             btnLogOut.Size = new Size(250, 115);
             btnLogOut.TabIndex = 6;
-            btnLogOut.Text = "LogOut";
+            btnLogOut.Text = "Log Out";
             btnLogOut.UseVisualStyleBackColor = true;
             btnLogOut.Click += btnLogOut_Click;
             // 
@@ -177,12 +177,12 @@
             // 
             lbTitle.Anchor = AnchorStyles.None;
             lbTitle.AutoSize = true;
-            lbTitle.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            lbTitle.Location = new Point(366, 25);
+            lbTitle.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            lbTitle.Location = new Point(272, 20);
             lbTitle.Name = "lbTitle";
-            lbTitle.Size = new Size(87, 35);
+            lbTitle.Size = new Size(322, 35);
             lbTitle.TabIndex = 0;
-            lbTitle.Text = "HOME";
+            lbTitle.Text = "STUDENT HOUSE SERVICE";
             // 
             // panelDesktop
             // 
@@ -202,7 +202,7 @@
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
             Name = "MainMenu";
-            Text = "MainMenu";
+            Text = "Main Menu";
             FormClosed += MainMenu_FormClosed;
             Load += MainMenu_Load;
             panelMenu.ResumeLayout(false);

@@ -90,22 +90,22 @@
             tableLayoutPanel1.Controls.Add(cbSex, 1, 1);
             tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 2);
             tableLayoutPanel1.Controls.Add(cbxShowPassword, 1, 4);
-            tableLayoutPanel1.Location = new Point(139, 71);
+            tableLayoutPanel1.Location = new Point(137, 93);
             tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 56F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 41F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 188F));
-            tableLayoutPanel1.Size = new Size(866, 413);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 74F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 105F));
+            tableLayoutPanel1.Size = new Size(866, 349);
             tableLayoutPanel1.TabIndex = 4;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint_1;
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(691, 132);
+            txtAddress.Location = new Point(691, 142);
             txtAddress.Margin = new Padding(3, 4, 3, 4);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(167, 27);
@@ -113,7 +113,7 @@
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(691, 68);
+            txtPhone.Location = new Point(691, 73);
             txtPhone.Margin = new Padding(3, 4, 3, 4);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(167, 27);
@@ -156,7 +156,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(451, 64);
+            label3.Location = new Point(451, 69);
             label3.Name = "label3";
             label3.Size = new Size(50, 20);
             label3.TabIndex = 8;
@@ -165,7 +165,7 @@
             // lbDoB
             // 
             lbDoB.AutoSize = true;
-            lbDoB.Location = new Point(3, 128);
+            lbDoB.Location = new Point(3, 138);
             lbDoB.Name = "lbDoB";
             lbDoB.Size = new Size(94, 20);
             lbDoB.TabIndex = 10;
@@ -174,7 +174,7 @@
             // lbAddress
             // 
             lbAddress.AutoSize = true;
-            lbAddress.Location = new Point(451, 128);
+            lbAddress.Location = new Point(451, 138);
             lbAddress.Name = "lbAddress";
             lbAddress.Size = new Size(62, 20);
             lbAddress.TabIndex = 12;
@@ -183,7 +183,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(3, 184);
+            label4.Location = new Point(3, 212);
             label4.Name = "label4";
             label4.Size = new Size(70, 20);
             label4.TabIndex = 14;
@@ -191,7 +191,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(176, 188);
+            txtPassword.Location = new Point(176, 216);
             txtPassword.Margin = new Padding(3, 4, 3, 4);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(243, 27);
@@ -201,7 +201,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(3, 64);
+            label5.Location = new Point(3, 69);
             label5.Name = "label5";
             label5.Size = new Size(32, 20);
             label5.TabIndex = 16;
@@ -211,7 +211,7 @@
             // 
             cbSex.FormattingEnabled = true;
             cbSex.Items.AddRange(new object[] { "Male", "FeMale" });
-            cbSex.Location = new Point(176, 68);
+            cbSex.Location = new Point(176, 73);
             cbSex.Margin = new Padding(3, 4, 3, 4);
             cbSex.Name = "cbSex";
             cbSex.Size = new Size(243, 28);
@@ -219,7 +219,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(176, 131);
+            dateTimePicker1.Location = new Point(176, 141);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(243, 27);
             dateTimePicker1.TabIndex = 18;
@@ -227,18 +227,18 @@
             // cbxShowPassword
             // 
             cbxShowPassword.AutoSize = true;
-            cbxShowPassword.Location = new Point(176, 229);
+            cbxShowPassword.Location = new Point(176, 247);
             cbxShowPassword.Margin = new Padding(3, 4, 3, 4);
             cbxShowPassword.Name = "cbxShowPassword";
-            cbxShowPassword.Size = new Size(128, 24);
+            cbxShowPassword.Size = new Size(132, 24);
             cbxShowPassword.TabIndex = 19;
-            cbxShowPassword.Text = "ShowPassword";
+            cbxShowPassword.Text = "Show Password";
             cbxShowPassword.UseVisualStyleBackColor = true;
             cbxShowPassword.CheckedChanged += cbxShowPassword_CheckedChanged;
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(518, 507);
+            btnSave.Location = new Point(521, 467);
             btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(119, 39);

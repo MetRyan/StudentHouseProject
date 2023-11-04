@@ -144,7 +144,7 @@ namespace UI.AdminPage
                             Dob = dtpdob.Value,
                             Sex = cbSex.Text,
                             Status = cbStatus.Text,
-                           // ServiceId = int.Parse(txtServiceId.Text),
+                            // ServiceId = int.Parse(txtServiceId.Text),
                             Password = txtPassword.Text,
 
                         };
