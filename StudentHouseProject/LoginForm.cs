@@ -81,7 +81,7 @@ namespace StudentHouseProject
 
 
 
-                    //ClosePreviousForm();
+                    ClosePreviousForm();
 
 
 
@@ -99,7 +99,7 @@ namespace StudentHouseProject
                         //staff thanh cong 
                         staff staff = repository_Staff.getStaffbyEmails(email);
                         StaffHome staffHomePage = new StaffHome(staff);
-                        //ClosePreviousForm();
+                        ClosePreviousForm();
 
                         staffHomePage.Show();
 
@@ -126,15 +126,15 @@ namespace StudentHouseProject
 
 
 
-                            //ClosePreviousForm();
+                            ClosePreviousForm();
 
 
 
 
                             // Trong class kh�c
-                         
 
-                           // f.ShowDialog(); f.Close();  
+
+                            // f.ShowDialog(); f.Close();  
                             //  Application.run(f);
                             f.WindowState = FormWindowState.Maximized;
 
@@ -181,6 +181,7 @@ namespace StudentHouseProject
 
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Application.Exit();
         }
 
         private void ClosePreviousForm()
