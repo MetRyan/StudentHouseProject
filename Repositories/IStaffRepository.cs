@@ -19,6 +19,7 @@ namespace Repositories
         public Boolean StaffIdExists (int id);
         public List<staff> GetStaffbyStatus(string Status);
 
+        public List<staff> GetStaffbyStatus(string Status);
         public List<int> getStaffByAvailable();
 
     }

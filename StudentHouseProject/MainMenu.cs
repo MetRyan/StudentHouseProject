@@ -238,8 +238,6 @@ namespace UI
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             CloseChildForms();
-            LoginForm login = new LoginForm();
-            login.Show();
             this.Close();
         }
 
