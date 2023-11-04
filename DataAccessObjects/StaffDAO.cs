@@ -115,7 +115,7 @@ namespace DataAccessObjects
             {
                 using (var Context = new StudentHouseMembershipContext())
                 {
-                    var temp = Context.Admins.SingleOrDefault(p => p.Email == email
+                    var temp = Context.staff.SingleOrDefault(p => p.Email == email
                     && p.Password == password);
                     if (temp != null)
                     { return true; }
@@ -158,30 +158,24 @@ namespace DataAccessObjects
         {
             try
             {
-                using(var context = new StudentHouseMembershipContext())
+                using (var context = new StudentHouseMembershipContext())
                 {
-                    List<StaffOrderModel> result = null;
+                    List<StaffOrderModel> result = new List<StaffOrderModel>();
 
                     List<StaffOrder> ordersOfStaff = context.StaffOrders.Where(x => x.StaffId == staffId).ToList();
 
-                    foreach(var orderOfStaff in ordersOfStaff)
+                    foreach (var orderOfStaff in ordersOfStaff)
                     {
                         StaffOrderModel staffOrderModel = null;
 
                         Order order = context.Orders.Where(x => x.OrderId == orderOfStaff.OrderId).FirstOrDefault();
                         if (order != null)
                         {
-                            staffOrderModel.StaffId = staffId;
-                            staffOrderModel.OrderId = orderOfStaff.OrderId;
-                            staffOrderModel.WorkDate = orderOfStaff.WorkDate;
-                            staffOrderModel.Status = orderOfStaff.Status;
-                            staffOrderModel.Description = order.Description;
-                            staffOrderModel.orderDetails = context.OrderDetails.Where(x => x.OrderId == order.OrderId).ToList();
-                        }
+                            List<OrderDetail> orderDetails = context.OrderDetails.Where(x => x.OrderId == order.OrderId).ToList();
+                            staffOrderModel = new StaffOrderModel(staffId, orderOfStaff.OrderId, orderOfStaff.WorkDate, orderOfStaff.Status, order.Description, orderDetails);
 
-                        if(staffOrderModel != null)
-                        {
                             result.Add(staffOrderModel);
+
                         }
                     }
 

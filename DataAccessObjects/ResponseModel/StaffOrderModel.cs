@@ -17,6 +17,16 @@ namespace DataAccessObjects.ResponseModel
         public string? Description { get; set; }
 
 
-        public ICollection<OrderDetail> orderDetails { get; set; }
+        public ICollection<OrderDetail> OrderDetails { get; set; }
+
+        public StaffOrderModel(int staffId, int? orderId, DateTime? workDate, string? status, string? description, ICollection<OrderDetail> orderDetails)
+        {
+            StaffId = staffId;
+            OrderId = orderId;
+            WorkDate = workDate;
+            Status = status;
+            Description = description;
+            OrderDetails = orderDetails;
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace StudentHouseProject.StaffPage
 
         private void btnViewDetails_Click(object sender, EventArgs e)
         {
-            if(dgvStaff.SelectedRows.Count > 0)
+            if (dgvStaff.SelectedRows.Count > 0)
             {
                 var orderId = (int)dgvStaff.SelectedRows[0].Cells[1].Value;
 
@@ -50,6 +50,13 @@ namespace StudentHouseProject.StaffPage
                 staffViewServiceDetails.Show();
                 this.Hide();
             }
+        }
+
+        private void StaffHome_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Hide();
         }
     }
 }

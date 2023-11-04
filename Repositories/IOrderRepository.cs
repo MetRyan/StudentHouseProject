@@ -21,6 +21,5 @@ namespace Repositories
         public OrderDetail GetOrder(int id);
 
         public int addOrder_getOrderId(Order p);
-
     }
 }
