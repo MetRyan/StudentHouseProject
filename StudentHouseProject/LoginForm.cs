@@ -100,7 +100,7 @@ namespace StudentHouseProject
                         staff staff = repository_Staff.getStaffbyEmails(email);
                         StaffHome staffHomePage = new StaffHome(staff);
                         //ClosePreviousForm();
-                      //  f.WindowState = FormWindowState.Maximized;
+                        //  f.WindowState = FormWindowState.Maximized;
 
                         staffHomePage.Show();
 
@@ -168,7 +168,7 @@ namespace StudentHouseProject
 
                 }
             }
-            ClosePreviousForm();
+
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
@@ -183,7 +183,7 @@ namespace StudentHouseProject
 
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            ClosePreviousForm();
+
         }
 
         private void ClosePreviousForm()
