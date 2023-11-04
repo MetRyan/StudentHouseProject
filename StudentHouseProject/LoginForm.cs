@@ -162,5 +162,14 @@ namespace StudentHouseProject
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
         }
+
+        private void ClosePreviousForm()
+        {
+            if (_previousForm != null)
+            {
+                _previousForm.Hide();
+                _previousForm = null;
+            }
+        }
     }
 }
