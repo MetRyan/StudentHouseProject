@@ -227,6 +227,7 @@ namespace UI
 
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
+
             MainMenu mainMenu = new MainMenu();
             mainMenu.Close();
         }

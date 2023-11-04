@@ -167,6 +167,7 @@ namespace StudentHouseProject
 
                 }
             }
+            ClosePreviousForm();
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
@@ -181,6 +182,7 @@ namespace StudentHouseProject
 
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            ClosePreviousForm();
         }
 
         private void ClosePreviousForm()
@@ -188,7 +190,7 @@ namespace StudentHouseProject
             if (_previousForm != null)
             {
                 _previousForm.Hide();
-                _previousForm = null;
+
             }
         }
     }
