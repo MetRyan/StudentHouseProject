@@ -49,6 +49,8 @@ namespace StudentHouseProject.StaffPage
 
             BindingSource source = new BindingSource();
             source.DataSource = getOrderDetails;
+
+
             txtAddress.DataBindings.Clear();
             cbPending.DataBindings.Clear();
             txtName.DataBindings.Clear();
