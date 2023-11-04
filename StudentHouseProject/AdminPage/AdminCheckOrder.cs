@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StudentHouseProject.User
+namespace StudentHouseProject.AdminPage
 {
     public partial class AdminCheckOrder : Form
     {

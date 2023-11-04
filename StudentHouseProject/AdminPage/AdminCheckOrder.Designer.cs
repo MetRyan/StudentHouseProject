@@ -1,4 +1,4 @@
-﻿namespace StudentHouseProject.User
+﻿namespace StudentHouseProject.AdminPage
 {
     partial class AdminCheckOrder
     {
@@ -28,37 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lbOrderList = new Label();
+            lbCheckOrder = new Label();
             dataGridView1 = new DataGridView();
             btnLoad = new Button();
             btnUpdate = new Button();
+            btnDelete = new Button();
             btnReturn = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // lbOrderList
+            // lbCheckOrder
             // 
-            lbOrderList.AutoSize = true;
-            lbOrderList.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            lbOrderList.Location = new Point(305, 47);
-            lbOrderList.Name = "lbOrderList";
-            lbOrderList.Size = new Size(157, 41);
-            lbOrderList.TabIndex = 0;
-            lbOrderList.Text = "Order List";
+            lbCheckOrder.AutoSize = true;
+            lbCheckOrder.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            lbCheckOrder.Location = new Point(309, 46);
+            lbCheckOrder.Name = "lbCheckOrder";
+            lbCheckOrder.Size = new Size(178, 38);
+            lbCheckOrder.TabIndex = 0;
+            lbCheckOrder.Text = "Check Order";
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(106, 107);
+            dataGridView1.Location = new Point(60, 99);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(558, 263);
+            dataGridView1.Size = new Size(664, 259);
             dataGridView1.TabIndex = 1;
             // 
             // btnLoad
             // 
-            btnLoad.Location = new Point(204, 393);
+            btnLoad.Location = new Point(148, 382);
             btnLoad.Name = "btnLoad";
             btnLoad.Size = new Size(94, 29);
             btnLoad.TabIndex = 2;
@@ -67,19 +68,28 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(341, 393);
+            btnUpdate.Location = new Point(280, 382);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(94, 29);
             btnUpdate.TabIndex = 3;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
             // 
+            // btnDelete
+            // 
+            btnDelete.Location = new Point(406, 382);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(94, 29);
+            btnDelete.TabIndex = 4;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = true;
+            // 
             // btnReturn
             // 
-            btnReturn.Location = new Point(474, 393);
+            btnReturn.Location = new Point(530, 382);
             btnReturn.Name = "btnReturn";
             btnReturn.Size = new Size(94, 29);
-            btnReturn.TabIndex = 4;
+            btnReturn.TabIndex = 5;
             btnReturn.Text = "Return";
             btnReturn.UseVisualStyleBackColor = true;
             // 
@@ -89,10 +99,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnReturn);
+            Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
             Controls.Add(btnLoad);
             Controls.Add(dataGridView1);
-            Controls.Add(lbOrderList);
+            Controls.Add(lbCheckOrder);
             Name = "AdminCheckOrder";
             Text = "AdminCheckOrder";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -102,10 +113,11 @@
 
         #endregion
 
-        private Label lbOrderList;
+        private Label lbCheckOrder;
         private DataGridView dataGridView1;
         private Button btnLoad;
         private Button btnUpdate;
+        private Button btnDelete;
         private Button btnReturn;
     }
 }
