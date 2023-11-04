@@ -77,6 +77,8 @@ namespace StudentHouseProject.User
             dgvViewDetails.Columns.Remove("Order");
             dgvViewDetails.Columns.Remove("Service");
             dgvViewDetails.Columns.Remove("ServiceId");
+            dgvViewDetails.Columns.Remove("Address");
+
 
             txtAddress.DataBindings.Add("Text", getOrderDetails, "Address");
             txtOrderDay.DataBindings.Add("Text", getOrderDetails, "CreateDate");

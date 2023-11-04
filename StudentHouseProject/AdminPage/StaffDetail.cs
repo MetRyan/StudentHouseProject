@@ -31,6 +31,7 @@ namespace UI.AdminPage
         {
             if (InserorUpdate)
             {
+                txtStaffId.Enabled = false;
 
 
                 staff getStaff = repository.GetStaffById(getStaffId);

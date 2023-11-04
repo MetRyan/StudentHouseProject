@@ -68,6 +68,12 @@ namespace StudentHouseProject.AdminAPage
                     context.Entry(getOrder).State = EntityState.Modified;
                     context.SaveChanges();
                 }
+                staffOrder.Status = "true";
+                using (var context = new StudentHouseMembershipContext())
+                {
+                    context.Entry(staffOrder).State = EntityState.Modified;
+                    context.SaveChanges();
+                }
                 MessageBox.Show("Assign successfully!");
                 reset();
             }
