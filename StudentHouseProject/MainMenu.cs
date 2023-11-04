@@ -227,8 +227,8 @@ namespace UI
 
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
-            CloseChildForms();
-            this.Close();
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.Close();
         }
 
         private void btnProfile_Click(object sender, EventArgs e)
