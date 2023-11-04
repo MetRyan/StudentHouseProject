@@ -75,7 +75,6 @@
             txtEmail.PlaceholderText = "Enter Your Email";
             txtEmail.Size = new Size(300, 27);
             txtEmail.TabIndex = 3;
-            txtEmail.Text = "wew9141@gmail.com";
             txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // label4
@@ -96,7 +95,6 @@
             txtPassword.PlaceholderText = "Enter Your Password";
             txtPassword.Size = new Size(300, 27);
             txtPassword.TabIndex = 5;
-            txtPassword.Text = "1";
             // 
             // btnLogin
             // 
