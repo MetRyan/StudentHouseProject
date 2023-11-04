@@ -139,7 +139,7 @@ namespace UI.AdminPage
                 repository.DeleteCustomer(CustomerObject);
                 LoadCustomerList();
             }
-        }
+         }
         private int GetSelectedCUstomerID()
         {
 

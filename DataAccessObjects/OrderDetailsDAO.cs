@@ -34,11 +34,11 @@ namespace DataAccessObjects
                 return context.OrderDetails.Where(od => od.OrderId == orderID).ToList();
             }
         }
-        public List<OrderDetail> GetOrderDetailsByServiceID(int serviceID)
+        public OrderDetail GetOrderDetailsByServiceID(int serviceID)
         {
             using (var context = new StudentHouseMembershipContext())
             {
-                return context.OrderDetails.Where(od => od.ServiceId == serviceID).ToList();
+                return context.OrderDetails.SingleOrDefault(od => od.ServiceId == serviceID);
             }
         }
         public void UpdateOrderDetail(OrderDetail orderDetail)

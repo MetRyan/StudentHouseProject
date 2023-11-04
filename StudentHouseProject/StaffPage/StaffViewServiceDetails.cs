@@ -19,32 +19,67 @@ namespace StudentHouseProject.StaffPage
         private staff _staff;
         private IStaffRepository repository_Staff = new StaffRepository();
         private IServiceRepository repository_Service = new ServiceRepository();
-
+        public IOrderDetailsRepository repository_OrderDetails = new OrderDetailsRepository();
         public StaffViewServiceDetails(int orderId, staff staff)
         {
             InitializeComponent();
             LoadOrder(orderId);
             _staff = staff;
         }
+        private bool isInitialLoad = true;
+
 
         private void LoadOrder(int orderId)
         {
-            _orderDetails = repository_Staff.GetStaffOrderDetails(orderId);
+            /*  _orderDetails = repository_Staff.GetStaffOrderDetails(order-Id);
 
-            foreach (OrderDetail detail in _orderDetails)
-            {
-                Service service = repository_Service.GetServiceById((int)detail.ServiceId);
-                detail.Service = service;
-            }
+              foreach (OrderDetail detail in _orderDetails)
+              {
+                  Service service = repository_Service.GetServiceById((int)detail.ServiceId);
+                  detail.Service = service;
+              }*/
+            List<OrderDetail> getOrderDetails = repository_OrderDetails.GetOrderDetailsByOrderID(orderId);
+
+            txtAddress.Enabled = false;
+            txtName.Enabled = false;
+            txtPhone.Enabled = false;
+            isInitialLoad = false;
+            cbPending.Enabled = false;
+            cbStatusWork.Text = "";
+
+            BindingSource source = new BindingSource();
+            source.DataSource = getOrderDetails;
+            txtAddress.DataBindings.Clear();
+            cbPending.DataBindings.Clear();
+            txtName.DataBindings.Clear();
+            txtPhone.DataBindings.Clear();
+
+
+
+            txtAddress.DataBindings.Add("Text", source, "Address");
+            /*txtDateCreated.DataBindings.Add("Text", source, "DateCreated");*/
+            cbPending.DataBindings.Add("Text", source, "Pending");
+            txtName.DataBindings.Add("Text", source, "ServiceName");
+            txtPhone.DataBindings.Add("Text", source, "Phone");
+
+            //dgvProductDetails.DataSource = null;
+            dgvProductDetails.DataSource = source;
+            dgvProductDetails.Columns.Remove("Order");
+            dgvProductDetails.Columns.Remove("Service");
+            dgvProductDetails.Columns.Remove("EndDate");
+
+
+
+
         }
 
         private void StaffViewServiceDetails_Load(object sender, EventArgs e)
         {
 
 
-            txtServiceName.Text = _orderDetails.FirstOrDefault().ServiceName;
-            txtAmountOfTime.Text = _orderDetails.FirstOrDefault().Service.AmountOfTime.ToString();
-            txtServicePrice.Text = _orderDetails.FirstOrDefault().Service.Price.ToString();
+            /* txtServiceName.Text = _orderDetails.FirstOrDefault().ServiceName;
+             txtAmountOfTime.Text = _orderDetails.FirstOrDefault().Service.AmountOfTime.ToString();
+             txtServicePrice.Text = _orderDetails.FirstOrDefault().Service.Price.ToString();*/
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -59,6 +94,71 @@ namespace StudentHouseProject.StaffPage
             StaffHome home = new StaffHome(_staff);
             home.Show();
             this.Hide();
+        }
+
+        private int GetselecttedServiceId()
+        {
+
+            int rowIndex = dgvProductDetails.CurrentCell.RowIndex;
+            int row = (int)dgvProductDetails.Rows[rowIndex].Cells["ServiceID"].Value;
+            return row;
+        }
+        private int GetselecttedOrderId()
+        {
+
+            int rowIndex = dgvProductDetails.CurrentCell.RowIndex;
+            int row = (int)dgvProductDetails.Rows[rowIndex].Cells["OrderId"].Value;
+            return row;
+        }
+
+        private void cbPending_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            if (cbStatusWork != null && cbStatusWork.SelectedItem != null)
+            {
+                // Lấy giá trị SelectedItem
+                string selected = cbStatusWork.SelectedItem.ToString();
+
+                // Xử lý
+                int OrderId = GetselecttedOrderId();
+                bool newPendingValue = true;
+                if (cbStatusWork.SelectedItem.ToString() == "True")
+                {
+                    newPendingValue = true;
+                }
+                else if (cbStatusWork.SelectedItem.ToString() == "False")
+                {
+                    newPendingValue = false;
+                }
+                else { return; }
+
+                using (var context = new StudentHouseMembershipContext())
+                {
+
+                    int ServiceId = GetselecttedServiceId();
+
+                    OrderDetail orderDetail = context.OrderDetails.FirstOrDefault(o => o.ServiceId == ServiceId);
+
+                    orderDetail.Pending = newPendingValue;
+
+                    context.SaveChanges();
+
+                    cbStatusWork.Text = "";
+                    LoadOrder(OrderId); // Replace ?? with the appropriate argument
+                    cbStatusWork.Text = "";
+
+                    // Display a message or perform any other necessary actions
+                    MessageBox.Show("Pending status updated successfully.");
+                    cbStatusWork.Text = "";
+                    cbStatusWork.SelectedIndex = -1;
+                }
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

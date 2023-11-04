@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DataAccessObjects.ResponseModel;
 using BusinessObjects;
+using Microsoft.EntityFrameworkCore;
 
 namespace StudentHouseProject.StaffPage
 {
@@ -18,6 +19,7 @@ namespace StudentHouseProject.StaffPage
         private staff _staff;
         private List<StaffOrderModel> ordersOfStaff;
         IStaffRepository repository_Staff = new StaffRepository();
+        IOrderDetailsRepository orderDetailsRepository = new OrderDetailsRepository();
 
         public StaffHome(staff staff)
         {
@@ -34,10 +36,43 @@ namespace StudentHouseProject.StaffPage
         {
             //Take Orders Of Staff
             List<StaffOrderModel> order = repository_Staff.GetStaffOrder(staff.StaffId);
+            
             ordersOfStaff = order;
 
             //Show data in dataGridView
             dgvStaff.DataSource = order;
+            dgvStaff.Columns.Remove("orderDetails");
+
+            using (var context = new StudentHouseMembershipContext()) // Replace YourDbContext with your actual DbContext
+            {
+                foreach (var staffOrder in order)
+                {
+                    // Check if all OrderDetails have Pending set to True
+                    bool allPendingTrue = staffOrder.OrderDetails.All(detail => detail.Pending == true);
+
+                    if (allPendingTrue)
+                    {
+                        // Set the Status based on the condition
+                        staffOrder.Status = "Done";
+
+                        // Update the staffOrder in the database
+                        context.SaveChanges();
+
+                    }
+                    else
+                    {
+                        // Set the Status based on the condition
+                        staffOrder.Status = "Pending";
+
+                        // Update the staffOrder in the database
+                        context.SaveChanges();
+
+                    }
+                }
+
+                // Save changes to the database
+            }
+
         }
 
         private void btnViewDetails_Click(object sender, EventArgs e)
