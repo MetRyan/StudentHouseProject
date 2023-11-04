@@ -219,6 +219,7 @@
             Controls.Add(label1);
             Name = "AdminViewServiceDetails";
             Text = "Service Details";
+            Load += AdminViewServiceDetails_Load;
             ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
             ResumeLayout(false);
             PerformLayout();

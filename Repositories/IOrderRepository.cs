@@ -18,9 +18,13 @@ namespace Repositories
         public int GenerateNewOrderId();
         //Add vao Order detail
         public void AddOrder(OrderDetail order);
-        public OrderDetail GetOrder(int id);
+        public List<OrderDetail> GetOrderDetails(int id);
+        public Order getOrerById(int productId);
 
         public int addOrder_getOrderId(Order p);
+        public List<int> getOrderIdStatusFalse( );
+        public List<Order> GetOrders();
+        public List<Order> GetOrdersByCustomerId(int CustomerId);
 
     }
 }

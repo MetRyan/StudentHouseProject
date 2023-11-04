@@ -7,9 +7,17 @@ namespace StudentHouseProject
 {
     public partial class LoginForm : Form
     {
+        private Form _previousForm = null;
+
         public LoginForm()
         {
             InitializeComponent();
+        }
+
+        public LoginForm(Form previousForm)
+        {
+            InitializeComponent();
+            _previousForm = previousForm;
         }
 
         private void LoginForm_Load(object sender, EventArgs e)
@@ -71,6 +79,13 @@ namespace StudentHouseProject
                     this.Dispose();
                     // Trong class kh�c
 
+
+
+                    ClosePreviousForm();
+
+
+
+                    // Trong class kh�c
                     f.ShowDialog();
 
                     f.Close();
@@ -84,6 +99,8 @@ namespace StudentHouseProject
                         //staff thanh cong 
                         staff staff = repository_Staff.getStaffbyEmails(email);
                         StaffHome staffHomePage = new StaffHome(staff);
+                        ClosePreviousForm();
+
                         staffHomePage.Show();
 
                         this.Hide();
@@ -107,10 +124,24 @@ namespace StudentHouseProject
                                      getCustomer = getCustomerbyEmail,
                                  };*/
 
-                            // Trong class kh�c
-                         
 
-                           // f.ShowDialog(); f.Close();  
+
+                            ClosePreviousForm();
+
+
+
+
+                            // Trong class kh�c
+
+
+                            // f.ShowDialog(); f.Close();  
+                            //  Application.run(f);
+                            f.WindowState = FormWindowState.Maximized;
+
+                            // Trong class kh�c
+
+
+                            // f.ShowDialog(); f.Close();  
                             //  Application.run(f);
                             f.WindowState = FormWindowState.Maximized;
 
@@ -121,6 +152,7 @@ namespace StudentHouseProject
 
                           
 
+                            f.Close();
                         }
                         else
                         {
@@ -149,6 +181,16 @@ namespace StudentHouseProject
 
         private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Application.Exit();
+        }
+
+        private void ClosePreviousForm()
+        {
+            if (_previousForm != null)
+            {
+                _previousForm.Hide();
+                _previousForm = null;
+            }
         }
     }
 }

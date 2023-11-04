@@ -24,7 +24,7 @@ namespace StudentHouseProject.AdminAPage
         BindingSource source;
 
 
-        public void LoadStaffList()
+        public void LoadServiceList()
         {
             txtServiceId.Enabled = false;
             txtAmountOfTime.Enabled = false;
@@ -74,20 +74,7 @@ namespace StudentHouseProject.AdminAPage
 
         }
 
-        private void StaffManagement_Load(object sender, EventArgs e)
-        {
-            txtAmountOfTime.Enabled = false;
-            txtServiceId.Enabled = false;
-            txtServiceName.Enabled = false;
-            txtServicePrice.Enabled = false;
-            txtStatus.Enabled = false;
-
-
-            btnDeleteService.Enabled = false;
-            btnAdd.Enabled = false;
-            btnUpdateService.Enabled = false;
-
-        }
+        
         private void reset()
         {
             txtAmountOfTime.Text = "";
@@ -97,7 +84,6 @@ namespace StudentHouseProject.AdminAPage
             txtStatus.Text = "";
         }
 
-       
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
@@ -107,7 +93,7 @@ namespace StudentHouseProject.AdminAPage
             };
             if (frm.ShowDialog() == DialogResult.OK) ;
             {
-                //LoadStaffList();
+                LoadServiceList();
 
             }
         }
@@ -136,7 +122,7 @@ namespace StudentHouseProject.AdminAPage
                 var StaffId = GetselecttedStaffId();
                 Service staffObject = repository.GetServiceById(StaffId);
                 repository.DeleteService(staffObject);
-                LoadStaffList();
+                LoadServiceList();
             }
         }
 
@@ -153,7 +139,7 @@ namespace StudentHouseProject.AdminAPage
             };
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                LoadStaffList();
+                LoadServiceList();
 
             }
 
@@ -161,8 +147,23 @@ namespace StudentHouseProject.AdminAPage
 
         private void btnLoad_Click_1(object sender, EventArgs e)
         {
-            LoadStaffList();
+            LoadServiceList();
 
+        }
+
+        private void AdminViewServiceDetails_Load(object sender, EventArgs e)
+        {
+
+            txtAmountOfTime.Enabled = false;
+            txtServiceId.Enabled = false;
+            txtServiceName.Enabled = false;
+            txtServicePrice.Enabled = false;
+            txtStatus.Enabled = false;
+
+
+            btnDeleteService.Enabled = false;
+            btnAdd.Enabled = false;
+            btnUpdateService.Enabled = false;
         }
     }
 }

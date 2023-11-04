@@ -77,6 +77,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "StaffHome";
             Text = "Home (Staff)";
+            FormClosed += StaffHome_FormClosed;
             Load += StaffHome_Load;
             ((System.ComponentModel.ISupportInitialize)dgvStaff).EndInit();
             ResumeLayout(false);

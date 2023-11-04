@@ -89,10 +89,10 @@ namespace UI
 
 
         }
-    /*    public static void ActivateCartButton(MainMenu form)
-        {
-            form.btnCart.PerformClick();
-        }*/
+        /*    public static void ActivateCartButton(MainMenu form)
+            {
+                form.btnCart.PerformClick();
+            }*/
 
 
         /*ublic void ActivateCartButton()
@@ -116,7 +116,6 @@ namespace UI
             childform.BringToFront();
             childform.Show();
             lbTitle.Text = childform.Text;
-
         }
 
         public void btnHomepage_Click(object sender, EventArgs e)
@@ -144,10 +143,7 @@ namespace UI
 
 
         public void button1_Click(object sender, EventArgs e)
-
         {
-
-
 
             OpenChildfrom(new Carts() { getCustomer = getCustomer }, sender);
 
@@ -155,9 +151,7 @@ namespace UI
 
         public void btnLogin_Click(object sender, EventArgs e)
         {
-            OpenChildfrom(new LoginForm(), sender);
-
-
+            OpenChildfrom(new LoginForm(this), sender);
         }
 
         public void btnRegister_Click(object sender, EventArgs e)
@@ -175,10 +169,14 @@ namespace UI
                 btnRegister.Enabled = false;
                 btnLogin.Visible = false;
                 btnLogin.Enabled = false;
-
+                btnProfile.Visible = true;
+                btnProfile.Enabled = true;
                 // Show and enable the LogOut button
                 btnLogOut.Visible = true;
                 btnLogOut.Enabled = true;
+                btnOrderHis.Visible = true;
+                btnOrderHis.Visible = true;
+
             }
             else
             {
@@ -187,6 +185,8 @@ namespace UI
                 btnRegister.Enabled = true;
                 btnLogin.Visible = true;
                 btnLogin.Enabled = true;
+                btnProfile.Visible = false;
+                btnProfile.Enabled = false;
 
                 // Hide and disable the LogOut button
                 btnLogOut.Visible = false;
@@ -196,7 +196,7 @@ namespace UI
 
         public void MainMenu_Load(object sender, EventArgs e)
         {
-
+            CloseChildForms();
             // Hide and disable the LogOut button
             UpdateUIForUserLoggedIn();
         }
@@ -215,6 +215,9 @@ namespace UI
 
           //  f.ShowDialog();
          //   CloseChildForms();
+            f.Show();
+            CloseChildForms();
+            this.Close();
 
         }
 
@@ -222,17 +225,35 @@ namespace UI
         {
 
         }
+
         public void CloseChildForms()
         {
             foreach (Form childForm in this.MdiChildren)
             {
                 childForm.Close();
             }
+            //this.Close();
         }
 
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             CloseChildForms();
+            LoginForm login = new LoginForm();
+            login.Show();
+            this.Close();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            OpenChildfrom(new UserProfile() { getCustomer = getCustomer }, sender);
+
+        }
+
+
+
+        private void btnHistoryOrder(object sender, EventArgs e)
+        {
+            OpenChildfrom(new OrderDetails() { getCustomer = getCustomer }, sender);
 
         }
     }

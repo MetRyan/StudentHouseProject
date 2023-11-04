@@ -69,7 +69,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(249, 171);
+            txtEmail.Location = new Point(249, 174);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Enter Your Email";
             txtEmail.Size = new Size(300, 27);
@@ -89,7 +89,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(249, 261);
+            txtPassword.Location = new Point(249, 259);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.PlaceholderText = "Enter Your Password";

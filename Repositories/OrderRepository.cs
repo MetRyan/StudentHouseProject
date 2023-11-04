@@ -20,7 +20,14 @@ namespace Repositories
 
         public List<CartItems> getCartsSession() => OrderDAOs.getCartsSession();
 
-        public OrderDetail GetOrder(int id) => OrderDAOs.GetOrderDetailsbyOrderId(id);
+        public List <OrderDetail> GetOrderDetails(int id) => OrderDAOs.GetOrderDetailsbyOrderId(id);
         public bool RemoveFromCartSession(int productId) => OrderDAOs.RemoveFromCart(productId);
+        public Order getOrerById (int productId) => OrderDAOs.GetOrderbyId(productId);
+        public List<int> getOrderIdStatusFalse() => OrderDAOs.getOrderIdPending();
+        
+        public List<Order> GetOrders ()=> OrderDAOs.GetOrders();
+        public List<Order> GetOrdersByCustomerId(int CustomerId) => OrderDAOs.GetOrderbyCustomer(CustomerId);
+
+        
     }
 }

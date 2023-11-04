@@ -130,6 +130,7 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "StaffViewServiceDetails";
             Text = "Service Details";
+            FormClosed += StaffViewServiceDetails_FormClosed;
             Load += StaffViewServiceDetails_Load;
             ResumeLayout(false);
             PerformLayout();

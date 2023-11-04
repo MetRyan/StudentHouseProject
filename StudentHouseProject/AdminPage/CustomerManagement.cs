@@ -15,29 +15,32 @@ namespace UI.AdminPage
         public void LoadCustomerList()
         {
 
-            txtCustomerID.Enabled = true;
-            txtPhone.Enabled = true;
-            txtDateOfBirth.Enabled = true;
-            txtDateCreated.Enabled = true;
-            txtFirstName.Enabled = true;
-            txtLastname.Enabled = true;
-            txtSex.Enabled = true;
-            txtEmail.Enabled = true;
+            txtCustomerID.Enabled = false;
+            txtPhone.Enabled = false;
+            txtDateOfBirth.Enabled = false;
+            txtDateCreated.Enabled = false;
+            txtFirstName.Enabled = false;
+            txtLastname.Enabled = false;
+            txtSex.Enabled = false;
+            txtEmail.Enabled = false;
 
             btnDelete.Enabled = true;
-            btnUpdate.Enabled = true;
+            //btnUpdate.Enabled = true;
             cbSearch.Enabled = true;
             txtSearch.Enabled = true;
             btnSearch.Enabled = true;
-            txtAdress.Enabled = true;
+            txtAdress.Enabled = false;
 
             dgvlistview.ReadOnly = true;
 
             try
             {
                 var CustomerList = repository.GetCustomers();
+                /* BindingSource source = new BindingSource();
+                 source.DataSource = CustomerList;*/
                 BindingSource source = new BindingSource();
                 source.DataSource = CustomerList;
+
                 txtCustomerID.DataBindings.Clear();
                 /* txtDateCreated.DataBindings.Clear();*/
                 txtDateOfBirth.DataBindings.Clear();
@@ -46,6 +49,8 @@ namespace UI.AdminPage
                 txtLastname.DataBindings.Clear();
                 txtPhone.DataBindings.Clear();
                 txtSex.DataBindings.Clear();
+                txtAdress.DataBindings.Clear();
+
 
 
                 txtCustomerID.DataBindings.Add("Text", source, "CustomerId");
@@ -61,6 +66,11 @@ namespace UI.AdminPage
 
                 dgvlistview.DataSource = null;
                 dgvlistview.DataSource = source;
+                dgvlistview.Columns.Remove("Password");
+                dgvlistview.Columns.Remove("Status");
+                dgvlistview.Columns.Remove("Orders");
+
+
 
                 //  List<CustomerManagement> Customer = repository.GetCustomer();
                 /*                if (Customer.Count == 0)
@@ -134,7 +144,7 @@ namespace UI.AdminPage
         {
 
             int rowIndex = dgvlistview.CurrentCell.RowIndex;
-            int row = (int)dgvlistview.Rows[rowIndex].Cells["CarId"].Value;
+            int row = (int)dgvlistview.Rows[rowIndex].Cells["CustomerId"].Value;
             return row;
         }
 
@@ -175,7 +185,10 @@ namespace UI.AdminPage
                     dgvlistview.ReadOnly = true;
 
                     dgvlistview.DefaultCellStyle.BackColor = Color.White;
-
+                    int getCustomerId = GetSelectedCUstomerID();
+                    Customer getObject = repository.GetCustomerById(getCustomerId);
+                    repository.UpdateCustomer(getObject);
+                    LoadCustomerList();
                 }
 
             }
@@ -247,7 +260,6 @@ namespace UI.AdminPage
             txtSearch.Enabled = false;
             btnSearch.Enabled = false;
             btnDelete.Enabled = false;
-            btnUpdate.Enabled = false;
             cbSearch.Enabled = false;
             txtAdress.Enabled = false;
             txtCustomerID.Enabled = false;
@@ -261,6 +273,11 @@ namespace UI.AdminPage
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCreate_Click(object sender, EventArgs e)
         {
 
         }

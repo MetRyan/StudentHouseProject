@@ -53,20 +53,20 @@ namespace UI.AdminPage
                 txtdob.DataBindings.Add("Text", source, "Dob");
                 txtSex.DataBindings.Add("Text", source, "Sex");
                 txtStatus.DataBindings.Add("Text", source, "Status");
-                txtServiceId.DataBindings.Add("Text", source, "Service");
+              //  txtServiceId.DataBindings.Add("Text", source, "Service");
 
                 // txtAdress.DataBindings.Add("Text", source, "Telephone");
 
-                dgv.DataSource = null;
+                //dgv.DataSource = null;
                 dgv.DataSource = source;
-                if (StaffList.Count < 0) { 
+                /*if (StaffList.Count < 0) { 
                 btnDelete.Enabled = false;
                     btnUpdate.Enabled = false;
                     btnSearch  .Enabled = false;
                     cbSearch.Enabled = false;
                 
                 }
-
+*/
 
             }
             catch (Exception ex)
@@ -163,7 +163,7 @@ namespace UI.AdminPage
                 InserorUpdate = true,
                 getStaffId = GetselecttedStaffId(),
             };
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK) ;
             {
                 LoadStaffList();
 

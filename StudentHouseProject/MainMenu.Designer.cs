@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panelMenu = new Panel();
+            btnOrderHis = new Button();
             btnLogOut = new Button();
             btnRegister = new Button();
             btnLogin = new Button();
@@ -46,6 +47,7 @@
             // panelMenu
             // 
             panelMenu.BackColor = SystemColors.ActiveCaption;
+            panelMenu.Controls.Add(btnOrderHis);
             panelMenu.Controls.Add(btnLogOut);
             panelMenu.Controls.Add(btnRegister);
             panelMenu.Controls.Add(btnLogin);
@@ -56,8 +58,21 @@
             panelMenu.Dock = DockStyle.Left;
             panelMenu.Location = new Point(0, 0);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(250, 857);
+            panelMenu.Size = new Size(250, 921);
             panelMenu.TabIndex = 1;
+            // 
+            // btnOrderHis
+            // 
+            btnOrderHis.Dock = DockStyle.Top;
+            btnOrderHis.FlatStyle = FlatStyle.Flat;
+            btnOrderHis.ImageAlign = ContentAlignment.MiddleLeft;
+            btnOrderHis.Location = new Point(0, 777);
+            btnOrderHis.Name = "btnOrderHis";
+            btnOrderHis.Size = new Size(250, 115);
+            btnOrderHis.TabIndex = 7;
+            btnOrderHis.Text = "HistoryOrder";
+            btnOrderHis.UseVisualStyleBackColor = true;
+            btnOrderHis.Click += btnHistoryOrder;
             // 
             // btnLogOut
             // 
@@ -122,6 +137,7 @@
             btnProfile.TabIndex = 2;
             btnProfile.Text = "Profile";
             btnProfile.UseVisualStyleBackColor = true;
+            btnProfile.Click += btnProfile_Click;
             // 
             // btnHomepage
             // 
@@ -173,7 +189,7 @@
             panelDesktop.Dock = DockStyle.Fill;
             panelDesktop.Location = new Point(250, 71);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(829, 786);
+            panelDesktop.Size = new Size(829, 850);
             panelDesktop.TabIndex = 3;
             panelDesktop.Paint += panelDesktop_Paint;
             // 
@@ -181,7 +197,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1079, 857);
+            ClientSize = new Size(1079, 921);
             Controls.Add(panelDesktop);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
@@ -206,5 +222,6 @@
         private Button btnLogin;
         private Button btnRegister;
         private Button btnLogOut;
+        private Button btnOrderHis;
     }
 }

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             btnUpdateService = new Button();
-            btnReturn = new Button();
             txtServicePrice = new TextBox();
             label5 = new Label();
             txtAmountOfTime = new TextBox();
@@ -41,6 +40,7 @@
             label8 = new Label();
             txtServiceId = new TextBox();
             label9 = new Label();
+            btnReturn = new Button();
             SuspendLayout();
             // 
             // btnUpdateService
@@ -54,18 +54,6 @@
             btnUpdateService.Text = "Update Service";
             btnUpdateService.UseVisualStyleBackColor = true;
             btnUpdateService.Click += btnSave_Click;
-            // 
-            // btnReturn
-            // 
-            btnReturn.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnReturn.Location = new Point(472, 342);
-            btnReturn.Margin = new Padding(3, 2, 3, 2);
-            btnReturn.Name = "btnReturn";
-            btnReturn.Size = new Size(130, 32);
-            btnReturn.TabIndex = 30;
-            btnReturn.Text = "Return to Home";
-            btnReturn.UseVisualStyleBackColor = true;
-            btnReturn.Click += btnReturn_Click;
             // 
             // txtServicePrice
             // 
@@ -135,7 +123,7 @@
             // 
             cbStatus.FormattingEnabled = true;
             cbStatus.Items.AddRange(new object[] { "True", "False" });
-            cbStatus.Location = new Point(364, 270);
+            cbStatus.Location = new Point(358, 268);
             cbStatus.Margin = new Padding(3, 2, 3, 2);
             cbStatus.Name = "cbStatus";
             cbStatus.Size = new Size(238, 23);
@@ -169,6 +157,18 @@
             label9.TabIndex = 43;
             label9.Text = "Service Id";
             // 
+            // btnReturn
+            // 
+            btnReturn.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnReturn.Location = new Point(472, 342);
+            btnReturn.Margin = new Padding(3, 2, 3, 2);
+            btnReturn.Name = "btnReturn";
+            btnReturn.Size = new Size(130, 32);
+            btnReturn.TabIndex = 30;
+            btnReturn.Text = "Return to Home";
+            btnReturn.UseVisualStyleBackColor = true;
+            btnReturn.Click += btnReturn_Click;
+            // 
             // AdminServiceDetail
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -198,7 +198,6 @@
         #endregion
 
         private Button btnUpdateService;
-        private Button btnReturn;
         private TextBox txtServicePrice;
         private Label label5;
         private TextBox txtAssignedStaff;
@@ -212,5 +211,6 @@
         private Label label8;
         private TextBox txtServiceId;
         private Label label9;
+        private Button btnReturn;
     }
 }

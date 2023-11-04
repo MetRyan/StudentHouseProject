@@ -129,10 +129,11 @@ namespace DataAccessObjects
             Customer Customer = new Customer();
             try
             {
-                using (var context = new StudentHouseMembershipContext()) { 
-                
+                using (var context = new StudentHouseMembershipContext())
+                {
+
                     Customer = context.Customers.SingleOrDefault(m => m.Email == email);
-            }
+                }
             }
             catch (Exception ex)
             {
@@ -163,11 +164,13 @@ namespace DataAccessObjects
                     try
                     {
 
-                        return context.Customers.Where(p => p.LastName.Contains(keyword)).ToList()
-                                .Where(p => p.FirstName.Contains(keyword)).ToList();
-                        
+                        /*         return context.Customers.Where(p => p.LastName.Contains(keyword)).ToList()
+                                         .Where(p => p.FirstName.Contains(keyword)).ToList();*/
 
-
+                        return context.Customers
+                            .Where(p => (p.FirstName + " " + p.LastName).Contains(keyword))
+                            .ToList();
+    
                     }
                     catch (FormatException ex)
                     {
@@ -181,6 +184,7 @@ namespace DataAccessObjects
 
         }
         
+
 
 
 
