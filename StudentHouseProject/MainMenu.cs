@@ -1,16 +1,6 @@
 ﻿using BusinessObjects;
 using StudentHouseProject;
 using StudentHouseProject.User;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Xml;
 
 namespace UI
 {
@@ -213,8 +203,8 @@ namespace UI
             MainMenu f = new MainMenu();
             // newMainMenu.ShowDialog();
 
-          //  f.ShowDialog();
-         //   CloseChildForms();
+            //  f.ShowDialog();
+            //   CloseChildForms();
             f.Show();
             CloseChildForms();
             this.Close();

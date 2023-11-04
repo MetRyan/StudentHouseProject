@@ -35,23 +35,24 @@
             label4 = new Label();
             txtPassword = new TextBox();
             btnLogin = new Button();
+            label5 = new Label();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(325, 36);
+            label1.Location = new Point(352, 94);
             label1.Name = "label1";
-            label1.Size = new Size(157, 28);
+            label1.Size = new Size(106, 28);
             label1.TabIndex = 0;
-            label1.Text = "Welcome Back!";
+            label1.Text = "Welcome!";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(311, 77);
+            label2.Location = new Point(311, 122);
             label2.Name = "label2";
             label2.Size = new Size(180, 20);
             label2.TabIndex = 1;
@@ -61,7 +62,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(249, 135);
+            label3.Location = new Point(244, 173);
             label3.Name = "label3";
             label3.Size = new Size(46, 20);
             label3.TabIndex = 2;
@@ -69,7 +70,7 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(249, 174);
+            txtEmail.Location = new Point(244, 196);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Enter Your Email";
             txtEmail.Size = new Size(300, 27);
@@ -81,7 +82,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(249, 227);
+            label4.Location = new Point(244, 239);
             label4.Name = "label4";
             label4.Size = new Size(73, 20);
             label4.TabIndex = 4;
@@ -89,7 +90,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(249, 259);
+            txtPassword.Location = new Point(244, 262);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.PlaceholderText = "Enter Your Password";
@@ -108,11 +109,22 @@
             btnLogin.UseVisualStyleBackColor = true;
             btnLogin.Click += btnLogin_Click_1;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(244, 38);
+            label5.Name = "label5";
+            label5.Size = new Size(312, 38);
+            label5.TabIndex = 7;
+            label5.Text = "Student House Service";
+            // 
             // LoginForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 451);
+            Controls.Add(label5);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
             Controls.Add(label4);
@@ -137,5 +149,6 @@
         private Label label4;
         private TextBox txtPassword;
         private Button btnLogin;
+        private Label label5;
     }
 }
