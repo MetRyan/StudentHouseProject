@@ -110,7 +110,7 @@
             // cbPayment
             // 
             cbPayment.FormattingEnabled = true;
-            cbPayment.Items.AddRange(new object[] { "Cash", "Working on ...." });
+            cbPayment.Items.AddRange(new object[] { "Cash" });
             cbPayment.Location = new Point(578, 575);
             cbPayment.Name = "cbPayment";
             cbPayment.Size = new Size(176, 28);
