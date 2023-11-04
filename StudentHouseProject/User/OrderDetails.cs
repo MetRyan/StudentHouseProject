@@ -38,7 +38,7 @@ namespace StudentHouseProject.User
             srouce.DataSource = OrderList;
 
             dgvOrderDetails.DataSource = srouce;
-
+                
             dgvOrderDetails.Columns.Remove("Payments");
             dgvOrderDetails.Columns.Remove("OrderDetails");
             dgvOrderDetails.Columns.Remove("Customer");
@@ -70,14 +70,7 @@ namespace StudentHouseProject.User
             dgvViewDetails.DataSource = null;
             dgvViewDetails.DataSource = source;
             //EndDate//PaymemmtMethod,Id,Phone,Order,Service,endday
-            dgvViewDetails.Columns.Remove("EndDate");
-            dgvViewDetails.Columns.Remove("PaymentMethod");
-            dgvViewDetails.Columns.Remove("Id");
-            dgvViewDetails.Columns.Remove("Phone");
-            dgvViewDetails.Columns.Remove("Order");
-            dgvViewDetails.Columns.Remove("Service");
-            dgvViewDetails.Columns.Remove("ServiceId");
-            dgvViewDetails.Columns.Remove("Address");
+       
 
             txtAddress.DataBindings.Clear();
             txtOrderDay.DataBindings.Clear();
@@ -91,7 +84,14 @@ namespace StudentHouseProject.User
 
             dgvViewDetails.DataSource = null;
             dgvViewDetails.DataSource = source;
-
+            dgvViewDetails.Columns.Remove("EndDate");
+            dgvViewDetails.Columns.Remove("PaymentMethod");
+            dgvViewDetails.Columns.Remove("Id");
+            dgvViewDetails.Columns.Remove("Phone");
+            dgvViewDetails.Columns.Remove("Order");
+            dgvViewDetails.Columns.Remove("Service");
+            dgvViewDetails.Columns.Remove("ServiceId");
+            dgvViewDetails.Columns.Remove("Address");
 
 
 
