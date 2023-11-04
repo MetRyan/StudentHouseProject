@@ -72,7 +72,7 @@ namespace StudentHouseProject.AdminPage
 
 
             dgvOrderDetails.DataSource = null;
-            dgvOrderDetails.DataSource = source;
+            dgvOrderDetails.DataSource = source;    
             dgvOrderDetails.Columns.Remove("Order");
             dgvOrderDetails.Columns.Remove("Service");
 

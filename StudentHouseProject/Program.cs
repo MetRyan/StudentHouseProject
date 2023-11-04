@@ -1,5 +1,6 @@
 using StudentHouseProject.AdminAPage;
 using StudentHouseProject.AdminPage;
+using StudentHouseProject.StaffPage;
 using UI;
 
 namespace StudentHouseProject

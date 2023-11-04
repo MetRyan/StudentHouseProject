@@ -123,7 +123,7 @@ namespace StudentHouseProject.User
 
         private void Carts_Load(object sender, EventArgs e)
         {
-
+            txtTotal.Enabled = false;
 
             if (getCustomer != null)
             {

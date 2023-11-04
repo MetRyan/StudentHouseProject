@@ -179,6 +179,8 @@ namespace UI
                 btnProfile.Enabled = false;
 
                 // Hide and disable the LogOut button
+                btnOrderHis.Visible = false;
+                btnOrderHis.Visible = false;
                 btnLogOut.Visible = false;
                 btnLogOut.Enabled = false;
             }
@@ -200,12 +202,12 @@ namespace UI
 
             this.Dispose();
             // Create and show a new instance of MainMenu
-            MainMenu f = new MainMenu();
+      /*      MainMenu f = new MainMenu();
             // newMainMenu.ShowDialog();
 
             //  f.ShowDialog();
             //   CloseChildForms();
-            f.Show();
+            f.Show();*/
             CloseChildForms();
             this.Close();
 

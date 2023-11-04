@@ -11,7 +11,7 @@ namespace Repositories
 
         public List<OrderDetail> GetOrderDetailsByOrderID(int orderID) => OrderDetailsDAO.Instance.GetOrderDetailsByOrderID(orderID);
 
-        public List<OrderDetail> GetOrderDetailsByServiceID(int serviceID) => OrderDetailsDAO.Instance.GetOrderDetailsByServiceID(serviceID);
+        public OrderDetail GetOrderDetailsByServiceID(int serviceID) => OrderDetailsDAO.Instance.GetOrderDetailsByServiceID(serviceID);
 
         public void UpdateOrderDetail(OrderDetail orderDetail)
         {

@@ -77,12 +77,20 @@ namespace StudentHouseProject.User
             dgvViewDetails.Columns.Remove("Order");
             dgvViewDetails.Columns.Remove("Service");
             dgvViewDetails.Columns.Remove("ServiceId");
+            dgvViewDetails.Columns.Remove("Address");
+
+            txtAddress.DataBindings.Clear();
+            txtOrderDay.DataBindings.Clear();
+            txtPayment.DataBindings.Clear();
+            txtPhone.DataBindings.Clear();
 
             txtAddress.DataBindings.Add("Text", getOrderDetails, "Address");
             txtOrderDay.DataBindings.Add("Text", getOrderDetails, "CreateDate");
             txtPayment.DataBindings.Add("Text", getOrderDetails, "PaymentMethod");
             txtPhone.DataBindings.Add("Text", getOrderDetails, "Phone");
 
+            dgvViewDetails.DataSource = null;
+            dgvViewDetails.DataSource = source;
 
 
 
