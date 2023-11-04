@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using Microsoft.VisualBasic.Devices;
 using Repositories;
 
 namespace UI.AdminPage
@@ -24,6 +25,8 @@ namespace UI.AdminPage
             txtStatus.Enabled = false;
             txtServiceId.Enabled = false;
 
+            btnSearch.Enabled = true;
+            cbSearch.Enabled = true;
             btnDelete.Enabled = true;
             btnUpdate.Enabled = true;
             try
@@ -50,13 +53,20 @@ namespace UI.AdminPage
                 txtdob.DataBindings.Add("Text", source, "Dob");
                 txtSex.DataBindings.Add("Text", source, "Sex");
                 txtStatus.DataBindings.Add("Text", source, "Status");
-                txtServiceId.DataBindings.Add("Text", source, "Service");
+              //  txtServiceId.DataBindings.Add("Text", source, "Service");
 
                 // txtAdress.DataBindings.Add("Text", source, "Telephone");
 
-                dgv.DataSource = null;
+                //dgv.DataSource = null;
                 dgv.DataSource = source;
-
+                /*if (StaffList.Count < 0) { 
+                btnDelete.Enabled = false;
+                    btnUpdate.Enabled = false;
+                    btnSearch  .Enabled = false;
+                    cbSearch.Enabled = false;
+                
+                }
+*/
 
             }
             catch (Exception ex)
@@ -81,7 +91,8 @@ namespace UI.AdminPage
             txtStatus.Enabled = false;
             txtServiceId.Enabled = false;
 
-
+            btnSearch.Enabled = false;
+            cbSearch.Enabled = false;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
         }
@@ -152,7 +163,7 @@ namespace UI.AdminPage
                 InserorUpdate = true,
                 getStaffId = GetselecttedStaffId(),
             };
-            if (frm.ShowDialog() == DialogResult.OK)
+            if (frm.ShowDialog() == DialogResult.OK) ;
             {
                 LoadStaffList();
 
@@ -162,7 +173,28 @@ namespace UI.AdminPage
 
         private void txtSearch_Click(object sender, EventArgs e)
         {
+         
 
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+            String searchBy = cbSearch.Text as string;
+            DialogResult d;
+            if (searchBy == null)
+            {
+
+                d = MessageBox.Show("Please choose field", "Error Input", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                return;
+            }
+            else
+            {
+
+                dgv.DataSource = repository.GetStaffbyStatus(searchBy);
+                var result = repository.GetStaffbyStatus(searchBy);
+                MessageBox.Show("Tìm thấy " + result.Count + " kết quả!");
+            }
         }
     }
 }

@@ -24,19 +24,21 @@ namespace StudentHouseProject.AdminAPage
         IServiceRepository repository = new ServiceRepository();
 
 
-        private void ServiceDetails_Load(object sender, EventArgs e)
+        private void ServiceDetails_Load()
         {
+
+
             if (InserorUpdate)
             {
 
 
                 //  Service getService = repository.(getStaffId);
-
-                txtAmountOfTime.DataBindings.Add("Text", getService, "StaffId");
-                txtServiceId.DataBindings.Add("Text", getService, "StaffName");
-                txtServiceName.DataBindings.Add("Text", getService, "Email");
-                txtServicePrice.DataBindings.Add("Text", getService, "Phone");
-                cbStatus.DataBindings.Add("Text", getService, "Dob");
+                MessageBox.Show(getService.ServiceName);
+                txtAmountOfTime.DataBindings.Add("Text", getService, "AmountOfTime");
+                txtServiceId.DataBindings.Add("Text", getService, "ServiceId");
+                txtServiceName.DataBindings.Add("Text", getService, "ServiceName");
+                txtServicePrice.DataBindings.Add("Text", getService, "Price");
+                cbStatus.DataBindings.Add("Text", getService, "Status");
 
                 // validatoin -> khi input bi loi khong hien new input
                 txtAmountOfTime.CausesValidation = false;
@@ -74,7 +76,7 @@ namespace StudentHouseProject.AdminAPage
                 if (
                     txtAmountOfTime.Text == ""
                     || txtServiceId.Text == ""
-                    || txtServiceName.Text == "" 
+                    || txtServiceName.Text == ""
                     || cbStatus.Text == ""
                     || txtServicePrice.Text == "")
                 {
@@ -83,7 +85,7 @@ namespace StudentHouseProject.AdminAPage
                 }
                 else
                 {
-                    int ServiceId = int.Parse(txtServiceId.Text); 
+                    int ServiceId = int.Parse(txtServiceId.Text);
                     int Price = int.Parse(txtServicePrice.Text);
                     int Time = int.Parse(txtAmountOfTime.Text);
 
@@ -108,12 +110,12 @@ namespace StudentHouseProject.AdminAPage
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
-                    else if (!int.TryParse(txtServicePrice.Text,out Price))
+                    else if (!int.TryParse(txtServicePrice.Text, out Price))
                     {
                         MessageBox.Show("Price must be valid Integer", "Service Management",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    else if (Price<1)
+                    else if (Price < 1)
                     {
                         MessageBox.Show("Price must be positive Integer", "Service Management",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -143,7 +145,7 @@ namespace StudentHouseProject.AdminAPage
                             ServiceName = txtServiceName.Text,
                             //Set default admin la 1 -> vi chi co 1 admin neu nhieu hon thi lam lai
                             AdminId = 1,
-                           
+
 
                         };
 
@@ -163,7 +165,10 @@ namespace StudentHouseProject.AdminAPage
                             p.ServiceId = getService.ServiceId;
 
                             repository.UpdateService(p);
+                            MessageBox.Show("Success", "Services Management", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                             Close();
+
                         }
                     }
                 }
@@ -179,6 +184,22 @@ namespace StudentHouseProject.AdminAPage
         private void txtServiceId_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+        private void AdminServiceDetail_Load(object sender, EventArgs e)
+        {
+            ServiceDetails_Load();
         }
     }
 }

@@ -103,17 +103,18 @@ namespace UI.AdminPage
                 {
                     int staffId = int.Parse(txtStaffId.Text); // Parse the StaffId from the text box
 
-                    if (InserorUpdate == false) { 
-                        bool staffIdExists = repository.StaffIdExists(staffId);
-                    if (staffIdExists)
+                    if (InserorUpdate == false)
                     {
-                        MessageBox.Show("Staff with the same ID already exists in the database.", "Staff Management",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        bool staffIdExists = repository.StaffIdExists(staffId);
+                        if (staffIdExists)
+                        {
+                            MessageBox.Show("Staff with the same ID already exists in the database.", "Staff Management",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                }
                     int staffIdd;
 
-                if (!int.TryParse(txtStaffId.Text, out staffIdd))
+                    if (!int.TryParse(txtStaffId.Text, out staffIdd))
                     {
                         MessageBox.Show("StaffId must be a valid integer.", "Staff Management",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -123,7 +124,7 @@ namespace UI.AdminPage
                         MessageBox.Show("StaffId must be a positive integer.", "Staff Management",
                             MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                   
+
                     else if (!txtEmail.Text.EndsWith("@gmail.com"))
                     {
                         MessageBox.Show("Email must end with @gmail.com.", "Staff Management",
@@ -143,7 +144,7 @@ namespace UI.AdminPage
                             Dob = dtpdob.Value,
                             Sex = cbSex.Text,
                             Status = cbStatus.Text,
-                            ServiceId = int.Parse(txtServiceId.Text),
+                           // ServiceId = int.Parse(txtServiceId.Text),
                             Password = txtPassword.Text,
 
                         };
@@ -164,6 +165,8 @@ namespace UI.AdminPage
                             p.StaffId = getStaffId;
 
                             repository.UpdateStaff(p);
+                            MessageBox.Show("Success", "Customer Management", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                             Close();
                         }
                     }
@@ -171,7 +174,7 @@ namespace UI.AdminPage
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error oddddccurred: {ex.Message}", "Error",
+                MessageBox.Show($"An error occurred: {ex.Message}", "Error",
             MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }

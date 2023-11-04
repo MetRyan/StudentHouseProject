@@ -121,9 +121,11 @@ namespace UI
         {
 
             // Create and show a new instance of MainMenu
+
             getAdmin = null;
-            MainMenu f = new MainMenu();
-            f.Show();
+ //           MainMenu f = new MainMenu();
+            this.Dispose();
+   //         f.ShowDialog();
 
         }
 

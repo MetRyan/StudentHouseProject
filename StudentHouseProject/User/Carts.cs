@@ -17,6 +17,7 @@ namespace StudentHouseProject.User
 {
     public partial class Carts : Form
     {
+
         IOrderRepository repository = new OrderRepository();
         public Customer getCustomer { get; set; }
         public Carts()
@@ -51,36 +52,48 @@ namespace StudentHouseProject.User
                      }*/
                     // Lấy dữ liệu từ item được click
                     //  MessageBox.Show(serviceName);
-                    bool cartRemove = repository.RemoveFromCartSession(serviceId);
-                    if (cartRemove)
-                    {
-                        this.Hide(); // Hide the old MainMenu form
-                        MessageBox.Show("Success");
-                        MainMenu f = new MainMenu()
+                  
+                        bool cartRemove = repository.RemoveFromCartSession(serviceId);
+                        if (cartRemove)
                         {
-                            getCustomer = getCustomer,
+                            /*this.Hide(); // Hide the old MainMenu form
+                            this.Dispose();
+                            this.Close();*/
 
-                        };
-                        f.button1_Click(null, null);
+                            MessageBox.Show("Success");
+                            flowLayoutPanel1.Controls.Clear();
+                            populateItems();
+                            //flowLayoutPanel1.Controls.Remove(listitems[i]);
 
-                        this.Hide(); // Hide the old MainMenu form
-                        /*     UserHome userHome = new UserHome()
-
+                            // populateItems();
+                            /* MainMenu f = new MainMenu()
                              {
-                                 getCustomer = getCustomerbyEmail,
+                                 getCustomer = getCustomer,
+
                              };*/
+                            //  f.button1_Click.
+                            /*  if (f != null)
+                              {
+                                  f.ActivateCartButton();
+                              }*/
+                            // f.btnHomepage_Click(null, null);
+                            //  this.Hide(); // Hide the old MainMenu form
+                            /*     UserHome userHome = new UserHome()
 
-                        // Trong class khác
-                        f.Show();
-                        f.Close();
+                                 {
+                                     getCustomer = getCustomerbyEmail,
+                                 };*/
 
-                    }
-                    else
-                    {
+                            // Trong class khác
+                            //f.ShowDialog();
+                            //  f.Close();
 
-                        MessageBox.Show("Fail");
-                    }
+                        }
+                        else
+                        {
 
+                            MessageBox.Show("Fail");
+                        }
 
                 };
                 txtTotal.Text = CalculateTotal().ToString();
@@ -130,49 +143,63 @@ namespace StudentHouseProject.User
         {
 
 
-
-            List<CartItems> cartlist = repository.getCartsSession();
-            Order listOrder = new Order
+                List<CartItems> cartlist = repository.getCartsSession();
+            if (cartlist.Count > 0)
             {
-                CustomerId = getCustomer.CustomerId,
-                Price = CalculateTotal(),
-                Description = txtNote.Text,
-                Status = "false",
-
-
-            };
-            int OrderId = repository.addOrder_getOrderId(listOrder);
-
-            for (int i = 0; i < cartlist.Count(); i++)
-            {
-
-                OrderDetail listOrderDetail = new OrderDetail
+                Order listOrder = new Order
                 {
-                    OrderId = OrderId,
-                    Address = txtAdress.Text,
-                    PaymentMethod = cbPayment.Text,
-                    Pending = false,
-                    Phone = txtPhone.Text,
-                    Price = cartlist[i].Price,
-                    ServiceId = cartlist[i].ServiceId,
-                    ServiceName = cartlist[i].ServiceName,
+                    CustomerId = getCustomer.CustomerId,
+                    Price = CalculateTotal(),
+                    Description = txtNote.Text ?? "N/A",
+                    Status = "false",
                     CreateDate = DateTime.Now,
-                    EndDate = null,
+
                 };
-                repository.AddOrder(listOrderDetail);
+                int OrderId = repository.addOrder_getOrderId(listOrder);
+
+                for (int i = 0; i < cartlist.Count(); i++)
+                {
+                    OrderDetail listOrderDetail = new OrderDetail
+                    {
+                        OrderId = OrderId,
+                        Address = txtAdress.Text,
+                        PaymentMethod = cbPayment.Text,
+                        Pending = false,
+                        Phone = txtPhone.Text,
+                        Price = cartlist[i].Price,
+                        ServiceId = cartlist[i].ServiceId,
+                        ServiceName = cartlist[i].ServiceName,
+                        CreateDate = DateTime.Now,
+                        EndDate = null,
+                    };
+                    repository.AddOrder(listOrderDetail);
+                }
                 MessageBox.Show("Order has been placed successfully.");
                 cartlist.Clear();
-
+                flowLayoutPanel1.Controls.Clear();
+                txtNote.Text = "";
+                cbPayment.Text = "";
+                populateItems();
 
 
 
             }
+            else {
 
 
+                MessageBox.Show("Your Cart is Empty");
+            }
         }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            populateItems();
 
         }
     }

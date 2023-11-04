@@ -89,8 +89,16 @@ namespace UI
 
 
         }
+        /*    public static void ActivateCartButton(MainMenu form)
+            {
+                form.btnCart.PerformClick();
+            }*/
 
 
+        /*ublic void ActivateCartButton()
+        {
+            btnCart.PerformClick();
+        }*/
         private void OpenChildfrom(Form childform, object btnSender)
         {
 
@@ -135,10 +143,7 @@ namespace UI
 
 
         public void button1_Click(object sender, EventArgs e)
-
         {
-
-
 
             OpenChildfrom(new Carts() { getCustomer = getCustomer }, sender);
 
@@ -164,10 +169,14 @@ namespace UI
                 btnRegister.Enabled = false;
                 btnLogin.Visible = false;
                 btnLogin.Enabled = false;
-
+                btnProfile.Visible = true;
+                btnProfile.Enabled = true;
                 // Show and enable the LogOut button
                 btnLogOut.Visible = true;
                 btnLogOut.Enabled = true;
+                btnOrderHis.Visible = true;
+                btnOrderHis.Visible = true;
+
             }
             else
             {
@@ -176,6 +185,8 @@ namespace UI
                 btnRegister.Enabled = true;
                 btnLogin.Visible = true;
                 btnLogin.Enabled = true;
+                btnProfile.Visible = false;
+                btnProfile.Enabled = false;
 
                 // Hide and disable the LogOut button
                 btnLogOut.Visible = false;
@@ -197,14 +208,13 @@ namespace UI
             getCustomer = null;
             //     this.Close();
 
-
+            this.Dispose();
             // Create and show a new instance of MainMenu
             MainMenu f = new MainMenu();
             // newMainMenu.ShowDialog();
 
-            f.Show();
-            CloseChildForms();
-            this.Close();
+            //  f.ShowDialog();
+            //   CloseChildForms();
 
         }
 
@@ -226,6 +236,20 @@ namespace UI
         {
             CloseChildForms();
             this.Close();
+        }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            OpenChildfrom(new UserProfile() { getCustomer = getCustomer }, sender);
+
+        }
+
+
+
+        private void btnHistoryOrder(object sender, EventArgs e)
+        {
+            OpenChildfrom(new OrderDetails() { getCustomer = getCustomer }, sender);
+
         }
     }
 }

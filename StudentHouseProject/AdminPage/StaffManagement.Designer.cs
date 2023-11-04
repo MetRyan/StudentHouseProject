@@ -44,9 +44,9 @@
             txtdob = new TextBox();
             txtSex = new TextBox();
             label2 = new Label();
-            comboBox1 = new ComboBox();
+            cbSearch = new ComboBox();
             dgv = new DataGridView();
-            txtSearch = new Button();
+            btnSearch = new Button();
             btnLoad = new Button();
             btnCreate = new Button();
             btnDelete = new Button();
@@ -187,14 +187,14 @@
             label2.TabIndex = 16;
             label2.Text = "SearchStatus";
             // 
-            // comboBox1
+            // cbSearch
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "true", "false" });
-            comboBox1.Location = new Point(165, 265);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(125, 28);
-            comboBox1.TabIndex = 17;
+            cbSearch.FormattingEnabled = true;
+            cbSearch.Items.AddRange(new object[] { "true", "false" });
+            cbSearch.Location = new Point(165, 265);
+            cbSearch.Name = "cbSearch";
+            cbSearch.Size = new Size(125, 28);
+            cbSearch.TabIndex = 17;
             // 
             // dgv
             // 
@@ -206,15 +206,15 @@
             dgv.Size = new Size(693, 172);
             dgv.TabIndex = 18;
             // 
-            // txtSearch
+            // btnSearch
             // 
-            txtSearch.Location = new Point(328, 265);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(94, 29);
-            txtSearch.TabIndex = 19;
-            txtSearch.Text = "Search";
-            txtSearch.UseVisualStyleBackColor = true;
-            txtSearch.Click += txtSearch_Click;
+            btnSearch.Location = new Point(328, 265);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(94, 29);
+            btnSearch.TabIndex = 19;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // btnLoad
             // 
@@ -283,9 +283,9 @@
             Controls.Add(btnDelete);
             Controls.Add(btnCreate);
             Controls.Add(btnLoad);
-            Controls.Add(txtSearch);
+            Controls.Add(btnSearch);
             Controls.Add(dgv);
-            Controls.Add(comboBox1);
+            Controls.Add(cbSearch);
             Controls.Add(label2);
             Controls.Add(txtSex);
             Controls.Add(txtdob);
@@ -328,9 +328,9 @@
         private TextBox txtdob;
         private TextBox txtSex;
         private Label label2;
-        private ComboBox comboBox1;
+        private ComboBox cbSearch;
         private DataGridView dgv;
-        private Button txtSearch;
+        private Button btnSearch;
         private Button btnLoad;
         private Button btnCreate;
         private Button btnDelete;

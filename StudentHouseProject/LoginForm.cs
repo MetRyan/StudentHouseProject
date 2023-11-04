@@ -65,15 +65,19 @@ namespace StudentHouseProject
                     this.Close();
 
                     Admin getAdminbyEmail = repository_Admin.getAdminbyEmail(email);
-                    MainMenuAdmin f = new MainMenuAdmin() { getAdmin = getAdminbyEmail};
-                    f.ShowDialog();
+                    MainMenuAdmin f = new MainMenuAdmin() { getAdmin = getAdminbyEmail };
+                    //  f.ShowDialog();
                     /*     UserHome userHome = new UserHome()
 
                          {
                              getCustomer = getCustomerbyEmail,
                          };*/
 
-                    ClosePreviousForm();
+                    // Trong class kh�c
+                    f.WindowState = FormWindowState.Maximized;
+
+                    this.Dispose();
+                    // Trong class kh�c
 
                     // Trong class kh�c
                     f.ShowDialog();
@@ -103,10 +107,11 @@ namespace StudentHouseProject
                         if (checkCustomer)
                         {
                             //this.Close();
+
                             this.Hide();
                             Customer getCustomerbyEmail = repository_Customer.getCustomerbyEmail(email);
                             MainMenu f = new MainMenu() { getCustomer = getCustomerbyEmail, };
-                            f.btnHomepage_Click(null, null);
+                            //f.btnHomepage_Click(null, null);
                             /*     UserHome userHome = new UserHome()
 
                                  {
@@ -115,10 +120,19 @@ namespace StudentHouseProject
                             ClosePreviousForm();
 
                             // Trong class kh�c
+
+
+                            // f.ShowDialog(); f.Close();  
+                            //  Application.run(f);
+                            f.WindowState = FormWindowState.Maximized;
+
+                            // Trong class kh�c
                             this.Hide();
                             f.ShowDialog();
 
-                            f.Close();
+
+
+
                         }
                         else
                         {
@@ -145,13 +159,8 @@ namespace StudentHouseProject
 
         }
 
-        private void ClosePreviousForm()
+        private void LoginForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (_previousForm != null)
-            {
-                _previousForm.Hide();
-                _previousForm = null;
-            }
         }
     }
 }

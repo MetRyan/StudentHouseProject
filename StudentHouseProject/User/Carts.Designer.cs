@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
             label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             button2 = new Button();
@@ -43,16 +42,6 @@
             label4 = new Label();
             txtNote = new TextBox();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(369, 712);
-            button1.Name = "button1";
-            button1.Size = new Size(149, 43);
-            button1.TabIndex = 22;
-            button1.Text = "Return to Home";
-            button1.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -76,7 +65,7 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(214, 712);
+            button2.Location = new Point(288, 711);
             button2.Name = "button2";
             button2.Size = new Size(149, 43);
             button2.TabIndex = 24;
@@ -185,7 +174,6 @@
             Controls.Add(lbAddress);
             Controls.Add(button2);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(button1);
             Controls.Add(label1);
             Name = "Carts";
             Text = "Carts";
@@ -195,8 +183,6 @@
         }
 
         #endregion
-
-        private Button button1;
         private Label label1;
         private FlowLayoutPanel flowLayoutPanel1;
         private Button button2;

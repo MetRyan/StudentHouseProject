@@ -26,5 +26,8 @@ namespace Repositories
         public List<OrderDetail> GetStaffOrderDetails(int orderId) => StaffDAO.GetStaffOrderDetails(orderId);
 
         public bool StaffIdExists(int id) => StaffDAO.StaffIdExists(id);
+        public List<staff> GetStaffbyStatus(string Status) =>StaffDAO.SearchbyStatus(Status);
+
+        public List<int> getStaffByAvailable() => StaffDAO.getStaffAvailable();
     }
 }

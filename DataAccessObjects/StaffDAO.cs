@@ -1,4 +1,5 @@
 ﻿using BusinessObjects;
+using System.ComponentModel.Design;
 using DataAccessObjects.ResponseModel;
 
 namespace DataAccessObjects
@@ -136,6 +137,52 @@ namespace DataAccessObjects
 
 
         }
+
+        public static List<int> getStaffAvailable()
+        {
+            try
+            {
+
+                using (var context = new StudentHouseMembershipContext())
+                {
+
+
+                    var staffId = context.staff.Where(p => p.Status == "false")
+                            .Select(p => p.StaffId).ToList();
+                    return staffId;
+
+
+                }
+
+
+
+
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+
+            }
+        }
+            public static List<staff> SearchbyStatus(string Status)
+        {
+            try
+            {
+                using (var context = new StudentHouseMembershipContext())
+                {
+
+                    List<staff> staffList = context.staff.Where(p => p.Status == Status).ToList();
+                    return staffList;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public static staff GetstaffbyEmail(String email)
         {
             staff getStaff = new staff();
