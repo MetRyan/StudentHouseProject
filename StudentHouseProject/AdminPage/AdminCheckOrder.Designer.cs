@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             lbCheckOrder = new Label();
-            dataGridView1 = new DataGridView();
+            dgvOrder = new DataGridView();
             btnLoad = new Button();
             btnUpdate = new Button();
             btnDelete = new Button();
             btnReturn = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvOrder).BeginInit();
             SuspendLayout();
             // 
             // lbCheckOrder
@@ -47,15 +47,15 @@
             lbCheckOrder.TabIndex = 0;
             lbCheckOrder.Text = "Check Order";
             // 
-            // dataGridView1
+            // dgvOrder
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(60, 99);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(664, 259);
-            dataGridView1.TabIndex = 1;
+            dgvOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvOrder.Location = new Point(60, 99);
+            dgvOrder.Name = "dgvOrder";
+            dgvOrder.RowHeadersWidth = 51;
+            dgvOrder.RowTemplate.Height = 29;
+            dgvOrder.Size = new Size(664, 259);
+            dgvOrder.TabIndex = 1;
             // 
             // btnLoad
             // 
@@ -102,11 +102,12 @@
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
             Controls.Add(btnLoad);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvOrder);
             Controls.Add(lbCheckOrder);
             Name = "AdminCheckOrder";
             Text = "AdminCheckOrder";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += AdminCheckOrder_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvOrder).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -114,7 +115,7 @@
         #endregion
 
         private Label lbCheckOrder;
-        private DataGridView dataGridView1;
+        private DataGridView dgvOrder;
         private Button btnLoad;
         private Button btnUpdate;
         private Button btnDelete;
