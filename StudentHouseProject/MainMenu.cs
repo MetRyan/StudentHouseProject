@@ -179,6 +179,8 @@ namespace UI
                 btnProfile.Enabled = false;
 
                 // Hide and disable the LogOut button
+                btnOrderHis.Visible = false;
+                btnOrderHis.Visible = false;
                 btnLogOut.Visible = false;
                 btnLogOut.Enabled = false;
             }

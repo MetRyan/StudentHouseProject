@@ -89,8 +89,8 @@ namespace StudentHouseProject.StaffPage
 
         private void StaffHome_FormClosed(object sender, FormClosedEventArgs e)
         {
-            LoginForm login = new LoginForm();
-            login.Show();
+         /*   LoginForm login = new LoginForm();
+            login.Show();*/
             this.Hide();
         }
     }
