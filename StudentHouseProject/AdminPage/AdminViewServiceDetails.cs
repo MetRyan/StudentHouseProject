@@ -85,7 +85,6 @@ namespace StudentHouseProject.AdminAPage
         }
 
 
-
         private void btnCreate_Click(object sender, EventArgs e)
         {
             AdminServiceDetail frm = new AdminServiceDetail()

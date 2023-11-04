@@ -213,8 +213,11 @@ namespace UI
             MainMenu f = new MainMenu();
             // newMainMenu.ShowDialog();
 
-            //  f.ShowDialog();
-            //   CloseChildForms();
+          //  f.ShowDialog();
+         //   CloseChildForms();
+            f.Show();
+            CloseChildForms();
+            this.Close();
 
         }
 

@@ -41,6 +41,7 @@
             txtTotal = new TextBox();
             label4 = new Label();
             txtNote = new TextBox();
+            btnLoad = new Button();
             SuspendLayout();
             // 
             // label1
@@ -157,11 +158,22 @@
             txtNote.TabIndex = 34;
             txtNote.TextChanged += textBox1_TextChanged;
             // 
+            // btnLoad
+            // 
+            btnLoad.Location = new Point(535, 712);
+            btnLoad.Name = "btnLoad";
+            btnLoad.Size = new Size(135, 43);
+            btnLoad.TabIndex = 35;
+            btnLoad.Text = "Load";
+            btnLoad.UseVisualStyleBackColor = true;
+            btnLoad.Click += btnLoad_Click;
+            // 
             // Carts
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1075, 792);
+            Controls.Add(btnLoad);
             Controls.Add(txtNote);
             Controls.Add(label4);
             Controls.Add(txtTotal);
@@ -196,5 +208,6 @@
         private TextBox txtTotal;
         private Label label4;
         private TextBox txtNote;
+        private Button btnLoad;
     }
 }
