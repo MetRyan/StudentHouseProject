@@ -78,7 +78,12 @@ namespace StudentHouseProject
 
                     this.Dispose();
                     // Trong class kh�c
-                    ClosePreviousForm();
+
+
+
+                    //ClosePreviousForm();
+
+
 
                     // Trong class kh�c
                     f.ShowDialog();
@@ -94,7 +99,7 @@ namespace StudentHouseProject
                         //staff thanh cong 
                         staff staff = repository_Staff.getStaffbyEmails(email);
                         StaffHome staffHomePage = new StaffHome(staff);
-                        ClosePreviousForm();
+                        //ClosePreviousForm();
 
                         staffHomePage.Show();
 
@@ -118,7 +123,13 @@ namespace StudentHouseProject
                                  {
                                      getCustomer = getCustomerbyEmail,
                                  };*/
-                            ClosePreviousForm();
+
+
+
+                            //ClosePreviousForm();
+
+
+
 
                             // Trong class kh�c
                          
