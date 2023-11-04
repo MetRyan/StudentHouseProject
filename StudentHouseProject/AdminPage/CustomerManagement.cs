@@ -54,7 +54,7 @@ namespace UI.AdminPage
 
 
                 txtCustomerID.DataBindings.Add("Text", source, "CustomerId");
-                /*txtDateCreated.DataBindings.Add("Text", source, "DateCreated");*/
+                txtDateCreated.DataBindings.Add("Text", source, "DateCreated");
                 txtDateOfBirth.DataBindings.Add("Text", source, "Dob");
                 txtEmail.DataBindings.Add("Text", source, "Email");
                 txtFirstName.DataBindings.Add("Text", source, "FirstName");
