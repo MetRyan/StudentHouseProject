@@ -202,12 +202,12 @@ namespace UI
 
             this.Dispose();
             // Create and show a new instance of MainMenu
-            MainMenu f = new MainMenu();
+      /*      MainMenu f = new MainMenu();
             // newMainMenu.ShowDialog();
 
             //  f.ShowDialog();
             //   CloseChildForms();
-            f.Show();
+            f.Show();*/
             CloseChildForms();
             this.Close();
 
