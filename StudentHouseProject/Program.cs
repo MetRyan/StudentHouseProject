@@ -1,4 +1,5 @@
 using StudentHouseProject.AdminAPage;
+using StudentHouseProject.AdminPage;
 using UI;
 
 namespace StudentHouseProject
@@ -16,7 +17,7 @@ namespace StudentHouseProject
             ApplicationConfiguration.Initialize();
             //Application.Run(new MainMenu());
             //Application.Run(new AdminAssignServiceToStaffs());
-            Application.Run(new LoginForm());
+            Application.Run(new MainMenu());
         }
     }
 }

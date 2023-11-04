@@ -1,10 +1,23 @@
 ﻿using BusinessObjects;
 using Repositories;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace StudentHouseProject.AdminPage
 {
-    public partial class AdminCheckOrder : Form
+    public partial class CheckTransactions : Form
     {
+        public CheckTransactions()
+        {
+            InitializeComponent();
+        }
         IOrderRepository repository = new OrderRepository();
         public void LoadOrderList()
         {
@@ -17,6 +30,10 @@ namespace StudentHouseProject.AdminPage
 
                 dgvOrder.DataSource = null;
                 dgvOrder.DataSource = source;
+                dgvOrder.Columns.Remove("Customer");
+                dgvOrder.Columns.Remove("OrderDetails");
+                dgvOrder.Columns.Remove("Payments");
+
 
 
             }
@@ -56,6 +73,10 @@ namespace StudentHouseProject.AdminPage
 
             dgvOrderDetails.DataSource = null;
             dgvOrderDetails.DataSource = source;
+            dgvOrderDetails.Columns.Remove("Order");
+            dgvOrderDetails.Columns.Remove("Service");
+
+
         }
 
         private void LoadCustomer(int customerId)
@@ -65,6 +86,7 @@ namespace StudentHouseProject.AdminPage
             Customer getCustomer = repository_Customer.GetCustomerById(CustomerId);
             source.DataSource = getCustomer;
             dgvCustomer.DataSource = new List<Customer> { getCustomer };
+            dgvCustomer.Columns.Remove("Orders");
 
         }
 
@@ -88,7 +110,9 @@ namespace StudentHouseProject.AdminPage
 
         }
 
-        private void dgvOrder_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+
+
+        private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int OrderId = GetSelectedProductID();
 
@@ -96,6 +120,11 @@ namespace StudentHouseProject.AdminPage
 
             LoadOrderDetails(OrderId);
             LoadCustomer(CustomerId);
+        }
+
+        private void dgvOrder_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

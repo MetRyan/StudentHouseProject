@@ -1,6 +1,7 @@
 ﻿using BusinessObjects;
 using StudentHouseProject;
 using StudentHouseProject.AdminAPage;
+using StudentHouseProject.AdminPage;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -123,9 +124,9 @@ namespace UI
             // Create and show a new instance of MainMenu
 
             getAdmin = null;
- //           MainMenu f = new MainMenu();
+            //           MainMenu f = new MainMenu();
             this.Dispose();
-   //         f.ShowDialog();
+            //         f.ShowDialog();
 
         }
 
@@ -146,6 +147,12 @@ namespace UI
         private void MainMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             CloseChildForms();
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenChildfrom(new CheckTransactions(), sender);
 
         }
 

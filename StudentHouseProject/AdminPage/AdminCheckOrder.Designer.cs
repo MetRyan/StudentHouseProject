@@ -31,17 +31,20 @@
             lbCheckOrder = new Label();
             dgvOrder = new DataGridView();
             btnLoad = new Button();
-            btnUpdate = new Button();
-            btnDelete = new Button();
-            btnReturn = new Button();
+            dgvCustomer = new DataGridView();
+            dgvOrderDetails = new DataGridView();
+            label1 = new Label();
+            label2 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvOrder).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCustomer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvOrderDetails).BeginInit();
             SuspendLayout();
             // 
             // lbCheckOrder
             // 
             lbCheckOrder.AutoSize = true;
             lbCheckOrder.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lbCheckOrder.Location = new Point(309, 46);
+            lbCheckOrder.Location = new Point(189, 44);
             lbCheckOrder.Name = "lbCheckOrder";
             lbCheckOrder.Size = new Size(178, 38);
             lbCheckOrder.TabIndex = 0;
@@ -50,57 +53,72 @@
             // dgvOrder
             // 
             dgvOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrder.Location = new Point(60, 99);
+            dgvOrder.Location = new Point(106, 113);
             dgvOrder.Name = "dgvOrder";
             dgvOrder.RowHeadersWidth = 51;
             dgvOrder.RowTemplate.Height = 29;
-            dgvOrder.Size = new Size(664, 259);
+            dgvOrder.Size = new Size(965, 259);
             dgvOrder.TabIndex = 1;
+            dgvOrder.CellContentClick += dgvOrder_CellContentClick_1;
             // 
             // btnLoad
             // 
-            btnLoad.Location = new Point(148, 382);
+            btnLoad.Location = new Point(833, 45);
             btnLoad.Name = "btnLoad";
-            btnLoad.Size = new Size(94, 29);
+            btnLoad.Size = new Size(141, 49);
             btnLoad.TabIndex = 2;
             btnLoad.Text = "Load";
             btnLoad.UseVisualStyleBackColor = true;
             // 
-            // btnUpdate
+            // dgvCustomer
             // 
-            btnUpdate.Location = new Point(280, 382);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(94, 29);
-            btnUpdate.TabIndex = 3;
-            btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = true;
+            dgvCustomer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCustomer.Location = new Point(106, 465);
+            dgvCustomer.Name = "dgvCustomer";
+            dgvCustomer.RowHeadersWidth = 51;
+            dgvCustomer.RowTemplate.Height = 29;
+            dgvCustomer.Size = new Size(965, 96);
+            dgvCustomer.TabIndex = 3;
             // 
-            // btnDelete
+            // dgvOrderDetails
             // 
-            btnDelete.Location = new Point(406, 382);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(94, 29);
-            btnDelete.TabIndex = 4;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = true;
+            dgvOrderDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvOrderDetails.Location = new Point(106, 664);
+            dgvOrderDetails.Name = "dgvOrderDetails";
+            dgvOrderDetails.RowHeadersWidth = 51;
+            dgvOrderDetails.RowTemplate.Height = 29;
+            dgvOrderDetails.Size = new Size(1056, 49);
+            dgvOrderDetails.TabIndex = 4;
             // 
-            // btnReturn
+            // label1
             // 
-            btnReturn.Location = new Point(530, 382);
-            btnReturn.Name = "btnReturn";
-            btnReturn.Size = new Size(94, 29);
-            btnReturn.TabIndex = 5;
-            btnReturn.Text = "Return";
-            btnReturn.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(189, 393);
+            label1.Name = "label1";
+            label1.Size = new Size(310, 38);
+            label1.TabIndex = 5;
+            label1.Text = "Customer Information";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(189, 593);
+            label2.Name = "label2";
+            label2.Size = new Size(218, 38);
+            label2.TabIndex = 6;
+            label2.Text = "Product Details";
             // 
             // AdminCheckOrder
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(btnReturn);
-            Controls.Add(btnDelete);
-            Controls.Add(btnUpdate);
+            ClientSize = new Size(1274, 920);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(dgvOrderDetails);
+            Controls.Add(dgvCustomer);
             Controls.Add(btnLoad);
             Controls.Add(dgvOrder);
             Controls.Add(lbCheckOrder);
@@ -108,6 +126,8 @@
             Text = "AdminCheckOrder";
             Load += AdminCheckOrder_Load;
             ((System.ComponentModel.ISupportInitialize)dgvOrder).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvCustomer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvOrderDetails).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -117,8 +137,9 @@
         private Label lbCheckOrder;
         private DataGridView dgvOrder;
         private Button btnLoad;
-        private Button btnUpdate;
-        private Button btnDelete;
-        private Button btnReturn;
+        private DataGridView dgvCustomer;
+        private DataGridView dgvOrderDetails;
+        private Label label1;
+        private Label label2;
     }
 }
