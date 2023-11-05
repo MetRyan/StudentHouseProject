@@ -133,7 +133,7 @@ namespace StudentHouseProject.User
             else
             {
 
-                MessageBox.Show("you have not login yet , please Login or Register");
+                MessageBox.Show("You have to be logged in to make orders, please Login or Register");
 
             }
             populateItems();
@@ -188,7 +188,7 @@ namespace StudentHouseProject.User
             {
 
 
-                MessageBox.Show("Your Cart is Empty");
+                MessageBox.Show("Your Cart is empty");
             }
         }
 

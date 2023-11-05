@@ -38,37 +38,39 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(684, 9);
+            label1.Location = new Point(598, 7);
             label1.Name = "label1";
-            label1.Size = new Size(147, 41);
+            label1.Size = new Size(119, 32);
             label1.TabIndex = 0;
             label1.Text = "Welcome";
             // 
             // lbNotification
             // 
             lbNotification.AutoSize = true;
-            lbNotification.Location = new Point(647, 52);
+            lbNotification.Location = new Point(566, 39);
             lbNotification.Name = "lbNotification";
-            lbNotification.Size = new Size(240, 20);
+            lbNotification.Size = new Size(193, 15);
             lbNotification.TabIndex = 2;
             lbNotification.Text = "Choose the service you want to use";
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Location = new Point(38, 95);
+            flowLayoutPanel1.Location = new Point(33, 71);
+            flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1441, 506);
+            flowLayoutPanel1.Size = new Size(1474, 846);
             flowLayoutPanel1.TabIndex = 5;
             // 
             // UserHome
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1524, 1013);
+            ClientSize = new Size(1530, 928);
             Controls.Add(lbNotification);
             Controls.Add(label1);
             Controls.Add(flowLayoutPanel1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "UserHome";
             Text = "UserHome";
             Load += UserHome_Load;

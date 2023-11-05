@@ -71,7 +71,7 @@ namespace StudentHouseProject
                     }
                     else
                     {
-                        MessageBox.Show("Please login before buy Services");
+                        MessageBox.Show("Please login before buying Services");
                     }
 
                     // string serviceName = ServiceList.Find(service => service.ServiceId == serviceId)?.ServiceName;
