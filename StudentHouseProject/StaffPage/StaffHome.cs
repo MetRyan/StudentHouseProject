@@ -36,7 +36,7 @@ namespace StudentHouseProject.StaffPage
         {
             //Take Orders Of Staff
             List<StaffOrderModel> order = repository_Staff.GetStaffOrder(staff.StaffId);
-            
+
             ordersOfStaff = order;
 
             //Show data in dataGridView
@@ -89,8 +89,8 @@ namespace StudentHouseProject.StaffPage
 
         private void StaffHome_FormClosed(object sender, FormClosedEventArgs e)
         {
-         /*   LoginForm login = new LoginForm();
-            login.Show();*/
+            /*   LoginForm login = new LoginForm();
+               login.Show();*/
             this.Hide();
         }
     }

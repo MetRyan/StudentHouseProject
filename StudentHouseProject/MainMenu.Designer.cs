@@ -37,9 +37,9 @@
             btnProfile = new Button();
             btnHomepage = new Button();
             panelLogo = new Panel();
-            panelTitleBar = new Panel();
-            lbTitle = new Label();
             panelDesktop = new Panel();
+            lbTitle = new Label();
+            panelTitleBar = new Panel();
             panelMenu.SuspendLayout();
             panelTitleBar.SuspendLayout();
             SuspendLayout();
@@ -59,7 +59,7 @@
             panelMenu.Location = new Point(0, 0);
             panelMenu.Margin = new Padding(3, 2, 3, 2);
             panelMenu.Name = "panelMenu";
-            panelMenu.Size = new Size(219, 789);
+            panelMenu.Size = new Size(250, 921);
             panelMenu.TabIndex = 1;
             // 
             // btnOrderHis
@@ -172,15 +172,14 @@
             panelLogo.Size = new Size(219, 53);
             panelLogo.TabIndex = 0;
             // 
-            // panelTitleBar
+            // panelDesktop
             // 
             panelTitleBar.BackColor = SystemColors.ControlDark;
             panelTitleBar.Controls.Add(lbTitle);
             panelTitleBar.Dock = DockStyle.Top;
-            panelTitleBar.Location = new Point(219, 0);
-            panelTitleBar.Margin = new Padding(3, 2, 3, 2);
+            panelTitleBar.Location = new Point(250, 0);
             panelTitleBar.Name = "panelTitleBar";
-            panelTitleBar.Size = new Size(1057, 53);
+            panelTitleBar.Size = new Size(829, 71);
             panelTitleBar.TabIndex = 2;
             // 
             // lbTitle
@@ -194,13 +193,12 @@
             lbTitle.TabIndex = 0;
             lbTitle.Text = "STUDENT HOUSE SERVICE";
             // 
-            // panelDesktop
+            // panelTitleBar
             // 
             panelDesktop.Dock = DockStyle.Fill;
-            panelDesktop.Location = new Point(219, 53);
-            panelDesktop.Margin = new Padding(3, 2, 3, 2);
+            panelDesktop.Location = new Point(250, 71);
             panelDesktop.Name = "panelDesktop";
-            panelDesktop.Size = new Size(1057, 736);
+            panelDesktop.Size = new Size(829, 850);
             panelDesktop.TabIndex = 3;
             panelDesktop.Paint += panelDesktop_Paint;
             // 
@@ -208,7 +206,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1276, 789);
+            ClientSize = new Size(1079, 921);
             Controls.Add(panelDesktop);
             Controls.Add(panelTitleBar);
             Controls.Add(panelMenu);
@@ -226,14 +224,14 @@
         private Panel panelMenu;
         private Button btnProfile;
         private Button btnHomepage;
-        private Panel panelLogo;
-        private Panel panelTitleBar;
-        private Label lbTitle;
-        private Panel panelDesktop;
         private Button btnCart;
         private Button btnLogin;
         private Button btnRegister;
         private Button btnLogOut;
         private Button btnOrderHis;
+        private Panel panelLogo;
+        private Label lbTitle;
+        private Panel panelTitleBar;
+        public Panel panelDesktop;
     }
 }

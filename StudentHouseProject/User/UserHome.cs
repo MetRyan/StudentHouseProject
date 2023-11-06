@@ -92,7 +92,5 @@ namespace StudentHouseProject
             }
 
         }
-
-
     }
 }

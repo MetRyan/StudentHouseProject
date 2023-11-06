@@ -31,6 +31,7 @@
             label1 = new Label();
             lbNotification = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            label2 = new Label();
             SuspendLayout();
             // 
             // label1
@@ -38,39 +39,52 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = SystemColors.ActiveCaptionText;
-            label1.Location = new Point(598, 7);
+            label1.Location = new Point(812, 9);
             label1.Name = "label1";
-            label1.Size = new Size(119, 32);
+            label1.Size = new Size(147, 41);
             label1.TabIndex = 0;
             label1.Text = "Welcome";
             // 
             // lbNotification
             // 
             lbNotification.AutoSize = true;
-            lbNotification.Location = new Point(566, 39);
+            lbNotification.Location = new Point(760, 50);
             lbNotification.Name = "lbNotification";
-            lbNotification.Size = new Size(193, 15);
+            lbNotification.Size = new Size(240, 20);
             lbNotification.TabIndex = 2;
             lbNotification.Text = "Choose the service you want to use";
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AutoScroll = true;
-            flowLayoutPanel1.Location = new Point(33, 71);
-            flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
+            flowLayoutPanel1.AutoSize = true;
+            flowLayoutPanel1.BackColor = SystemColors.ActiveCaption;
+            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
+            flowLayoutPanel1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            flowLayoutPanel1.Location = new Point(205, 153);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1474, 846);
+            flowLayoutPanel1.Size = new Size(1342, 732);
             flowLayoutPanel1.TabIndex = 5;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(205, 95);
+            label2.Name = "label2";
+            label2.Size = new Size(210, 28);
+            label2.TabIndex = 6;
+            label2.Text = "Scroll to see all Service";
             // 
             // UserHome
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1530, 928);
+            ClientSize = new Size(1749, 1055);
+            Controls.Add(label2);
             Controls.Add(lbNotification);
             Controls.Add(label1);
             Controls.Add(flowLayoutPanel1);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "UserHome";
             Text = "UserHome";
             Load += UserHome_Load;
@@ -83,5 +97,6 @@
         private Label label1;
         private Label lbNotification;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Label label2;
     }
 }

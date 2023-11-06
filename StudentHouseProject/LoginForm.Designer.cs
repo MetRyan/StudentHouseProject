@@ -124,7 +124,9 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1124, 583);
+            AutoScroll = true;
+            AutoSize = true;
+            ClientSize = new Size(800, 451);
             Controls.Add(label5);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
