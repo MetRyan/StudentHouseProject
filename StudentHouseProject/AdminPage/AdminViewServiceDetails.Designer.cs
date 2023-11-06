@@ -49,7 +49,7 @@
             // 
             // txtServicePrice
             // 
-            txtServicePrice.Location = new Point(864, 65);
+            txtServicePrice.Location = new Point(1055, 87);
             txtServicePrice.Margin = new Padding(3, 2, 3, 2);
             txtServicePrice.Name = "txtServicePrice";
             txtServicePrice.Size = new Size(198, 23);
@@ -59,7 +59,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(770, 68);
+            label5.Location = new Point(961, 90);
             label5.Name = "label5";
             label5.Size = new Size(70, 15);
             label5.TabIndex = 16;
@@ -67,7 +67,7 @@
             // 
             // txtAmountOfTime
             // 
-            txtAmountOfTime.Location = new Point(604, 146);
+            txtAmountOfTime.Location = new Point(684, 168);
             txtAmountOfTime.Margin = new Padding(3, 2, 3, 2);
             txtAmountOfTime.Name = "txtAmountOfTime";
             txtAmountOfTime.Size = new Size(85, 23);
@@ -77,7 +77,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(397, 148);
+            label3.Location = new Point(477, 170);
             label3.Name = "label3";
             label3.Size = new Size(181, 15);
             label3.TabIndex = 12;
@@ -85,7 +85,7 @@
             // 
             // txtServiceName
             // 
-            txtServiceName.Location = new Point(491, 107);
+            txtServiceName.Location = new Point(571, 129);
             txtServiceName.Margin = new Padding(3, 2, 3, 2);
             txtServiceName.Name = "txtServiceName";
             txtServiceName.Size = new Size(198, 23);
@@ -95,7 +95,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(397, 112);
+            label2.Location = new Point(477, 132);
             label2.Name = "label2";
             label2.Size = new Size(80, 15);
             label2.TabIndex = 10;
@@ -104,20 +104,20 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(647, 30);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(789, 33);
             label1.Name = "label1";
-            label1.Size = new Size(138, 25);
+            label1.Size = new Size(181, 32);
             label1.TabIndex = 9;
             label1.Text = "Service Details";
             // 
             // btnAdd
             // 
             btnAdd.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAdd.Location = new Point(932, 482);
+            btnAdd.Location = new Point(1138, 485);
             btnAdd.Margin = new Padding(3, 2, 3, 2);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(130, 32);
+            btnAdd.Size = new Size(150, 40);
             btnAdd.TabIndex = 18;
             btnAdd.Text = "Add Service";
             btnAdd.UseVisualStyleBackColor = true;
@@ -126,10 +126,10 @@
             // btnDeleteService
             // 
             btnDeleteService.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnDeleteService.Location = new Point(580, 482);
+            btnDeleteService.Location = new Point(694, 485);
             btnDeleteService.Margin = new Padding(3, 2, 3, 2);
             btnDeleteService.Name = "btnDeleteService";
-            btnDeleteService.Size = new Size(130, 32);
+            btnDeleteService.Size = new Size(150, 40);
             btnDeleteService.TabIndex = 19;
             btnDeleteService.Text = "Remove Service";
             btnDeleteService.UseVisualStyleBackColor = true;
@@ -138,10 +138,10 @@
             // btnUpdateService
             // 
             btnUpdateService.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnUpdateService.Location = new Point(760, 482);
+            btnUpdateService.Location = new Point(926, 485);
             btnUpdateService.Margin = new Padding(3, 2, 3, 2);
             btnUpdateService.Name = "btnUpdateService";
-            btnUpdateService.Size = new Size(130, 32);
+            btnUpdateService.Size = new Size(150, 40);
             btnUpdateService.TabIndex = 20;
             btnUpdateService.Text = "Update Service";
             btnUpdateService.UseVisualStyleBackColor = true;
@@ -149,7 +149,7 @@
             // 
             // txtServiceId
             // 
-            txtServiceId.Location = new Point(491, 65);
+            txtServiceId.Location = new Point(571, 87);
             txtServiceId.Margin = new Padding(3, 2, 3, 2);
             txtServiceId.Name = "txtServiceId";
             txtServiceId.Size = new Size(198, 23);
@@ -159,7 +159,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label8.Location = new Point(397, 68);
+            label8.Location = new Point(477, 90);
             label8.Name = "label8";
             label8.Size = new Size(59, 15);
             label8.TabIndex = 25;
@@ -169,7 +169,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(770, 112);
+            label4.Location = new Point(961, 134);
             label4.Name = "label4";
             label4.Size = new Size(40, 15);
             label4.TabIndex = 27;
@@ -178,17 +178,17 @@
             // dgv
             // 
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv.Location = new Point(412, 201);
+            dgv.Location = new Point(460, 276);
             dgv.Margin = new Padding(3, 2, 3, 2);
             dgv.Name = "dgv";
             dgv.RowHeadersWidth = 51;
             dgv.RowTemplate.Height = 29;
-            dgv.Size = new Size(650, 239);
+            dgv.Size = new Size(828, 189);
             dgv.TabIndex = 29;
             // 
             // txtStatus
             // 
-            txtStatus.Location = new Point(864, 107);
+            txtStatus.Location = new Point(1055, 129);
             txtStatus.Margin = new Padding(3, 2, 3, 2);
             txtStatus.Name = "txtStatus";
             txtStatus.Size = new Size(198, 23);
@@ -197,10 +197,10 @@
             // btnLoad
             // 
             btnLoad.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLoad.Location = new Point(412, 482);
+            btnLoad.Location = new Point(460, 485);
             btnLoad.Margin = new Padding(3, 2, 3, 2);
             btnLoad.Name = "btnLoad";
-            btnLoad.Size = new Size(130, 32);
+            btnLoad.Size = new Size(150, 40);
             btnLoad.TabIndex = 31;
             btnLoad.Text = "Load";
             btnLoad.UseVisualStyleBackColor = true;
@@ -210,7 +210,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1213, 616);
+            ClientSize = new Size(1478, 616);
             Controls.Add(btnLoad);
             Controls.Add(txtStatus);
             Controls.Add(dgv);

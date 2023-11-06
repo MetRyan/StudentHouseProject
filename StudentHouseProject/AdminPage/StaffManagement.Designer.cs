@@ -69,7 +69,7 @@
             // lbStaffId
             // 
             lbStaffId.AutoSize = true;
-            lbStaffId.Location = new Point(43, 73);
+            lbStaffId.Location = new Point(514, 87);
             lbStaffId.Name = "lbStaffId";
             lbStaffId.Size = new Size(44, 15);
             lbStaffId.TabIndex = 1;
@@ -78,7 +78,7 @@
             // lbStaffName
             // 
             lbStaffName.AutoSize = true;
-            lbStaffName.Location = new Point(40, 104);
+            lbStaffName.Location = new Point(514, 123);
             lbStaffName.Name = "lbStaffName";
             lbStaffName.Size = new Size(66, 15);
             lbStaffName.TabIndex = 2;
@@ -88,7 +88,7 @@
             // lbEmail
             // 
             lbEmail.AutoSize = true;
-            lbEmail.Location = new Point(40, 140);
+            lbEmail.Location = new Point(514, 155);
             lbEmail.Name = "lbEmail";
             lbEmail.Size = new Size(36, 15);
             lbEmail.TabIndex = 3;
@@ -97,7 +97,7 @@
             // lbPhone
             // 
             lbPhone.AutoSize = true;
-            lbPhone.Location = new Point(326, 70);
+            lbPhone.Location = new Point(951, 87);
             lbPhone.Name = "lbPhone";
             lbPhone.Size = new Size(41, 15);
             lbPhone.TabIndex = 4;
@@ -106,7 +106,7 @@
             // lbdob
             // 
             lbdob.AutoSize = true;
-            lbdob.Location = new Point(326, 104);
+            lbdob.Location = new Point(950, 123);
             lbdob.Name = "lbdob";
             lbdob.Size = new Size(75, 15);
             lbdob.TabIndex = 5;
@@ -115,7 +115,7 @@
             // lbSex
             // 
             lbSex.AutoSize = true;
-            lbSex.Location = new Point(41, 176);
+            lbSex.Location = new Point(514, 193);
             lbSex.Name = "lbSex";
             lbSex.Size = new Size(25, 15);
             lbSex.TabIndex = 6;
@@ -124,7 +124,7 @@
             // lbStatus
             // 
             lbStatus.AutoSize = true;
-            lbStatus.Location = new Point(327, 176);
+            lbStatus.Location = new Point(951, 193);
             lbStatus.Name = "lbStatus";
             lbStatus.Size = new Size(39, 15);
             lbStatus.TabIndex = 7;
@@ -132,31 +132,31 @@
             // 
             // txtStaffId
             // 
-            txtStaffId.Location = new Point(144, 68);
+            txtStaffId.Location = new Point(600, 78);
             txtStaffId.Margin = new Padding(3, 2, 3, 2);
             txtStaffId.Name = "txtStaffId";
-            txtStaffId.Size = new Size(149, 23);
+            txtStaffId.Size = new Size(227, 23);
             txtStaffId.TabIndex = 8;
             // 
             // txtStaffName
             // 
-            txtStaffName.Location = new Point(144, 101);
+            txtStaffName.Location = new Point(600, 117);
             txtStaffName.Margin = new Padding(3, 2, 3, 2);
             txtStaffName.Name = "txtStaffName";
-            txtStaffName.Size = new Size(149, 23);
+            txtStaffName.Size = new Size(227, 23);
             txtStaffName.TabIndex = 9;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(144, 136);
+            txtEmail.Location = new Point(600, 152);
             txtEmail.Margin = new Padding(3, 2, 3, 2);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(149, 23);
+            txtEmail.Size = new Size(227, 23);
             txtEmail.TabIndex = 10;
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(430, 68);
+            txtPhone.Location = new Point(1031, 84);
             txtPhone.Margin = new Padding(3, 2, 3, 2);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(227, 23);
@@ -164,7 +164,7 @@
             // 
             // txtStatus
             // 
-            txtStatus.Location = new Point(430, 174);
+            txtStatus.Location = new Point(1031, 190);
             txtStatus.Margin = new Padding(3, 2, 3, 2);
             txtStatus.Name = "txtStatus";
             txtStatus.Size = new Size(227, 23);
@@ -172,7 +172,7 @@
             // 
             // txtdob
             // 
-            txtdob.Location = new Point(430, 104);
+            txtdob.Location = new Point(1031, 120);
             txtdob.Margin = new Padding(3, 2, 3, 2);
             txtdob.Name = "txtdob";
             txtdob.Size = new Size(227, 23);
@@ -180,16 +180,16 @@
             // 
             // txtSex
             // 
-            txtSex.Location = new Point(144, 173);
+            txtSex.Location = new Point(600, 189);
             txtSex.Margin = new Padding(3, 2, 3, 2);
             txtSex.Name = "txtSex";
-            txtSex.Size = new Size(149, 23);
+            txtSex.Size = new Size(227, 23);
             txtSex.TabIndex = 14;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(43, 213);
+            label2.Location = new Point(514, 233);
             label2.Name = "label2";
             label2.Size = new Size(77, 15);
             label2.TabIndex = 16;
@@ -200,10 +200,10 @@
             cbSearch.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSearch.FormattingEnabled = true;
             cbSearch.Items.AddRange(new object[] { "true", "false" });
-            cbSearch.Location = new Point(144, 213);
+            cbSearch.Location = new Point(600, 229);
             cbSearch.Margin = new Padding(3, 2, 3, 2);
             cbSearch.Name = "cbSearch";
-            cbSearch.Size = new Size(149, 23);
+            cbSearch.Size = new Size(130, 23);
             cbSearch.TabIndex = 17;
             // 
             // dgv
@@ -211,20 +211,20 @@
             dgv.AllowUserToAddRows = false;
             dgv.AllowUserToDeleteRows = false;
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv.Location = new Point(51, 271);
+            dgv.Location = new Point(460, 276);
             dgv.Margin = new Padding(3, 2, 3, 2);
             dgv.Name = "dgv";
             dgv.RowHeadersWidth = 51;
             dgv.RowTemplate.Height = 29;
-            dgv.Size = new Size(613, 129);
+            dgv.Size = new Size(828, 189);
             dgv.TabIndex = 18;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(317, 213);
+            btnSearch.Location = new Point(752, 228);
             btnSearch.Margin = new Padding(3, 2, 3, 2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(82, 22);
+            btnSearch.Size = new Size(75, 24);
             btnSearch.TabIndex = 19;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
@@ -232,10 +232,10 @@
             // 
             // btnLoad
             // 
-            btnLoad.Location = new Point(113, 404);
+            btnLoad.Location = new Point(460, 485);
             btnLoad.Margin = new Padding(3, 2, 3, 2);
             btnLoad.Name = "btnLoad";
-            btnLoad.Size = new Size(82, 22);
+            btnLoad.Size = new Size(150, 40);
             btnLoad.TabIndex = 20;
             btnLoad.Text = "Load";
             btnLoad.UseVisualStyleBackColor = true;
@@ -243,10 +243,10 @@
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(249, 404);
+            btnCreate.Location = new Point(1138, 485);
             btnCreate.Margin = new Padding(3, 2, 3, 2);
             btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(82, 22);
+            btnCreate.Size = new Size(150, 40);
             btnCreate.TabIndex = 21;
             btnCreate.Text = "Create";
             btnCreate.UseVisualStyleBackColor = true;
@@ -254,10 +254,10 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(377, 404);
+            btnDelete.Location = new Point(694, 485);
             btnDelete.Margin = new Padding(3, 2, 3, 2);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(82, 22);
+            btnDelete.Size = new Size(150, 40);
             btnDelete.TabIndex = 22;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
@@ -265,10 +265,10 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(517, 404);
+            btnUpdate.Location = new Point(926, 485);
             btnUpdate.Margin = new Padding(3, 2, 3, 2);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(82, 22);
+            btnUpdate.Size = new Size(150, 40);
             btnUpdate.TabIndex = 23;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
@@ -276,7 +276,7 @@
             // 
             // txtServiceId
             // 
-            txtServiceId.Location = new Point(430, 136);
+            txtServiceId.Location = new Point(1031, 152);
             txtServiceId.Margin = new Padding(3, 2, 3, 2);
             txtServiceId.Name = "txtServiceId";
             txtServiceId.Size = new Size(227, 23);
@@ -285,7 +285,7 @@
             // lbServiceId
             // 
             lbServiceId.AutoSize = true;
-            lbServiceId.Location = new Point(326, 141);
+            lbServiceId.Location = new Point(950, 155);
             lbServiceId.Name = "lbServiceId";
             lbServiceId.Size = new Size(54, 15);
             lbServiceId.TabIndex = 25;
@@ -295,7 +295,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(249, 20);
+            label3.Location = new Point(789, 33);
             label3.Name = "label3";
             label3.Size = new Size(224, 32);
             label3.TabIndex = 26;
@@ -305,7 +305,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(729, 455);
+            ClientSize = new Size(1472, 581);
             Controls.Add(label3);
             Controls.Add(lbServiceId);
             Controls.Add(txtServiceId);

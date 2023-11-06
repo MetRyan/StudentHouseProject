@@ -48,10 +48,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(724, 18);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(789, 33);
             label1.Name = "label1";
-            label1.Size = new Size(221, 30);
+            label1.Size = new Size(253, 32);
             label1.TabIndex = 1;
             label1.Text = "Assign Staff to Order";
             // 
@@ -59,7 +59,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(591, 79);
+            label2.Location = new Point(662, 87);
             label2.Name = "label2";
             label2.Size = new Size(10, 15);
             label2.TabIndex = 2;
@@ -69,7 +69,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(591, 130);
+            label3.Location = new Point(662, 138);
             label3.Name = "label3";
             label3.Size = new Size(48, 15);
             label3.TabIndex = 4;
@@ -80,7 +80,7 @@
             // 
             cbStaff.DropDownStyle = ComboBoxStyle.DropDownList;
             cbStaff.FormattingEnabled = true;
-            cbStaff.Location = new Point(709, 124);
+            cbStaff.Location = new Point(780, 132);
             cbStaff.Margin = new Padding(3, 2, 3, 2);
             cbStaff.Name = "cbStaff";
             cbStaff.Size = new Size(262, 23);
@@ -90,10 +90,10 @@
             // btnAssign
             // 
             btnAssign.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnAssign.Location = new Point(1015, 130);
+            btnAssign.Location = new Point(1066, 182);
             btnAssign.Margin = new Padding(3, 2, 3, 2);
             btnAssign.Name = "btnAssign";
-            btnAssign.Size = new Size(69, 69);
+            btnAssign.Size = new Size(96, 23);
             btnAssign.TabIndex = 6;
             btnAssign.Text = "Assign";
             btnAssign.UseVisualStyleBackColor = true;
@@ -103,7 +103,7 @@
             // 
             lbWorkDate.AutoSize = true;
             lbWorkDate.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lbWorkDate.Location = new Point(591, 177);
+            lbWorkDate.Location = new Point(662, 185);
             lbWorkDate.Name = "lbWorkDate";
             lbWorkDate.Size = new Size(64, 15);
             lbWorkDate.TabIndex = 9;
@@ -111,7 +111,7 @@
             // 
             // txtWorkDate
             // 
-            txtWorkDate.Location = new Point(709, 174);
+            txtWorkDate.Location = new Point(780, 182);
             txtWorkDate.Mask = "00/00/0000";
             txtWorkDate.Name = "txtWorkDate";
             txtWorkDate.Size = new Size(262, 23);
@@ -122,7 +122,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(591, 79);
+            label4.Location = new Point(662, 87);
             label4.Name = "label4";
             label4.Size = new Size(53, 15);
             label4.TabIndex = 11;
@@ -132,7 +132,7 @@
             // 
             cbOrderId.DropDownStyle = ComboBoxStyle.DropDownList;
             cbOrderId.FormattingEnabled = true;
-            cbOrderId.Location = new Point(709, 76);
+            cbOrderId.Location = new Point(780, 84);
             cbOrderId.Margin = new Padding(3, 2, 3, 2);
             cbOrderId.Name = "cbOrderId";
             cbOrderId.Size = new Size(262, 23);
@@ -142,7 +142,7 @@
             // dgvStaff
             // 
             dgvStaff.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvStaff.Location = new Point(483, 248);
+            dgvStaff.Location = new Point(554, 256);
             dgvStaff.Margin = new Padding(3, 2, 3, 2);
             dgvStaff.Name = "dgvStaff";
             dgvStaff.RowHeadersWidth = 51;
@@ -154,7 +154,7 @@
             // dgvOrder
             // 
             dgvOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrder.Location = new Point(483, 379);
+            dgvOrder.Location = new Point(554, 387);
             dgvOrder.Margin = new Padding(3, 2, 3, 2);
             dgvOrder.Name = "dgvOrder";
             dgvOrder.RowHeadersWidth = 51;
@@ -166,7 +166,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(483, 216);
+            label5.Location = new Point(554, 224);
             label5.Name = "label5";
             label5.Size = new Size(59, 30);
             label5.TabIndex = 15;
@@ -176,7 +176,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.Location = new Point(483, 347);
+            label6.Location = new Point(554, 355);
             label6.Name = "label6";
             label6.Size = new Size(71, 30);
             label6.TabIndex = 16;
@@ -186,7 +186,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1305, 634);
+            ClientSize = new Size(1456, 634);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(dgvOrder);
