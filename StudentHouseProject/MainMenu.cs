@@ -183,6 +183,8 @@ namespace UI
                 btnOrderHis.Visible = false;
                 btnLogOut.Visible = false;
                 btnLogOut.Enabled = false;
+                btnCart.Visible = false;
+                btnCart.Enabled = false;
             }
         }
 
