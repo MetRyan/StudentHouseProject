@@ -1,7 +1,5 @@
 ﻿using BusinessObjects;
-using Microsoft.EntityFrameworkCore;
 using Repositories;
-using System.Globalization;
 
 namespace StudentHouseProject.User
 {

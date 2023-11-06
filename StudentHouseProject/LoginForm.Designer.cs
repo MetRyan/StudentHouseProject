@@ -42,9 +42,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(352, 94);
+            label1.Location = new Point(401, 77);
             label1.Name = "label1";
-            label1.Size = new Size(106, 28);
+            label1.Size = new Size(87, 21);
             label1.TabIndex = 0;
             label1.Text = "Welcome!";
             // 
@@ -52,9 +52,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(311, 122);
+            label2.Location = new Point(374, 98);
             label2.Name = "label2";
-            label2.Size = new Size(180, 20);
+            label2.Size = new Size(143, 15);
             label2.TabIndex = 1;
             label2.Text = "Please Login To Continue";
             // 
@@ -62,48 +62,49 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(244, 173);
+            label3.Location = new Point(316, 136);
             label3.Name = "label3";
-            label3.Size = new Size(46, 20);
+            label3.Size = new Size(36, 15);
             label3.TabIndex = 2;
             label3.Text = "Email";
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(244, 196);
+            txtEmail.Location = new Point(316, 153);
+            txtEmail.Margin = new Padding(3, 2, 3, 2);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Enter Your Email";
-            txtEmail.Size = new Size(300, 27);
+            txtEmail.Size = new Size(263, 23);
             txtEmail.TabIndex = 3;
-            txtEmail.Text = "wew9141@gmail.com";
             txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(244, 239);
+            label4.Location = new Point(316, 185);
             label4.Name = "label4";
-            label4.Size = new Size(73, 20);
+            label4.Size = new Size(57, 15);
             label4.TabIndex = 4;
             label4.Text = "Password";
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(244, 262);
+            txtPassword.Location = new Point(316, 202);
+            txtPassword.Margin = new Padding(3, 2, 3, 2);
             txtPassword.Name = "txtPassword";
             txtPassword.PasswordChar = '*';
             txtPassword.PlaceholderText = "Enter Your Password";
-            txtPassword.Size = new Size(300, 27);
+            txtPassword.Size = new Size(263, 23);
             txtPassword.TabIndex = 5;
-            txtPassword.Text = "1";
             // 
             // btnLogin
             // 
             btnLogin.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            btnLogin.Location = new Point(325, 323);
+            btnLogin.Location = new Point(386, 248);
+            btnLogin.Margin = new Padding(3, 2, 3, 2);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(133, 43);
+            btnLogin.Size = new Size(116, 32);
             btnLogin.TabIndex = 6;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = true;
@@ -113,17 +114,17 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(244, 38);
+            label5.Location = new Point(316, 34);
             label5.Name = "label5";
-            label5.Size = new Size(312, 38);
+            label5.Size = new Size(246, 30);
             label5.TabIndex = 7;
             label5.Text = "Student House Service";
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 451);
+            ClientSize = new Size(1124, 583);
             Controls.Add(label5);
             Controls.Add(btnLogin);
             Controls.Add(txtPassword);
@@ -132,6 +133,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "LoginForm";
             Text = "Login";
             FormClosed += LoginForm_FormClosed;
