@@ -9,6 +9,7 @@ namespace BusinessObjects
         {
             OrderDetails = new HashSet<OrderDetail>();
             Payments = new HashSet<Payment>();
+            StaffOrders = new HashSet<StaffOrder>();
         }
 
         public int OrderId { get; set; }
@@ -17,10 +18,11 @@ namespace BusinessObjects
         public string? Description { get; set; }
         public string? Status { get; set; }
         public DateTime? CreateDate { get; set; }
-
+        public string? Inprocess { get; set; }
 
         public virtual Customer Customer { get; set; } = null!;
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }
         public virtual ICollection<Payment> Payments { get; set; }
+        public virtual ICollection<StaffOrder> StaffOrders { get; set; }
     }
 }

@@ -193,7 +193,7 @@
             dgvlistview.Name = "dgvlistview";
             dgvlistview.RowHeadersWidth = 51;
             dgvlistview.RowTemplate.Height = 29;
-            dgvlistview.Size = new Size(1014, 219);
+            dgvlistview.Size = new Size(1060, 218);
             dgvlistview.TabIndex = 16;
             // 
             // lbSearch

@@ -58,13 +58,18 @@ namespace UI.AdminPage
 
                 //dgv.DataSource = null;
                 dgv.DataSource = source;
+                dgv.Columns.Remove("ServiceId");
+                dgv.Columns.Remove("Password");
+                dgv.Columns.Remove("Service");
+                dgv.DataSource = source;
+
                 /*if (StaffList.Count < 0) { 
-                btnDelete.Enabled = false;
-                    btnUpdate.Enabled = false;
-                    btnSearch  .Enabled = false;
-                    cbSearch.Enabled = false;
-                
-                }
+            btnDelete.Enabled = false;
+                btnUpdate.Enabled = false;
+                btnSearch  .Enabled = false;
+                cbSearch.Enabled = false;
+
+            }
 */
 
             }
@@ -94,6 +99,7 @@ namespace UI.AdminPage
             cbSearch.Enabled = false;
             btnDelete.Enabled = false;
             btnUpdate.Enabled = false;
+            btnLoad.PerformClick();
         }
         private void reset()
         {
@@ -193,6 +199,7 @@ namespace UI.AdminPage
                 dgv.DataSource = repository.GetStaffbyStatus(searchBy);
                 var result = repository.GetStaffbyStatus(searchBy);
                 MessageBox.Show("Tìm thấy " + result.Count + " kết quả!");
+                cbSearch.SelectedIndex = -1;
             }
         }
     }

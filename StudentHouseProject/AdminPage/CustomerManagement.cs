@@ -40,9 +40,10 @@ namespace UI.AdminPage
                  source.DataSource = CustomerList;*/
                 BindingSource source = new BindingSource();
                 source.DataSource = CustomerList;
+                dgvlistview.DataSource = source;
 
                 txtCustomerID.DataBindings.Clear();
-                /* txtDateCreated.DataBindings.Clear();*/
+                txtDateCreated.DataBindings.Clear();
                 txtDateOfBirth.DataBindings.Clear();
                 txtEmail.DataBindings.Clear();
                 txtFirstName.DataBindings.Clear();
@@ -50,6 +51,7 @@ namespace UI.AdminPage
                 txtPhone.DataBindings.Clear();
                 txtSex.DataBindings.Clear();
                 txtAdress.DataBindings.Clear();
+
 
 
 
@@ -62,7 +64,6 @@ namespace UI.AdminPage
                 txtPhone.DataBindings.Add("Text", source, "Phone");
                 txtSex.DataBindings.Add("Text", source, "Sex");
                 txtAdress.DataBindings.Add("Text", source, "Adress");
-
 
                 dgvlistview.DataSource = null;
                 dgvlistview.DataSource = source;
@@ -128,7 +129,7 @@ namespace UI.AdminPage
                 btnDelete.Enabled = false;
                 return;
             }
-            d = MessageBox.Show("Are you sure delete it", "Delete ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            d = MessageBox.Show("Are you sure you want to inactivate this customer?", "Delete ", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
 
             if (d == DialogResult.OK)
@@ -136,10 +137,11 @@ namespace UI.AdminPage
 
                 var CustomerId = GetSelectedCUstomerID();
                 Customer CustomerObject = repository.GetCustomerById(CustomerId);
-                repository.DeleteCustomer(CustomerObject);
+                repository.inActiveCustomer(CustomerObject);
                 LoadCustomerList();
+                MessageBox.Show("This Account have been inActive ");
             }
-         }
+        }
         private int GetSelectedCUstomerID()
         {
 
@@ -221,6 +223,9 @@ namespace UI.AdminPage
                 dgvlistview.DataSource = repository.SearchCustomerbyType(keyword, searchBy);
                 var result = repository.SearchCustomerbyType(keyword, searchBy);
                 MessageBox.Show("Tìm thấy " + result.Count + " kết quả!");
+                cbSearch.SelectedIndex = -1;
+                txtSearch.Text = "";
+            
             }
 
 
@@ -247,7 +252,7 @@ namespace UI.AdminPage
 
                 var customerId = GetSelectedCUstomerID();
                 Customer CustomerObject = repository.GetCustomerById(customerId);
-                repository.DeleteCustomer(CustomerObject);
+                repository.inActiveCustomer(CustomerObject);
                 LoadCustomerList();
             }
 
@@ -257,6 +262,7 @@ namespace UI.AdminPage
 
         private void frmCustomerManagement_Load(object sender, EventArgs e)
         {
+            LoadCustomerList();
             txtSearch.Enabled = false;
             btnSearch.Enabled = false;
             btnDelete.Enabled = false;
@@ -270,6 +276,8 @@ namespace UI.AdminPage
             txtLastname.Enabled = false;
             txtPhone.Enabled = false;
             txtSex.Enabled = false;
+            LoadCustomerList();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using DataAccessObjects.ResponseModel;
 using BusinessObjects;
 using Microsoft.EntityFrameworkCore;
+using DataAccessObjects;
 
 namespace StudentHouseProject.StaffPage
 {
@@ -20,6 +21,7 @@ namespace StudentHouseProject.StaffPage
         private List<StaffOrderModel> ordersOfStaff;
         IStaffRepository repository_Staff = new StaffRepository();
         IOrderDetailsRepository orderDetailsRepository = new OrderDetailsRepository();
+        IOrderRepository orderRepository = new OrderRepository();
 
         public StaffHome(staff staff)
         {
@@ -34,9 +36,12 @@ namespace StudentHouseProject.StaffPage
 
         private void LoadData(staff staff)
         {
+
+
             //Take Orders Of Staff
             List<StaffOrderModel> order = repository_Staff.GetStaffOrder(staff.StaffId);
-            
+            order = order.OrderByDescending(o => o.OrderId).ToList();
+
             ordersOfStaff = order;
 
             //Show data in dataGridView
@@ -47,13 +52,25 @@ namespace StudentHouseProject.StaffPage
             {
                 foreach (var staffOrder in order)
                 {
+
+
                     // Check if all OrderDetails have Pending set to True
-                    bool allPendingTrue = staffOrder.OrderDetails.All(detail => detail.Pending == true);
+                    bool allPendingTrue = staffOrder.OrderDetails.All(detail => detail.Pending == "true");
+                    Order getOrder = orderRepository.getOrerById(staffOrder.OrderId);
 
                     if (allPendingTrue)
                     {
+                        context.Entry(getOrder).State = EntityState.Detached;
+
+                        getOrder.Inprocess = "true";
                         // Set the Status based on the condition
                         staffOrder.Status = "Done";
+                        staff.Status = "false";
+
+                        context.Entry(getOrder).State = EntityState.Modified;
+                        context.SaveChanges();
+
+                        context.Entry(staff).State = EntityState.Modified;
 
                         // Update the staffOrder in the database
                         context.SaveChanges();
@@ -63,6 +80,8 @@ namespace StudentHouseProject.StaffPage
                     {
                         // Set the Status based on the condition
                         staffOrder.Status = "Pending";
+                        getOrder.Inprocess = "false";
+                        context.Entry(getOrder).State = EntityState.Modified;
 
                         // Update the staffOrder in the database
                         context.SaveChanges();
@@ -89,8 +108,8 @@ namespace StudentHouseProject.StaffPage
 
         private void StaffHome_FormClosed(object sender, FormClosedEventArgs e)
         {
-         /*   LoginForm login = new LoginForm();
-            login.Show();*/
+            /*   LoginForm login = new LoginForm();
+               login.Show();*/
             this.Hide();
         }
     }

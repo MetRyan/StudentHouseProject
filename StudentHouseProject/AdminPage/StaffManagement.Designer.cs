@@ -198,6 +198,8 @@
             // 
             // dgv
             // 
+            dgv.AllowUserToAddRows = false;
+            dgv.AllowUserToDeleteRows = false;
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv.Location = new Point(49, 328);
             dgv.Name = "dgv";

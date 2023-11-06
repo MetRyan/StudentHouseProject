@@ -18,6 +18,7 @@ namespace BusinessObjects
         public double? Price { get; set; }
         public string? Status { get; set; }
         public int? AdminId { get; set; }
+        public bool? Active { get; set; }
 
         public virtual Admin? Admin { get; set; }
         public virtual ICollection<OrderDetail> OrderDetails { get; set; }

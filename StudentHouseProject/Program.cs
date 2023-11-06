@@ -18,7 +18,12 @@ namespace StudentHouseProject
             ApplicationConfiguration.Initialize();
             //Application.Run(new MainMenu());
             //Application.Run(new AdminAssignServiceToStaffs());
-            Application.Run(new MainMenu());
+
+            //Application.Run(new MainMenu());
+
+            MainMenu mainMenu = new MainMenu();
+            mainMenu.WindowState = FormWindowState.Maximized; // ??t tr?ng thái c?a s? thành Maximized
+            Application.Run(mainMenu);
         }
     }
 }

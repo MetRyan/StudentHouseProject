@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace BusinessObjects
 {
@@ -27,12 +30,7 @@ namespace BusinessObjects
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                // optionsBuilder.UseSqlServer("Server=MSI\\SERVER1;Database=StudentHouseMembership; Uid=sa; Pwd=12345");
-                //"Server=LAPTOP-RFJCRS8T;Database=StudentHouseMembership; Uid=sa; Pwd=sa"
-                //optionsBuilder.UseSqlServer("Server=LAPTOP-RFJCRS8T;Database=StudentHouseMembership; Uid=sa; Pwd=sa");
-                optionsBuilder.UseSqlServer("Server=DESKTOP-IDK73G0\\SQLEXPRESS;Database=StudentHouseMembership; Uid=sa; Pwd=1234567890");
-
-
+                optionsBuilder.UseSqlServer("Server=LAPTOP-RFJCRS8T;Database=StudentHouseMembership; Uid=sa; Pwd=sa");
             }
         }
 
@@ -122,13 +120,18 @@ namespace BusinessObjects
             modelBuilder.Entity<Order>(entity =>
             {
                 entity.ToTable("Order");
-                entity.Property(e => e.CreateDate).HasColumnType("date");
 
                 entity.Property(e => e.OrderId).HasColumnName("OrderID");
+
+                entity.Property(e => e.CreateDate).HasColumnType("date");
 
                 entity.Property(e => e.CustomerId).HasColumnName("CustomerID");
 
                 entity.Property(e => e.Description).HasMaxLength(50);
+
+                entity.Property(e => e.Inprocess)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
 
                 entity.Property(e => e.Status)
                     .HasMaxLength(10)
@@ -155,6 +158,10 @@ namespace BusinessObjects
                     .HasMaxLength(20)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Pending)
+                    .HasMaxLength(10)
+                    .IsUnicode(false);
+
                 entity.Property(e => e.Phone)
                     .HasMaxLength(20)
                     .HasColumnName("phone");
@@ -166,6 +173,7 @@ namespace BusinessObjects
                 entity.HasOne(d => d.Order)
                     .WithMany(p => p.OrderDetails)
                     .HasForeignKey(d => d.OrderId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__OrderDeta__Order__2D27B809");
 
                 entity.HasOne(d => d.Service)
@@ -220,13 +228,7 @@ namespace BusinessObjects
 
             modelBuilder.Entity<StaffOrder>(entity =>
             {
-
                 entity.ToTable("StaffOrder");
-                entity.Property(e => e.StaffId)
-                    .ValueGeneratedNever()
-                    .HasColumnName("StaffID");
-
-                entity.Property(e => e.Id).ValueGeneratedOnAdd();
 
                 entity.Property(e => e.OrderId).HasColumnName("OrderID");
 
@@ -239,12 +241,13 @@ namespace BusinessObjects
                 entity.Property(e => e.WorkDate).HasColumnType("date");
 
                 entity.HasOne(d => d.Order)
-                    .WithMany()
+                    .WithMany(p => p.StaffOrders)
                     .HasForeignKey(d => d.OrderId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__StaffOrde__Order__33D4B598");
 
                 entity.HasOne(d => d.Staff)
-                    .WithMany()
+                    .WithMany(p => p.StaffOrders)
                     .HasForeignKey(d => d.StaffId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK__StaffOrde__Staff__32E0915F");

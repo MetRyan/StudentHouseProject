@@ -126,6 +126,7 @@
             Controls.Add(lbCheckOrder);
             Name = "CheckTransactions";
             Text = "Check Order";
+            Load += CheckTransactions_Load;
             ((System.ComponentModel.ISupportInitialize)dgvOrderDetails).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCustomer).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvOrder).EndInit();

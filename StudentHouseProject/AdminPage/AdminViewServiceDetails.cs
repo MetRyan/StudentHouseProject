@@ -47,10 +47,17 @@ namespace StudentHouseProject.AdminAPage
                 txtStatus.DataBindings.Add("Text", source, "Status");
 
                 // txtAdress.DataBindings.Add("Text", source, "Telephone");
+             
+
+
+
+
 
                 dgv.DataSource = null;
                 dgv.DataSource = source;
-
+                dgv.Columns.Remove("Admin");
+                dgv.Columns.Remove("OrderDetails");
+                dgv.Columns.Remove("staff");
 
             }
             catch (Exception ex)
@@ -132,6 +139,7 @@ namespace StudentHouseProject.AdminAPage
                 LoadServiceList();
 
             }
+            LoadServiceList();
 
         }
 
@@ -154,6 +162,10 @@ namespace StudentHouseProject.AdminAPage
             btnDeleteService.Enabled = false;
             btnAdd.Enabled = false;
             btnUpdateService.Enabled = false;
+            LoadServiceList();
+       /*     dgv.Columns.Remove("Admin");
+            dgv.Columns.Remove("OrderDetails");
+            dgv.Columns.Remove("staff");*/
         }
     }
 }

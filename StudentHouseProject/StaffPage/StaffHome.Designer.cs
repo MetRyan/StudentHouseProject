@@ -38,7 +38,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(474, 60);
+            label1.Location = new Point(541, 43);
             label1.Name = "label1";
             label1.Size = new Size(287, 38);
             label1.TabIndex = 1;
@@ -47,7 +47,7 @@
             // dgvStaff
             // 
             dgvStaff.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvStaff.Location = new Point(42, 231);
+            dgvStaff.Location = new Point(109, 214);
             dgvStaff.Margin = new Padding(3, 4, 3, 4);
             dgvStaff.Name = "dgvStaff";
             dgvStaff.RowHeadersWidth = 51;
@@ -58,7 +58,7 @@
             // btnViewDetails
             // 
             btnViewDetails.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnViewDetails.Location = new Point(1072, 165);
+            btnViewDetails.Location = new Point(1139, 148);
             btnViewDetails.Name = "btnViewDetails";
             btnViewDetails.Size = new Size(123, 36);
             btnViewDetails.TabIndex = 3;
@@ -70,7 +70,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1230, 808);
+            ClientSize = new Size(1374, 819);
             Controls.Add(btnViewDetails);
             Controls.Add(dgvStaff);
             Controls.Add(label1);

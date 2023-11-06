@@ -43,7 +43,33 @@ namespace StudentHouseProject.User
             dgvOrderDetails.Columns.Remove("OrderDetails");
             dgvOrderDetails.Columns.Remove("Customer");
             // dgvOrderDetails.Columns.Remove("Payments");
+            foreach(var order in OrderList)
+            {
+                if (order.Status == "true")
+                {
+                    order.Status = "đã giao việc ";
 
+
+                }
+                else { 
+                    order.Status = "chưa giao việc ";
+
+                }
+                if(order.Inprocess== "true") {
+                    order.Inprocess = " Đã hoàn thành";
+
+
+                }
+                else
+                {
+                    order.Inprocess = " Chưa hoàn thành";
+
+
+                }
+          
+
+
+            }
 
 
         }
@@ -92,7 +118,20 @@ namespace StudentHouseProject.User
             dgvViewDetails.Columns.Remove("Service");
             dgvViewDetails.Columns.Remove("ServiceId");
             dgvViewDetails.Columns.Remove("Address");
+            // foreach( var )
+            foreach (var items in getOrderDetails) {
 
+                if (items.Pending == "true")
+                {
+                    items.Pending = " đã hoàn thành";
+
+                }
+                else { 
+                
+                items.Pending =" chưa hoàn thành ";
+                }
+            
+            }
 
 
         }
