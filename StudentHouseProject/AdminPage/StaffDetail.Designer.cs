@@ -55,9 +55,9 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(59, 98);
+            label1.Location = new Point(52, 74);
             label1.Name = "label1";
-            label1.Size = new Size(100, 25);
+            label1.Size = new Size(84, 20);
             label1.TabIndex = 0;
             label1.Text = "Staff Name";
             // 
@@ -65,9 +65,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(59, 149);
+            label2.Location = new Point(52, 112);
             label2.Name = "label2";
-            label2.Size = new Size(54, 25);
+            label2.Size = new Size(46, 20);
             label2.TabIndex = 1;
             label2.Text = "Email";
             // 
@@ -75,9 +75,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(59, 49);
+            label3.Location = new Point(52, 37);
             label3.Name = "label3";
-            label3.Size = new Size(69, 25);
+            label3.Size = new Size(57, 20);
             label3.TabIndex = 2;
             label3.Text = "Staff Id";
             // 
@@ -85,9 +85,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(59, 197);
+            label4.Location = new Point(52, 148);
             label4.Name = "label4";
-            label4.Size = new Size(62, 25);
+            label4.Size = new Size(50, 20);
             label4.TabIndex = 3;
             label4.Text = "Phone";
             // 
@@ -95,9 +95,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(363, 365);
+            label5.Location = new Point(318, 274);
             label5.Name = "label5";
-            label5.Size = new Size(115, 25);
+            label5.Size = new Size(96, 20);
             label5.TabIndex = 4;
             label5.Text = "Date Of Birth";
             // 
@@ -105,9 +105,9 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.Location = new Point(363, 411);
+            label6.Location = new Point(318, 308);
             label6.Name = "label6";
-            label6.Size = new Size(39, 25);
+            label6.Size = new Size(32, 20);
             label6.TabIndex = 5;
             label6.Text = "Sex";
             // 
@@ -115,9 +115,9 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.Location = new Point(363, 267);
+            label7.Location = new Point(318, 200);
             label7.Name = "label7";
-            label7.Size = new Size(60, 25);
+            label7.Size = new Size(49, 20);
             label7.TabIndex = 6;
             label7.Text = "Status";
             // 
@@ -125,72 +125,83 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.Location = new Point(363, 315);
+            label8.Location = new Point(318, 236);
             label8.Name = "label8";
-            label8.Size = new Size(87, 25);
+            label8.Size = new Size(70, 20);
             label8.TabIndex = 7;
             label8.Text = "Password";
             // 
             // txtStaffId
             // 
-            txtStaffId.Location = new Point(203, 47);
+            txtStaffId.Location = new Point(178, 35);
+            txtStaffId.Margin = new Padding(3, 2, 3, 2);
             txtStaffId.Name = "txtStaffId";
-            txtStaffId.Size = new Size(313, 27);
+            txtStaffId.Size = new Size(274, 23);
             txtStaffId.TabIndex = 8;
             // 
             // txtStaffName
             // 
-            txtStaffName.Location = new Point(203, 96);
+            txtStaffName.Location = new Point(178, 72);
+            txtStaffName.Margin = new Padding(3, 2, 3, 2);
             txtStaffName.Name = "txtStaffName";
-            txtStaffName.Size = new Size(313, 27);
+            txtStaffName.Size = new Size(274, 23);
             txtStaffName.TabIndex = 9;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(203, 149);
+            txtEmail.Location = new Point(178, 112);
+            txtEmail.Margin = new Padding(3, 2, 3, 2);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(313, 27);
+            txtEmail.Size = new Size(274, 23);
             txtEmail.TabIndex = 10;
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(203, 197);
+            txtPhone.Location = new Point(178, 148);
+            txtPhone.Margin = new Padding(3, 2, 3, 2);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(313, 27);
+            txtPhone.Size = new Size(274, 23);
             txtPhone.TabIndex = 11;
             txtPhone.TextChanged += txtPhone_TextChanged;
             // 
             // cbStatus
             // 
+            cbStatus.DropDownStyle = ComboBoxStyle.DropDownList;
             cbStatus.FormattingEnabled = true;
             cbStatus.Items.AddRange(new object[] { "true", "false" });
-            cbStatus.Location = new Point(507, 267);
+            cbStatus.Location = new Point(444, 200);
+            cbStatus.Margin = new Padding(3, 2, 3, 2);
             cbStatus.Name = "cbStatus";
-            cbStatus.Size = new Size(251, 28);
+            cbStatus.Size = new Size(220, 23);
             cbStatus.TabIndex = 12;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(508, 316);
+            txtPassword.Location = new Point(444, 237);
+            txtPassword.Margin = new Padding(3, 2, 3, 2);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(250, 27);
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(219, 23);
             txtPassword.TabIndex = 13;
             txtPassword.Text = "1";
             // 
             // dtpdob
             // 
-            dtpdob.Location = new Point(507, 363);
+            dtpdob.Location = new Point(444, 272);
+            dtpdob.Margin = new Padding(3, 2, 3, 2);
             dtpdob.Name = "dtpdob";
-            dtpdob.Size = new Size(250, 27);
+            dtpdob.Size = new Size(219, 23);
             dtpdob.TabIndex = 14;
             // 
             // cbSex
             // 
+            cbSex.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSex.FormattingEnabled = true;
             cbSex.Items.AddRange(new object[] { "male", "female" });
-            cbSex.Location = new Point(508, 411);
+            cbSex.Location = new Point(444, 308);
+            cbSex.Margin = new Padding(3, 2, 3, 2);
             cbSex.Name = "cbSex";
-            cbSex.Size = new Size(249, 28);
+            cbSex.Size = new Size(218, 23);
             cbSex.TabIndex = 15;
             // 
             // label9
@@ -199,10 +210,10 @@
             label9.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
             label9.ForeColor = SystemColors.ControlText;
             label9.ImageAlign = ContentAlignment.TopLeft;
-            label9.Location = new Point(542, 116);
+            label9.Location = new Point(474, 87);
             label9.Name = "label9";
             label9.RightToLeft = RightToLeft.No;
-            label9.Size = new Size(263, 38);
+            label9.Size = new Size(205, 30);
             label9.TabIndex = 18;
             label9.Text = "Staff Management";
             label9.TextAlign = ContentAlignment.MiddleLeft;
@@ -211,17 +222,19 @@
             // pictureBox1
             // 
             pictureBox1.Image = StudentHouseProject.Properties.Resources.download;
-            pictureBox1.Location = new Point(59, 286);
+            pictureBox1.Location = new Point(52, 214);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(227, 234);
+            pictureBox1.Size = new Size(199, 176);
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(417, 476);
+            btnSave.Location = new Point(365, 357);
+            btnSave.Margin = new Padding(3, 2, 3, 2);
             btnSave.Name = "btnSave";
-            btnSave.Size = new Size(119, 44);
+            btnSave.Size = new Size(104, 33);
             btnSave.TabIndex = 20;
             btnSave.Text = "Save";
             btnSave.UseVisualStyleBackColor = true;
@@ -229,18 +242,19 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(572, 476);
+            btnCancel.Location = new Point(500, 357);
+            btnCancel.Margin = new Padding(3, 2, 3, 2);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(119, 44);
+            btnCancel.Size = new Size(104, 33);
             btnCancel.TabIndex = 21;
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             // 
             // StaffDetail
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(832, 565);
+            ClientSize = new Size(728, 424);
             Controls.Add(btnCancel);
             Controls.Add(btnSave);
             Controls.Add(pictureBox1);
@@ -261,6 +275,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "StaffDetail";
             Text = "Staff Details";
             Load += StaffDetail_Load;

@@ -60,27 +60,27 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(89, 4);
+            label1.Location = new Point(78, 3);
             label1.Name = "label1";
-            label1.Size = new Size(13, 20);
+            label1.Size = new Size(10, 15);
             label1.TabIndex = 0;
             label1.Text = " ";
             // 
             // lbStaffId
             // 
             lbStaffId.AutoSize = true;
-            lbStaffId.Location = new Point(49, 97);
+            lbStaffId.Location = new Point(43, 73);
             lbStaffId.Name = "lbStaffId";
-            lbStaffId.Size = new Size(57, 20);
+            lbStaffId.Size = new Size(44, 15);
             lbStaffId.TabIndex = 1;
             lbStaffId.Text = "Staff Id";
             // 
             // lbStaffName
             // 
             lbStaffName.AutoSize = true;
-            lbStaffName.Location = new Point(46, 139);
+            lbStaffName.Location = new Point(40, 104);
             lbStaffName.Name = "lbStaffName";
-            lbStaffName.Size = new Size(84, 20);
+            lbStaffName.Size = new Size(66, 15);
             lbStaffName.TabIndex = 2;
             lbStaffName.Text = "Staff Name";
             lbStaffName.Click += label3_Click;
@@ -88,130 +88,141 @@
             // lbEmail
             // 
             lbEmail.AutoSize = true;
-            lbEmail.Location = new Point(46, 187);
+            lbEmail.Location = new Point(40, 140);
             lbEmail.Name = "lbEmail";
-            lbEmail.Size = new Size(46, 20);
+            lbEmail.Size = new Size(36, 15);
             lbEmail.TabIndex = 3;
             lbEmail.Text = "Email";
             // 
             // lbPhone
             // 
             lbPhone.AutoSize = true;
-            lbPhone.Location = new Point(373, 93);
+            lbPhone.Location = new Point(326, 70);
             lbPhone.Name = "lbPhone";
-            lbPhone.Size = new Size(50, 20);
+            lbPhone.Size = new Size(41, 15);
             lbPhone.TabIndex = 4;
             lbPhone.Text = "Phone";
             // 
             // lbdob
             // 
             lbdob.AutoSize = true;
-            lbdob.Location = new Point(373, 139);
+            lbdob.Location = new Point(326, 104);
             lbdob.Name = "lbdob";
-            lbdob.Size = new Size(96, 20);
+            lbdob.Size = new Size(75, 15);
             lbdob.TabIndex = 5;
             lbdob.Text = "Date Of Birth";
             // 
             // lbSex
             // 
             lbSex.AutoSize = true;
-            lbSex.Location = new Point(47, 235);
+            lbSex.Location = new Point(41, 176);
             lbSex.Name = "lbSex";
-            lbSex.Size = new Size(32, 20);
+            lbSex.Size = new Size(25, 15);
             lbSex.TabIndex = 6;
             lbSex.Text = "Sex";
             // 
             // lbStatus
             // 
             lbStatus.AutoSize = true;
-            lbStatus.Location = new Point(374, 234);
+            lbStatus.Location = new Point(327, 176);
             lbStatus.Name = "lbStatus";
-            lbStatus.Size = new Size(49, 20);
+            lbStatus.Size = new Size(39, 15);
             lbStatus.TabIndex = 7;
             lbStatus.Text = "Status";
             // 
             // txtStaffId
             // 
-            txtStaffId.Location = new Point(165, 91);
+            txtStaffId.Location = new Point(144, 68);
+            txtStaffId.Margin = new Padding(3, 2, 3, 2);
             txtStaffId.Name = "txtStaffId";
-            txtStaffId.Size = new Size(170, 27);
+            txtStaffId.Size = new Size(149, 23);
             txtStaffId.TabIndex = 8;
             // 
             // txtStaffName
             // 
-            txtStaffName.Location = new Point(165, 135);
+            txtStaffName.Location = new Point(144, 101);
+            txtStaffName.Margin = new Padding(3, 2, 3, 2);
             txtStaffName.Name = "txtStaffName";
-            txtStaffName.Size = new Size(170, 27);
+            txtStaffName.Size = new Size(149, 23);
             txtStaffName.TabIndex = 9;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(165, 181);
+            txtEmail.Location = new Point(144, 136);
+            txtEmail.Margin = new Padding(3, 2, 3, 2);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(170, 27);
+            txtEmail.Size = new Size(149, 23);
             txtEmail.TabIndex = 10;
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(491, 91);
+            txtPhone.Location = new Point(430, 68);
+            txtPhone.Margin = new Padding(3, 2, 3, 2);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(259, 27);
+            txtPhone.Size = new Size(227, 23);
             txtPhone.TabIndex = 11;
             // 
             // txtStatus
             // 
-            txtStatus.Location = new Point(491, 232);
+            txtStatus.Location = new Point(430, 174);
+            txtStatus.Margin = new Padding(3, 2, 3, 2);
             txtStatus.Name = "txtStatus";
-            txtStatus.Size = new Size(259, 27);
+            txtStatus.Size = new Size(227, 23);
             txtStatus.TabIndex = 12;
             // 
             // txtdob
             // 
-            txtdob.Location = new Point(491, 139);
+            txtdob.Location = new Point(430, 104);
+            txtdob.Margin = new Padding(3, 2, 3, 2);
             txtdob.Name = "txtdob";
-            txtdob.Size = new Size(259, 27);
+            txtdob.Size = new Size(227, 23);
             txtdob.TabIndex = 13;
             // 
             // txtSex
             // 
-            txtSex.Location = new Point(165, 231);
+            txtSex.Location = new Point(144, 173);
+            txtSex.Margin = new Padding(3, 2, 3, 2);
             txtSex.Name = "txtSex";
-            txtSex.Size = new Size(170, 27);
+            txtSex.Size = new Size(149, 23);
             txtSex.TabIndex = 14;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(49, 284);
+            label2.Location = new Point(43, 213);
             label2.Name = "label2";
-            label2.Size = new Size(97, 20);
+            label2.Size = new Size(77, 15);
             label2.TabIndex = 16;
             label2.Text = "Search Status";
             // 
             // cbSearch
             // 
+            cbSearch.DropDownStyle = ComboBoxStyle.DropDownList;
             cbSearch.FormattingEnabled = true;
             cbSearch.Items.AddRange(new object[] { "true", "false" });
-            cbSearch.Location = new Point(165, 284);
+            cbSearch.Location = new Point(144, 213);
+            cbSearch.Margin = new Padding(3, 2, 3, 2);
             cbSearch.Name = "cbSearch";
-            cbSearch.Size = new Size(170, 28);
+            cbSearch.Size = new Size(149, 23);
             cbSearch.TabIndex = 17;
             // 
             // dgv
             // 
             dgv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgv.Location = new Point(58, 361);
+            dgv.Location = new Point(51, 271);
+            dgv.Margin = new Padding(3, 2, 3, 2);
             dgv.Name = "dgv";
             dgv.RowHeadersWidth = 51;
             dgv.RowTemplate.Height = 29;
-            dgv.Size = new Size(701, 172);
+            dgv.Size = new Size(613, 129);
             dgv.TabIndex = 18;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(362, 284);
+            btnSearch.Location = new Point(317, 213);
+            btnSearch.Margin = new Padding(3, 2, 3, 2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(94, 29);
+            btnSearch.Size = new Size(82, 22);
             btnSearch.TabIndex = 19;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = true;
@@ -219,9 +230,10 @@
             // 
             // btnLoad
             // 
-            btnLoad.Location = new Point(129, 539);
+            btnLoad.Location = new Point(113, 404);
+            btnLoad.Margin = new Padding(3, 2, 3, 2);
             btnLoad.Name = "btnLoad";
-            btnLoad.Size = new Size(94, 29);
+            btnLoad.Size = new Size(82, 22);
             btnLoad.TabIndex = 20;
             btnLoad.Text = "Load";
             btnLoad.UseVisualStyleBackColor = true;
@@ -229,9 +241,10 @@
             // 
             // btnCreate
             // 
-            btnCreate.Location = new Point(285, 539);
+            btnCreate.Location = new Point(249, 404);
+            btnCreate.Margin = new Padding(3, 2, 3, 2);
             btnCreate.Name = "btnCreate";
-            btnCreate.Size = new Size(94, 29);
+            btnCreate.Size = new Size(82, 22);
             btnCreate.TabIndex = 21;
             btnCreate.Text = "Create";
             btnCreate.UseVisualStyleBackColor = true;
@@ -239,9 +252,10 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(431, 539);
+            btnDelete.Location = new Point(377, 404);
+            btnDelete.Margin = new Padding(3, 2, 3, 2);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(94, 29);
+            btnDelete.Size = new Size(82, 22);
             btnDelete.TabIndex = 22;
             btnDelete.Text = "Delete";
             btnDelete.UseVisualStyleBackColor = true;
@@ -249,9 +263,10 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(591, 539);
+            btnUpdate.Location = new Point(517, 404);
+            btnUpdate.Margin = new Padding(3, 2, 3, 2);
             btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(94, 29);
+            btnUpdate.Size = new Size(82, 22);
             btnUpdate.TabIndex = 23;
             btnUpdate.Text = "Update";
             btnUpdate.UseVisualStyleBackColor = true;
@@ -259,17 +274,18 @@
             // 
             // txtServiceId
             // 
-            txtServiceId.Location = new Point(491, 181);
+            txtServiceId.Location = new Point(430, 136);
+            txtServiceId.Margin = new Padding(3, 2, 3, 2);
             txtServiceId.Name = "txtServiceId";
-            txtServiceId.Size = new Size(259, 27);
+            txtServiceId.Size = new Size(227, 23);
             txtServiceId.TabIndex = 24;
             // 
             // lbServiceId
             // 
             lbServiceId.AutoSize = true;
-            lbServiceId.Location = new Point(373, 188);
+            lbServiceId.Location = new Point(326, 141);
             lbServiceId.Name = "lbServiceId";
-            lbServiceId.Size = new Size(69, 20);
+            lbServiceId.Size = new Size(54, 15);
             lbServiceId.TabIndex = 25;
             lbServiceId.Text = "ServiceId";
             // 
@@ -277,17 +293,17 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(285, 26);
+            label3.Location = new Point(249, 20);
             label3.Name = "label3";
-            label3.Size = new Size(281, 41);
+            label3.Size = new Size(224, 32);
             label3.TabIndex = 26;
             label3.Text = "Staff Management";
             // 
             // StaffManagement
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(833, 607);
+            ClientSize = new Size(729, 455);
             Controls.Add(label3);
             Controls.Add(lbServiceId);
             Controls.Add(txtServiceId);
@@ -314,6 +330,7 @@
             Controls.Add(lbStaffName);
             Controls.Add(lbStaffId);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "StaffManagement";
             Text = "Staff Management";
             Load += StaffManagement_Load;
