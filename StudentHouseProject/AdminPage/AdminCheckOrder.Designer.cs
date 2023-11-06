@@ -45,28 +45,30 @@
             // 
             lbCheckOrder.AutoSize = true;
             lbCheckOrder.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lbCheckOrder.Location = new Point(147, 116);
+            lbCheckOrder.Location = new Point(463, 62);
             lbCheckOrder.Name = "lbCheckOrder";
-            lbCheckOrder.Size = new Size(178, 38);
+            lbCheckOrder.Size = new Size(142, 30);
             lbCheckOrder.TabIndex = 0;
             lbCheckOrder.Text = "Check Order";
             // 
             // dgvOrder
             // 
             dgvOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrder.Location = new Point(147, 184);
+            dgvOrder.Location = new Point(463, 113);
+            dgvOrder.Margin = new Padding(3, 2, 3, 2);
             dgvOrder.Name = "dgvOrder";
             dgvOrder.RowHeadersWidth = 51;
             dgvOrder.RowTemplate.Height = 29;
-            dgvOrder.Size = new Size(965, 219);
+            dgvOrder.Size = new Size(844, 164);
             dgvOrder.TabIndex = 1;
             dgvOrder.CellContentClick += dgvOrder_CellContentClick_1;
             // 
             // btnLoad
             // 
-            btnLoad.Location = new Point(971, 116);
+            btnLoad.Location = new Point(1184, 62);
+            btnLoad.Margin = new Padding(3, 2, 3, 2);
             btnLoad.Name = "btnLoad";
-            btnLoad.Size = new Size(141, 49);
+            btnLoad.Size = new Size(123, 37);
             btnLoad.TabIndex = 2;
             btnLoad.Text = "Load";
             btnLoad.UseVisualStyleBackColor = true;
@@ -74,30 +76,32 @@
             // dgvCustomer
             // 
             dgvCustomer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCustomer.Location = new Point(147, 466);
+            dgvCustomer.Location = new Point(463, 325);
+            dgvCustomer.Margin = new Padding(3, 2, 3, 2);
             dgvCustomer.Name = "dgvCustomer";
             dgvCustomer.RowHeadersWidth = 51;
             dgvCustomer.RowTemplate.Height = 29;
-            dgvCustomer.Size = new Size(965, 109);
+            dgvCustomer.Size = new Size(844, 82);
             dgvCustomer.TabIndex = 3;
             // 
             // dgvOrderDetails
             // 
             dgvOrderDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrderDetails.Location = new Point(147, 631);
+            dgvOrderDetails.Location = new Point(463, 448);
+            dgvOrderDetails.Margin = new Padding(3, 2, 3, 2);
             dgvOrderDetails.Name = "dgvOrderDetails";
             dgvOrderDetails.RowHeadersWidth = 51;
             dgvOrderDetails.RowTemplate.Height = 29;
-            dgvOrderDetails.Size = new Size(965, 134);
+            dgvOrderDetails.Size = new Size(844, 100);
             dgvOrderDetails.TabIndex = 4;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(147, 415);
+            label1.Location = new Point(463, 286);
             label1.Name = "label1";
-            label1.Size = new Size(310, 38);
+            label1.Size = new Size(242, 30);
             label1.TabIndex = 5;
             label1.Text = "Customer Information";
             // 
@@ -105,9 +109,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(147, 578);
+            label2.Location = new Point(463, 409);
             label2.Name = "label2";
-            label2.Size = new Size(218, 38);
+            label2.Size = new Size(173, 30);
             label2.TabIndex = 6;
             label2.Text = "Product Details";
             // 
@@ -115,17 +119,17 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(510, 51);
+            label3.Location = new Point(762, 18);
             label3.Name = "label3";
-            label3.Size = new Size(238, 41);
+            label3.Size = new Size(191, 32);
             label3.TabIndex = 7;
             label3.Text = "Order Checking";
             // 
             // AdminCheckOrder
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1274, 920);
+            ClientSize = new Size(1494, 690);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -134,6 +138,7 @@
             Controls.Add(btnLoad);
             Controls.Add(dgvOrder);
             Controls.Add(lbCheckOrder);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "AdminCheckOrder";
             Text = "AdminCheckOrder";
             Load += AdminCheckOrder_Load;
