@@ -140,7 +140,7 @@ namespace StudentHouseProject.StaffPage
 
                     int ServiceId = GetselecttedServiceId();
 
-                    OrderDetail orderDetail = context.OrderDetails.FirstOrDefault(o => o.ServiceId == ServiceId&& o.OrderId ==OrderId);
+                    OrderDetail orderDetail = context.OrderDetails.FirstOrDefault(o => o.ServiceId == ServiceId && o.OrderId == OrderId);
 
                     orderDetail.Pending = newPendingValue;
                     context.Entry(orderDetail).State = EntityState.Modified;
