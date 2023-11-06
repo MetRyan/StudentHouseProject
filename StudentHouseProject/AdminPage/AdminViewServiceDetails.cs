@@ -47,7 +47,7 @@ namespace StudentHouseProject.AdminAPage
                 txtStatus.DataBindings.Add("Text", source, "Status");
 
                 // txtAdress.DataBindings.Add("Text", source, "Telephone");
-             
+
 
 
 
@@ -65,12 +65,6 @@ namespace StudentHouseProject.AdminAPage
                 MessageBox.Show(ex.Message, "Error on load list of Services");
             }
         }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void reset()
         {
@@ -163,9 +157,9 @@ namespace StudentHouseProject.AdminAPage
             btnAdd.Enabled = false;
             btnUpdateService.Enabled = false;
             LoadServiceList();
-       /*     dgv.Columns.Remove("Admin");
-            dgv.Columns.Remove("OrderDetails");
-            dgv.Columns.Remove("staff");*/
+            /*     dgv.Columns.Remove("Admin");
+                 dgv.Columns.Remove("OrderDetails");
+                 dgv.Columns.Remove("staff");*/
         }
     }
 }
