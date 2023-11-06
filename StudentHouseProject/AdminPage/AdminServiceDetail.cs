@@ -30,7 +30,7 @@ namespace StudentHouseProject.AdminAPage
 
             if (InserorUpdate)
             {
-
+                txtServiceId.Enabled = false;
 
                 //  Service getService = repository.(getStaffId);
                 txtAmountOfTime.DataBindings.Add("Text", getService, "AmountOfTime");
