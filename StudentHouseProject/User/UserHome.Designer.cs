@@ -55,11 +55,12 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AllowDrop = true;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Location = new Point(33, 71);
             flowLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1474, 846);
+            flowLayoutPanel1.Size = new Size(1474, 653);
             flowLayoutPanel1.TabIndex = 5;
             // 
             // UserHome
