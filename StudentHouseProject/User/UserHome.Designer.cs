@@ -57,6 +57,7 @@
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.AllowDrop = true;
+            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.AutoSize = true;
             flowLayoutPanel1.BackColor = SystemColors.ActiveCaption;

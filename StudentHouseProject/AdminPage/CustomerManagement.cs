@@ -225,7 +225,7 @@ namespace UI.AdminPage
                 MessageBox.Show("Tìm thấy " + result.Count + " kết quả!");
                 cbSearch.SelectedIndex = -1;
                 txtSearch.Text = "";
-            
+
             }
 
 
@@ -286,6 +286,11 @@ namespace UI.AdminPage
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSex_TextChanged(object sender, EventArgs e)
         {
 
         }
