@@ -11,6 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repositories", "Repositorie
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessObjects", "BusinessObjects\BusinessObjects.csproj", "{4036A0AE-8F72-4460-9924-CCC241DE19C5}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation Layer", "Presentation Layer", "{75512C4B-E0AF-407A-BA7D-2AF909F29A06}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Layer", "Business Layer", "{95926BC4-C0F8-4CD1-8165-12E6E0D67462}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data Layer", "Data Layer", "{6EA7D0FE-1C8A-426F-BC77-D03FA9764AA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +42,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7E282004-0319-4EFC-820B-5F74DA816D91} = {75512C4B-E0AF-407A-BA7D-2AF909F29A06}
+		{C7D90E3B-ABBF-459F-B169-5A6F988F447F} = {6EA7D0FE-1C8A-426F-BC77-D03FA9764AA2}
+		{4E431560-7485-4A66-81BA-66503E3D1FAB} = {6EA7D0FE-1C8A-426F-BC77-D03FA9764AA2}
+		{4036A0AE-8F72-4460-9924-CCC241DE19C5} = {95926BC4-C0F8-4CD1-8165-12E6E0D67462}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {404E4585-7C95-4957-91AD-B26B295163A0}
