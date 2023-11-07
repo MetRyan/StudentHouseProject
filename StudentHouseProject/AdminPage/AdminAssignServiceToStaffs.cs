@@ -73,7 +73,7 @@ namespace StudentHouseProject.AdminAPage
                     context.Entry(getOrder).State = EntityState.Modified;
                     context.SaveChanges();
                 }
-               // staffOrder.Status = "true";
+                // staffOrder.Status = "true";
                 using (var context = new StudentHouseMembershipContext())
                 {
                     context.Entry(staffOrder).State = EntityState.Modified;
@@ -81,7 +81,7 @@ namespace StudentHouseProject.AdminAPage
                 }
                 MessageBox.Show("Assign successfully!");
                 reset();
-               LoadOrderIds();
+                LoadOrderIds();
                 LoadStaffIds();
             }
             catch (Exception ex)
