@@ -35,9 +35,9 @@ namespace BusinessObjects
 //=======
                 // optionsBuilder.UseSqlServer("Server=MSI\\SERVER1;Database=StudentHouseMembership; Uid=sa; Pwd=12345");
                 //"Server=LAPTOP-RFJCRS8T;Database=StudentHouseMembership; Uid=sa; Pwd=sa"
-                //optionsBuilder.UseSqlServer("Server=LAPTOP-RFJCRS8T;Database=StudentHouseMembership; Uid=sa; Pwd=sa");
+                optionsBuilder.UseSqlServer("Server=LAPTOP-RFJCRS8T;Database=StudentHouseMembership; Uid=sa; Pwd=sa");
                 //optionsBuilder.UseSqlServer("Server=DESKTOP-IDK73G0\\SQLEXPRESS;Database=StudentHouseMembership; Uid=sa; Pwd=1234567890");
-                optionsBuilder.UseSqlServer("Server=LAPTOP-CUDSA6B4\\SQLEXPRESS;Database=StudentHouseMembership; Uid=sa; Pwd=1234567890");
+              // optionsBuilder.UseSqlServer("Server=LAPTOP-CUDSA6B4\\SQLEXPRESS;Database=StudentHouseMembership; Uid=sa; Pwd=1234567890");
                 
 //>>>>>>> Stashed changes
             }
