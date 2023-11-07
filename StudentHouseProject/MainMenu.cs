@@ -69,15 +69,7 @@ namespace UI
                     previousBtn.ForeColor = Color.Black;
                     previousBtn.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
                 }
-
-
-
             }
-
-
-
-
-
         }
         /*    public static void ActivateCartButton(MainMenu form)
             {

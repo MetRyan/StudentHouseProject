@@ -29,7 +29,10 @@ namespace DataAccessObjects
             {
                 using (var context = new StudentHouseMembershipContext())
                 {
-                    return context.Customers.ToList();
+
+
+                    //return context.Customers.ToList();
+                    return context.Customers.Where(p => p.Active == true).ToList();
                 }
             }
             catch (Exception e)
@@ -82,14 +85,20 @@ namespace DataAccessObjects
                 throw e;
             }
         }
-        public void DeleteCustomer(Customer customer)
+        public void inActiveCustomer(Customer customer)
         {
             try
             {
                 using (var context = new StudentHouseMembershipContext())
                 {
-                    context.Customers.Remove(customer);
-                    context.SaveChanges();
+                    ///context.Customers.Remove(customer);
+                    
+                    var exitstingCustomer = context.Customers.SingleOrDefault(p=> p.CustomerId == customer.CustomerId);
+                    if (exitstingCustomer != null) {
+                        exitstingCustomer.Active = false;
+                        context.SaveChanges();
+                    }
+
                 }
             }
             catch (Exception e)
@@ -104,7 +113,8 @@ namespace DataAccessObjects
                 using (var Context = new StudentHouseMembershipContext())
                 {
                     var temp = Context.Customers.SingleOrDefault(p => p.Email == email
-                    && p.Password == password);
+                    && p.Password == password&& p.Active == true);
+                        
                     if (temp != null)
                     { return true; }
 
@@ -150,7 +160,7 @@ namespace DataAccessObjects
                 {
                     try
                     {
-                        return context.Customers.Where(p => p.Phone.Contains(keyword)).ToList();
+                        return context.Customers.Where(p => p.Phone.Contains(keyword) && p.Active==true).ToList();
                     }
                     catch (FormatException ex)
                     {
@@ -168,7 +178,7 @@ namespace DataAccessObjects
                                          .Where(p => p.FirstName.Contains(keyword)).ToList();*/
 
                         return context.Customers
-                            .Where(p => (p.FirstName + " " + p.LastName).Contains(keyword))
+                            .Where(p =>p.Active==true && (p.FirstName + " " + p.LastName).Contains(keyword))
                             .ToList();
     
                     }

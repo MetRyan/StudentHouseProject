@@ -57,7 +57,8 @@ namespace StudentHouseProject.AdminAPage
                 staffOrder.StaffId = Convert.ToInt32(cbStaff.Text);
                 staffOrder.OrderId = Convert.ToInt32(cbOrderId.Text);
                 staffOrder.WorkDate = Convert.ToDateTime(txtWorkDate.Text);
-                staffOrder.Status = "Assigned";
+                //  staffOrder.Status = "Assigned";
+                staff getStaff = repository_Staff.GetStaffById(staffOrder.StaffId);
 
                 StaffOrderDAO staffOrderDAO = new StaffOrderDAO();
                 staffOrderDAO.AddStaffOrder(staffOrder);
@@ -65,10 +66,14 @@ namespace StudentHouseProject.AdminAPage
                 getOrder.Status = "true";
                 using (var context = new StudentHouseMembershipContext())
                 {
+                    getStaff.Status = "true";
+                    context.Entry(getStaff).State = EntityState.Modified;
+                    context.SaveChanges();
+
                     context.Entry(getOrder).State = EntityState.Modified;
                     context.SaveChanges();
                 }
-                staffOrder.Status = "true";
+               // staffOrder.Status = "true";
                 using (var context = new StudentHouseMembershipContext())
                 {
                     context.Entry(staffOrder).State = EntityState.Modified;
@@ -76,6 +81,8 @@ namespace StudentHouseProject.AdminAPage
                 }
                 MessageBox.Show("Assign successfully!");
                 reset();
+               LoadOrderIds();
+                LoadStaffIds();
             }
             catch (Exception ex)
             {

@@ -30,10 +30,9 @@ namespace StudentHouseProject.AdminAPage
 
             if (InserorUpdate)
             {
-
+                txtServiceId.Enabled = false;
 
                 //  Service getService = repository.(getStaffId);
-                MessageBox.Show(getService.ServiceName);
                 txtAmountOfTime.DataBindings.Add("Text", getService, "AmountOfTime");
                 txtServiceId.DataBindings.Add("Text", getService, "ServiceId");
                 txtServiceName.DataBindings.Add("Text", getService, "ServiceName");
@@ -46,6 +45,9 @@ namespace StudentHouseProject.AdminAPage
                 txtServiceName.CausesValidation = false;
                 txtServicePrice.CausesValidation = false;
                 cbStatus.CausesValidation = false;
+
+
+
                 //   txtAdress.CausesValidation = false;
 
                 /*           txtCarName.DataBindings.Add("Text", car, "CarName", false, DataSourceUpdateMode.OnPropertyChanged);
@@ -146,6 +148,8 @@ namespace StudentHouseProject.AdminAPage
                             //Set default admin la 1 -> vi chi co 1 admin neu nhieu hon thi lam lai
                             AdminId = 1,
 
+                           Active = true,
+
 
                         };
 
@@ -175,8 +179,8 @@ namespace StudentHouseProject.AdminAPage
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error oddddccurred: {ex.Message}", "Error",
-            MessageBoxButtons.OK, MessageBoxIcon.Error);
+               // MessageBox.Show($"An error oddddccurred: {ex.Message}", "Error",
+//            MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }

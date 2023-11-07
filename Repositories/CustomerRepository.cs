@@ -7,7 +7,7 @@ namespace Repositories
     {
         public void AddCustomer(Customer customer) => CustomerDAO.Instance.AddCustomer(customer);
 
-        public void DeleteCustomer(Customer customer) => CustomerDAO.Instance.DeleteCustomer(customer);
+        public void inActiveCustomer(Customer customer) => CustomerDAO.Instance.inActiveCustomer(customer);
         public Customer GetCustomerById(int id) => CustomerDAO.Instance.GetCustomerById(id);
 
         public List<Customer> GetCustomers() => CustomerDAO.Instance.GetCustomers();

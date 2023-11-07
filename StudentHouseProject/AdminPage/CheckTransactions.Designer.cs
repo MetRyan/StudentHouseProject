@@ -43,41 +43,67 @@
             // dgvOrderDetails
             // 
             dgvOrderDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrderDetails.Location = new Point(185, 611);
+
+            dgvOrderDetails.Location = new Point(456, 431);
+            dgvOrderDetails.Margin = new Padding(3, 2, 3, 2);
+
+            dgvOrderDetails.Location = new Point(431, 687);
+
             dgvOrderDetails.Name = "dgvOrderDetails";
             dgvOrderDetails.RowHeadersWidth = 51;
             dgvOrderDetails.RowTemplate.Height = 29;
-            dgvOrderDetails.Size = new Size(960, 213);
+            dgvOrderDetails.Size = new Size(840, 160);
             dgvOrderDetails.TabIndex = 9;
             // 
             // dgvCustomer
             // 
             dgvCustomer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCustomer.Location = new Point(185, 468);
+
+            dgvCustomer.Location = new Point(456, 324);
+            dgvCustomer.Margin = new Padding(3, 2, 3, 2);
+
+            dgvCustomer.Location = new Point(431, 484);
+
             dgvCustomer.Name = "dgvCustomer";
             dgvCustomer.RowHeadersWidth = 51;
             dgvCustomer.RowTemplate.Height = 29;
-            dgvCustomer.Size = new Size(960, 68);
+            dgvCustomer.Size = new Size(840, 51);
             dgvCustomer.TabIndex = 8;
             // 
             // btnLoad
             // 
-            btnLoad.Location = new Point(1026, 93);
+
+            btnLoad.Location = new Point(1302, 89);
+            btnLoad.Margin = new Padding(3, 2, 3, 2);
             btnLoad.Name = "btnLoad";
-            btnLoad.Size = new Size(119, 42);
+            btnLoad.Size = new Size(83, 35);
+            btnLoad.TabIndex = 7;
+            btnLoad.Text = "Load Orders";
+            btnLoad.UseVisualStyleBackColor = true;
+
+            btnLoad.BackColor = SystemColors.ActiveCaption;
+            btnLoad.Location = new Point(174, 115);
+            btnLoad.Name = "btnLoad";
+            btnLoad.Size = new Size(160, 70);
             btnLoad.TabIndex = 7;
             btnLoad.Text = "Load";
-            btnLoad.UseVisualStyleBackColor = true;
+            btnLoad.UseVisualStyleBackColor = false;
+
             btnLoad.Click += btnLoad_Click;
             // 
             // dgvOrder
             // 
             dgvOrder.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvOrder.Location = new Point(185, 141);
+
+            dgvOrder.Location = new Point(456, 79);
+            dgvOrder.Margin = new Padding(3, 2, 3, 2);
+
+            dgvOrder.Location = new Point(431, 115);
+
             dgvOrder.Name = "dgvOrder";
             dgvOrder.RowHeadersWidth = 51;
             dgvOrder.RowTemplate.Height = 29;
-            dgvOrder.Size = new Size(960, 259);
+            dgvOrder.Size = new Size(840, 194);
             dgvOrder.TabIndex = 6;
             dgvOrder.CellClick += dgvOrder_CellClick;
             dgvOrder.CellContentClick += dgvOrder_CellContentClick_2;
@@ -86,37 +112,59 @@
             // 
             lbCheckOrder.AutoSize = true;
             lbCheckOrder.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lbCheckOrder.Location = new Point(565, 34);
+
+            lbCheckOrder.Location = new Point(789, 33);
+
+            lbCheckOrder.Location = new Point(798, 36);
+
             lbCheckOrder.Name = "lbCheckOrder";
-            lbCheckOrder.Size = new Size(178, 38);
+            lbCheckOrder.Size = new Size(142, 30);
             lbCheckOrder.TabIndex = 5;
             lbCheckOrder.Text = "Check Order";
             // 
             // label1
             // 
             label1.AutoSize = true;
+
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(185, 416);
+            label1.Location = new Point(456, 285);
             label1.Name = "label1";
-            label1.Size = new Size(310, 38);
+            label1.Size = new Size(242, 30);
+
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(122, 484);
+            label1.Name = "label1";
+            label1.Size = new Size(277, 35);
+
             label1.TabIndex = 10;
             label1.Text = "Customer Information";
             // 
             // label2
             // 
             label2.AutoSize = true;
+
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(185, 555);
+            label2.Location = new Point(456, 389);
             label2.Name = "label2";
-            label2.Size = new Size(297, 41);
+            label2.Size = new Size(241, 32);
+
+            label2.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(137, 687);
+            label2.Name = "label2";
+            label2.Size = new Size(249, 35);
+
             label2.TabIndex = 11;
             label2.Text = "Service Information";
             // 
             // CheckTransactions
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1343, 868);
+
+            ClientSize = new Size(1431, 651);
+
+            ClientSize = new Size(1718, 961);
+
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dgvOrderDetails);
@@ -124,8 +172,10 @@
             Controls.Add(btnLoad);
             Controls.Add(dgvOrder);
             Controls.Add(lbCheckOrder);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "CheckTransactions";
             Text = "Check Order";
+            Load += CheckTransactions_Load;
             ((System.ComponentModel.ISupportInitialize)dgvOrderDetails).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvCustomer).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvOrder).EndInit();

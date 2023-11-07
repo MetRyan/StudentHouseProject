@@ -72,7 +72,7 @@ namespace StudentHouseProject.AdminPage
 
 
             dgvOrderDetails.DataSource = null;
-            dgvOrderDetails.DataSource = source;    
+            dgvOrderDetails.DataSource = source;
             dgvOrderDetails.Columns.Remove("Order");
             dgvOrderDetails.Columns.Remove("Service");
 
@@ -124,6 +124,12 @@ namespace StudentHouseProject.AdminPage
 
         private void dgvOrder_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void CheckTransactions_Load(object sender, EventArgs e)
+        {
+            LoadOrderList();
 
         }
     }

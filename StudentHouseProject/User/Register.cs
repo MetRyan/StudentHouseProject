@@ -79,6 +79,7 @@ namespace StudentHouseProject.User
                     Password = txtPassword.Text,
                     Sex = cbGender.Text,
                     Adress = txtAddress.Text,
+                    Active = true,
 
 
                 };

@@ -100,7 +100,7 @@ namespace StudentHouseProject
                         staff staff = repository_Staff.getStaffbyEmails(email);
                         StaffHome staffHomePage = new StaffHome(staff);
                         //ClosePreviousForm();
-                        //  f.WindowState = FormWindowState.Maximized;
+                      //  staffHomePage.WindowState = FormWindowState.Maximized;
 
                         staffHomePage.Show();
 

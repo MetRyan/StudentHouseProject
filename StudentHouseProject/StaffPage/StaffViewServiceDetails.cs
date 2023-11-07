@@ -1,5 +1,6 @@
 ﻿using BusinessObjects;
 using DataAccessObjects.ResponseModel;
+using Microsoft.EntityFrameworkCore;
 using Repositories;
 using System;
 using System.Collections.Generic;
@@ -123,14 +124,14 @@ namespace StudentHouseProject.StaffPage
 
                 // Xử lý
                 int OrderId = GetselecttedOrderId();
-                bool newPendingValue = true;
+                string newPendingValue = "true";
                 if (cbStatusWork.SelectedItem.ToString() == "True")
                 {
-                    newPendingValue = true;
+                    newPendingValue = "true";
                 }
                 else if (cbStatusWork.SelectedItem.ToString() == "False")
                 {
-                    newPendingValue = false;
+                    newPendingValue = "false";
                 }
                 else { return; }
 
@@ -139,13 +140,13 @@ namespace StudentHouseProject.StaffPage
 
                     int ServiceId = GetselecttedServiceId();
 
-                    OrderDetail orderDetail = context.OrderDetails.FirstOrDefault(o => o.ServiceId == ServiceId);
+                    OrderDetail orderDetail = context.OrderDetails.FirstOrDefault(o => o.ServiceId == ServiceId && o.OrderId == OrderId);
 
                     orderDetail.Pending = newPendingValue;
+                    context.Entry(orderDetail).State = EntityState.Modified;
 
                     context.SaveChanges();
 
-                    cbStatusWork.Text = "";
                     LoadOrder(OrderId); // Replace ?? with the appropriate argument
                     cbStatusWork.Text = "";
 

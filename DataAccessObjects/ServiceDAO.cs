@@ -28,14 +28,14 @@ namespace DataAccessObjects
         {
             using (var context = new StudentHouseMembershipContext())
             {
-                return context.Services.ToList();
+                return context.Services.Where(p=> p.Active == true).ToList();
             }
         }
         public Service GetServiceById(int id)
         {
             using (var context = new StudentHouseMembershipContext())
             {
-                return context.Services.Find(id);
+                return context.Services.SingleOrDefault(p=> p.ServiceId == id && p.Active == true);
             }
         }
         public void AddService(Service service)
@@ -67,9 +67,17 @@ namespace DataAccessObjects
         {
             using (var context = new StudentHouseMembershipContext())
             {
-                var serviceToDelete = context.Services.Find(service.ServiceId);
-                context.Services.Remove(serviceToDelete);
-                context.SaveChanges();
+                var serviceExist = context.Services.Find(service.ServiceId);
+                //context.Services.Remove(serviceToDelete);
+               if(serviceExist != null)
+                {
+                    serviceExist.Active = false;
+                    context.SaveChanges();
+
+
+                }
+                    context.SaveChanges();
+
             }
         }
         public static bool ServicesIdExists(int staffId)

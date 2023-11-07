@@ -58,7 +58,7 @@
             // 
             lbOrderHistory.AutoSize = true;
             lbOrderHistory.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            lbOrderHistory.Location = new Point(289, 32);
+            lbOrderHistory.Location = new Point(511, 27);
             lbOrderHistory.Name = "lbOrderHistory";
             lbOrderHistory.Size = new Size(208, 38);
             lbOrderHistory.TabIndex = 0;
@@ -71,14 +71,14 @@
             dgvOrderDetails.Name = "dgvOrderDetails";
             dgvOrderDetails.RowHeadersWidth = 51;
             dgvOrderDetails.RowTemplate.Height = 29;
-            dgvOrderDetails.Size = new Size(777, 275);
+            dgvOrderDetails.Size = new Size(937, 268);
             dgvOrderDetails.TabIndex = 2;
             dgvOrderDetails.CellClick += dgvOrderDetails_CellClick;
             dgvOrderDetails.CellContentClick += dgvOrderDetails_CellContentClick;
             // 
             // btnReload
             // 
-            btnReload.Location = new Point(1014, 136);
+            btnReload.Location = new Point(1140, 136);
             btnReload.Name = "btnReload";
             btnReload.Size = new Size(165, 49);
             btnReload.TabIndex = 3;
@@ -89,18 +89,18 @@
             // dgvViewDetails
             // 
             dgvViewDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvViewDetails.Location = new Point(109, 444);
+            dgvViewDetails.Location = new Point(115, 514);
             dgvViewDetails.Name = "dgvViewDetails";
             dgvViewDetails.RowHeadersWidth = 51;
             dgvViewDetails.RowTemplate.Height = 29;
-            dgvViewDetails.Size = new Size(784, 228);
+            dgvViewDetails.Size = new Size(680, 228);
             dgvViewDetails.TabIndex = 4;
             // 
             // ViewDetailsOrder
             // 
             ViewDetailsOrder.AutoSize = true;
             ViewDetailsOrder.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            ViewDetailsOrder.Location = new Point(289, 387);
+            ViewDetailsOrder.Location = new Point(115, 473);
             ViewDetailsOrder.Name = "ViewDetailsOrder";
             ViewDetailsOrder.Size = new Size(262, 38);
             ViewDetailsOrder.TabIndex = 5;
@@ -109,7 +109,7 @@
             // Address
             // 
             Address.AutoSize = true;
-            Address.Location = new Point(943, 452);
+            Address.Location = new Point(965, 517);
             Address.Name = "Address";
             Address.Size = new Size(62, 20);
             Address.TabIndex = 6;
@@ -118,7 +118,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(943, 511);
+            label2.Location = new Point(965, 584);
             label2.Name = "label2";
             label2.Size = new Size(51, 20);
             label2.TabIndex = 7;
@@ -127,7 +127,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(943, 565);
+            label3.Location = new Point(965, 652);
             label3.Name = "label3";
             label3.Size = new Size(121, 20);
             label3.TabIndex = 8;
@@ -136,7 +136,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(943, 627);
+            label4.Location = new Point(965, 710);
             label4.Name = "label4";
             label4.Size = new Size(79, 20);
             label4.TabIndex = 9;
@@ -144,7 +144,7 @@
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(1032, 444);
+            txtAddress.Location = new Point(1159, 514);
             txtAddress.Multiline = true;
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(282, 42);
@@ -152,21 +152,21 @@
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(1032, 508);
+            txtPhone.Location = new Point(1159, 584);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(282, 27);
             txtPhone.TabIndex = 11;
             // 
             // txtPayment
             // 
-            txtPayment.Location = new Point(1083, 561);
+            txtPayment.Location = new Point(1159, 649);
             txtPayment.Name = "txtPayment";
             txtPayment.Size = new Size(231, 27);
             txtPayment.TabIndex = 12;
             // 
             // txtOrderDay
             // 
-            txtOrderDay.Location = new Point(1075, 621);
+            txtOrderDay.Location = new Point(1159, 707);
             txtOrderDay.Name = "txtOrderDay";
             txtOrderDay.Size = new Size(239, 27);
             txtOrderDay.TabIndex = 13;
@@ -175,7 +175,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1594, 773);
+            BackColor = SystemColors.ControlLight;
+            ClientSize = new Size(1704, 773);
             Controls.Add(txtOrderDay);
             Controls.Add(txtPayment);
             Controls.Add(txtPhone);

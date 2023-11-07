@@ -37,10 +37,10 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(474, 60);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(394, 33);
             label1.Name = "label1";
-            label1.Size = new Size(287, 38);
+            label1.Size = new Size(246, 32);
             label1.TabIndex = 1;
             label1.Text = "Welcome back Staff!";
             // 
@@ -49,20 +49,20 @@
             dgvStaff.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvStaff.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvStaff.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvStaff.Location = new Point(42, 231);
-            dgvStaff.Margin = new Padding(3, 4, 3, 4);
+            dgvStaff.Location = new Point(42, 118);
             dgvStaff.Name = "dgvStaff";
-            dgvStaff.RowHeadersWidth = 50;
-            dgvStaff.RowTemplate.Height = 50;
-            dgvStaff.Size = new Size(1153, 487);
+            dgvStaff.RowHeadersWidth = 51;
+            dgvStaff.RowTemplate.Height = 29;
+            dgvStaff.Size = new Size(983, 365);
             dgvStaff.TabIndex = 2;
             // 
             // btnViewDetails
             // 
             btnViewDetails.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnViewDetails.Location = new Point(1072, 165);
+            btnViewDetails.Location = new Point(42, 74);
+            btnViewDetails.Margin = new Padding(3, 2, 3, 2);
             btnViewDetails.Name = "btnViewDetails";
-            btnViewDetails.Size = new Size(123, 36);
+            btnViewDetails.Size = new Size(108, 27);
             btnViewDetails.TabIndex = 3;
             btnViewDetails.Text = "View Details";
             btnViewDetails.UseVisualStyleBackColor = true;
@@ -70,12 +70,13 @@
             // 
             // StaffHome
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1230, 808);
+            ClientSize = new Size(1075, 509);
             Controls.Add(btnViewDetails);
             Controls.Add(dgvStaff);
             Controls.Add(label1);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "StaffHome";
             Text = "Home (Staff)";
             FormClosed += StaffHome_FormClosed;

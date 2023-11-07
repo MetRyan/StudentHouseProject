@@ -47,7 +47,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(398, 35);
+            label1.Location = new Point(761, 28);
             label1.Name = "label1";
             label1.Size = new Size(167, 31);
             label1.TabIndex = 21;
@@ -57,15 +57,15 @@
             // 
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BorderStyle = BorderStyle.FixedSingle;
-            flowLayoutPanel1.Location = new Point(56, 84);
+            flowLayoutPanel1.Location = new Point(785, 94);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(815, 385);
+            flowLayoutPanel1.Size = new Size(789, 385);
             flowLayoutPanel1.TabIndex = 23;
             // 
             // button2
             // 
             button2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(271, 711);
+            button2.Location = new Point(299, 436);
             button2.Name = "button2";
             button2.Size = new Size(149, 43);
             button2.TabIndex = 24;
@@ -76,7 +76,7 @@
             // lbAddress
             // 
             lbAddress.AutoSize = true;
-            lbAddress.Location = new Point(94, 527);
+            lbAddress.Location = new Point(37, 103);
             lbAddress.Name = "lbAddress";
             lbAddress.Size = new Size(62, 20);
             lbAddress.TabIndex = 25;
@@ -84,7 +84,7 @@
             // 
             // txtAdress
             // 
-            txtAdress.Location = new Point(205, 522);
+            txtAdress.Location = new Point(125, 103);
             txtAdress.Name = "txtAdress";
             txtAdress.Size = new Size(215, 27);
             txtAdress.TabIndex = 26;
@@ -92,7 +92,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(455, 527);
+            label2.Location = new Point(381, 103);
             label2.Name = "label2";
             label2.Size = new Size(50, 20);
             label2.TabIndex = 27;
@@ -101,7 +101,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(455, 580);
+            label3.Location = new Point(381, 192);
             label3.Name = "label3";
             label3.Size = new Size(121, 20);
             label3.TabIndex = 28;
@@ -111,7 +111,7 @@
             // 
             cbPayment.FormattingEnabled = true;
             cbPayment.Items.AddRange(new object[] { "Cash" });
-            cbPayment.Location = new Point(578, 575);
+            cbPayment.Location = new Point(522, 189);
             cbPayment.Name = "cbPayment";
             cbPayment.Size = new Size(176, 28);
             cbPayment.TabIndex = 29;
@@ -119,7 +119,7 @@
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(525, 524);
+            txtPhone.Location = new Point(469, 103);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(229, 27);
             txtPhone.TabIndex = 30;
@@ -127,7 +127,7 @@
             // Total
             // 
             Total.AutoSize = true;
-            Total.Location = new Point(94, 583);
+            Total.Location = new Point(37, 185);
             Total.Name = "Total";
             Total.Size = new Size(42, 20);
             Total.TabIndex = 31;
@@ -135,7 +135,7 @@
             // 
             // txtTotal
             // 
-            txtTotal.Location = new Point(205, 579);
+            txtTotal.Location = new Point(125, 185);
             txtTotal.Name = "txtTotal";
             txtTotal.Size = new Size(215, 27);
             txtTotal.TabIndex = 32;
@@ -143,7 +143,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(94, 629);
+            label4.Location = new Point(37, 269);
             label4.Name = "label4";
             label4.Size = new Size(42, 20);
             label4.TabIndex = 33;
@@ -151,7 +151,7 @@
             // 
             // txtNote
             // 
-            txtNote.Location = new Point(205, 626);
+            txtNote.Location = new Point(125, 269);
             txtNote.Multiline = true;
             txtNote.Name = "txtNote";
             txtNote.Size = new Size(549, 57);
@@ -162,7 +162,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(949, 792);
+            BackColor = SystemColors.ControlLight;
+            ClientSize = new Size(1571, 792);
             Controls.Add(txtNote);
             Controls.Add(label4);
             Controls.Add(txtTotal);

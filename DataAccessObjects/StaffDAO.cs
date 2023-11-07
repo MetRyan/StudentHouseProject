@@ -31,7 +31,7 @@ namespace DataAccessObjects
             {
                 using (var context = new StudentHouseMembershipContext())
                 {
-                    return context.staff.ToList();
+                    return context.staff.Where(p=> p.Active == true).ToList();
                 }
             }
             catch (Exception e)
@@ -46,12 +46,12 @@ namespace DataAccessObjects
             {
                 using (var context = new StudentHouseMembershipContext())
                 {
-                    return context.staff.Find(id);
+                    return context.staff.SingleOrDefault(s => s.Active == true && s.StaffId == id);
                 }
             }
             catch (Exception e)
             {
-                throw e;
+                throw new Exception("Please enter Again");
             }
         }
         public void AddStaff(staff staff)
@@ -66,7 +66,7 @@ namespace DataAccessObjects
             }
             catch (Exception e)
             {
-                throw e;
+                throw ;
             }
         }
         public void UpdateStaff(staff staff)
@@ -100,8 +100,14 @@ namespace DataAccessObjects
             {
                 using (var context = new StudentHouseMembershipContext())
                 {
-                    var staffToDelete = context.staff.Find(staff.StaffId);
-                    context.staff.Remove(staffToDelete);
+                    //context.staff.Remove(staffToDelete);
+                    var exitstingstaff = context.staff.SingleOrDefault(p => p.StaffId == staff.StaffId);
+                    if (exitstingstaff != null)
+                    {
+                        exitstingstaff.Active = false;
+                        context.SaveChanges();
+                    }
+
                     context.SaveChanges();
                 }
             }
@@ -117,7 +123,7 @@ namespace DataAccessObjects
                 using (var Context = new StudentHouseMembershipContext())
                 {
                     var temp = Context.staff.SingleOrDefault(p => p.Email == email
-                    && p.Password == password);
+                    && p.Password == password&& p.Active == true);
                     if (temp != null)
                     { return true; }
 
@@ -147,7 +153,7 @@ namespace DataAccessObjects
                 {
 
 
-                    var staffId = context.staff.Where(p => p.Status == "false")
+                    var staffId = context.staff.Where(p => p.Status == "false" && p.Active == true)
                             .Select(p => p.StaffId).ToList();
                     return staffId;
 
@@ -172,7 +178,7 @@ namespace DataAccessObjects
                 using (var context = new StudentHouseMembershipContext())
                 {
 
-                    List<staff> staffList = context.staff.Where(p => p.Status == Status).ToList();
+                    List<staff> staffList = context.staff.Where(p => p.Status == Status && p.Active ==true).ToList();
                     return staffList;
                 }
 
@@ -208,13 +214,13 @@ namespace DataAccessObjects
                 using (var context = new StudentHouseMembershipContext())
                 {
                     List<StaffOrderModel> result = new List<StaffOrderModel>();
-
+                    //lay order of staff 
                     List<StaffOrder> ordersOfStaff = context.StaffOrders.Where(x => x.StaffId == staffId).ToList();
 
                     foreach (var orderOfStaff in ordersOfStaff)
                     {
                         StaffOrderModel staffOrderModel = null;
-
+                        // lay orderId -> descripttion , Inprocess
                         Order order = context.Orders.Where(x => x.OrderId == orderOfStaff.OrderId).FirstOrDefault();
                         if (order != null)
                         {

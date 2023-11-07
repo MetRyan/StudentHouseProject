@@ -54,7 +54,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(471, 27);
+            label1.Location = new Point(802, 9);
             label1.Name = "label1";
             label1.Size = new Size(170, 38);
             label1.TabIndex = 0;
@@ -73,8 +73,8 @@
             tableLayoutPanel1.ColumnCount = 4;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 38.6574059F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 61.3425941F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 240F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 177F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 230F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 327F));
             tableLayoutPanel1.Controls.Add(txtAddress, 3, 2);
             tableLayoutPanel1.Controls.Add(txtPhone, 3, 1);
             tableLayoutPanel1.Controls.Add(lbFirstName, 0, 0);
@@ -90,7 +90,7 @@
             tableLayoutPanel1.Controls.Add(cbSex, 1, 1);
             tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 2);
             tableLayoutPanel1.Controls.Add(cbxShowPassword, 1, 4);
-            tableLayoutPanel1.Location = new Point(137, 93);
+            tableLayoutPanel1.Location = new Point(354, 108);
             tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 5;
@@ -99,24 +99,24 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 74F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 31F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 105F));
-            tableLayoutPanel1.Size = new Size(866, 349);
+            tableLayoutPanel1.Size = new Size(1124, 349);
             tableLayoutPanel1.TabIndex = 4;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint_1;
             // 
             // txtAddress
             // 
-            txtAddress.Location = new Point(691, 142);
+            txtAddress.Location = new Point(799, 142);
             txtAddress.Margin = new Padding(3, 4, 3, 4);
             txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(167, 27);
+            txtAddress.Size = new Size(218, 27);
             txtAddress.TabIndex = 13;
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(691, 73);
+            txtPhone.Location = new Point(799, 73);
             txtPhone.Margin = new Padding(3, 4, 3, 4);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(167, 27);
+            txtPhone.Size = new Size(218, 27);
             txtPhone.TabIndex = 9;
             // 
             // lbFirstName
@@ -130,7 +130,7 @@
             // 
             // txtFirstName
             // 
-            txtFirstName.Location = new Point(176, 4);
+            txtFirstName.Location = new Point(222, 4);
             txtFirstName.Margin = new Padding(3, 4, 3, 4);
             txtFirstName.Name = "txtFirstName";
             txtFirstName.Size = new Size(243, 27);
@@ -139,7 +139,7 @@
             // lbLastName
             // 
             lbLastName.AutoSize = true;
-            lbLastName.Location = new Point(451, 0);
+            lbLastName.Location = new Point(569, 0);
             lbLastName.Name = "lbLastName";
             lbLastName.Size = new Size(79, 20);
             lbLastName.TabIndex = 6;
@@ -147,16 +147,16 @@
             // 
             // txtLastName
             // 
-            txtLastName.Location = new Point(691, 4);
+            txtLastName.Location = new Point(799, 4);
             txtLastName.Margin = new Padding(3, 4, 3, 4);
             txtLastName.Name = "txtLastName";
-            txtLastName.Size = new Size(167, 27);
+            txtLastName.Size = new Size(218, 27);
             txtLastName.TabIndex = 7;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(451, 69);
+            label3.Location = new Point(569, 69);
             label3.Name = "label3";
             label3.Size = new Size(50, 20);
             label3.TabIndex = 8;
@@ -174,7 +174,7 @@
             // lbAddress
             // 
             lbAddress.AutoSize = true;
-            lbAddress.Location = new Point(451, 138);
+            lbAddress.Location = new Point(569, 138);
             lbAddress.Name = "lbAddress";
             lbAddress.Size = new Size(62, 20);
             lbAddress.TabIndex = 12;
@@ -191,7 +191,7 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(176, 216);
+            txtPassword.Location = new Point(222, 216);
             txtPassword.Margin = new Padding(3, 4, 3, 4);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(243, 27);
@@ -211,7 +211,7 @@
             // 
             cbSex.FormattingEnabled = true;
             cbSex.Items.AddRange(new object[] { "Male", "FeMale" });
-            cbSex.Location = new Point(176, 73);
+            cbSex.Location = new Point(222, 73);
             cbSex.Margin = new Padding(3, 4, 3, 4);
             cbSex.Name = "cbSex";
             cbSex.Size = new Size(243, 28);
@@ -219,7 +219,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(176, 141);
+            dateTimePicker1.Location = new Point(222, 141);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(243, 27);
             dateTimePicker1.TabIndex = 18;
@@ -227,7 +227,7 @@
             // cbxShowPassword
             // 
             cbxShowPassword.AutoSize = true;
-            cbxShowPassword.Location = new Point(176, 247);
+            cbxShowPassword.Location = new Point(222, 247);
             cbxShowPassword.Margin = new Padding(3, 4, 3, 4);
             cbxShowPassword.Name = "cbxShowPassword";
             cbxShowPassword.Size = new Size(132, 24);
@@ -238,7 +238,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(521, 467);
+            btnSave.Location = new Point(822, 516);
             btnSave.Margin = new Padding(3, 4, 3, 4);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(119, 39);
@@ -252,7 +252,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1125, 631);
+            BackColor = SystemColors.ControlLight;
+            ClientSize = new Size(1551, 631);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(label2);
             Controls.Add(label1);

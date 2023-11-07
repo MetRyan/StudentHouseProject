@@ -56,6 +56,7 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.AllowDrop = true;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.AutoSize = true;
             flowLayoutPanel1.BackColor = SystemColors.ActiveCaption;
@@ -63,7 +64,7 @@
             flowLayoutPanel1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             flowLayoutPanel1.Location = new Point(205, 153);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1342, 732);
+            flowLayoutPanel1.Size = new Size(1350, 653);
             flowLayoutPanel1.TabIndex = 5;
             // 
             // label2

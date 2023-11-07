@@ -147,6 +147,7 @@ namespace UI.AdminPage
                             Status = cbStatus.Text,
                             // ServiceId = int.Parse(txtServiceId.Text),
                             Password = txtPassword.Text,
+                            Active =true,
 
                         };
 
@@ -175,8 +176,8 @@ namespace UI.AdminPage
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}", "Error",
-            MessageBoxButtons.OK, MessageBoxIcon.Error);
+           //     MessageBox.Show($"An error occurred: {ex.Message}", "Error",
+           // MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
         }

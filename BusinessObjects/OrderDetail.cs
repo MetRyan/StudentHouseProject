@@ -5,7 +5,7 @@ namespace BusinessObjects
 {
     public partial class OrderDetail
     {
-        public int? OrderId { get; set; }
+        public int OrderId { get; set; }
         public int? ServiceId { get; set; }
         public string? ServiceName { get; set; }
         public double? Price { get; set; }
@@ -13,11 +13,11 @@ namespace BusinessObjects
         public DateTime? EndDate { get; set; }
         public string? Address { get; set; }
         public string? PaymentMethod { get; set; }
-        public bool? Pending { get; set; }
+        public string? Pending { get; set; }
         public int Id { get; set; }
         public string? Phone { get; set; }
 
-        public virtual Order? Order { get; set; }
+        public virtual Order Order { get; set; } = null!;
         public virtual Service? Service { get; set; }
     }
 }

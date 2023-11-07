@@ -22,10 +22,52 @@ namespace StudentHouseProject.User
 
         private void OrderDetails_Load(object sender, EventArgs e)
         {
+            //  btnReload.PerformClick();
             txtAddress.Enabled = false;
             txtOrderDay.Enabled = false;
             txtPayment.Enabled = false;
             txtPhone.Enabled = false;
+            var OrderList = repository.GetOrdersByCustomerId(getCustomer.CustomerId);
+            BindingSource srouce = new BindingSource();
+            srouce.DataSource = OrderList;
+
+            dgvOrderDetails.DataSource = srouce;
+
+            dgvOrderDetails.Columns.Remove("Payments");
+            dgvOrderDetails.Columns.Remove("OrderDetails");
+            dgvOrderDetails.Columns.Remove("Customer");
+            dgvOrderDetails.Columns.Remove("StaffOrders");
+
+            // dgvOrderDetails.Columns.Remove("Payments");
+            foreach (var order in OrderList)
+            {
+                if (order.Status == "true")
+                {
+                    order.Status = "đã giao việc ";
+
+
+                }
+                else
+                {
+                    order.Status = "chưa giao việc ";
+
+                }
+                if (order.Inprocess == "true")
+                {
+                    order.Inprocess = " Đã hoàn thành";
+
+
+                }
+                else
+                {
+                    order.Inprocess = " Chưa hoàn thành";
+
+
+                }
+
+
+
+            }
 
 
         }
@@ -38,12 +80,42 @@ namespace StudentHouseProject.User
             srouce.DataSource = OrderList;
 
             dgvOrderDetails.DataSource = srouce;
-                
+
             dgvOrderDetails.Columns.Remove("Payments");
             dgvOrderDetails.Columns.Remove("OrderDetails");
             dgvOrderDetails.Columns.Remove("Customer");
-            // dgvOrderDetails.Columns.Remove("Payments");
+            dgvOrderDetails.Columns.Remove("StaffOrders");
 
+            // dgvOrderDetails.Columns.Remove("Payments");
+            foreach (var order in OrderList)
+            {
+                if (order.Status == "true")
+                {
+                    order.Status = "đã giao việc ";
+
+
+                }
+                else
+                {
+                    order.Status = "chưa giao việc ";
+
+                }
+                if (order.Inprocess == "true")
+                {
+                    order.Inprocess = " Đã hoàn thành";
+
+
+                }
+                else
+                {
+                    order.Inprocess = " Chưa hoàn thành";
+
+
+                }
+
+
+
+            }
 
 
         }
@@ -70,7 +142,7 @@ namespace StudentHouseProject.User
             dgvViewDetails.DataSource = null;
             dgvViewDetails.DataSource = source;
             //EndDate//PaymemmtMethod,Id,Phone,Order,Service,endday
-       
+
 
             txtAddress.DataBindings.Clear();
             txtOrderDay.DataBindings.Clear();
@@ -92,7 +164,22 @@ namespace StudentHouseProject.User
             dgvViewDetails.Columns.Remove("Service");
             dgvViewDetails.Columns.Remove("ServiceId");
             dgvViewDetails.Columns.Remove("Address");
+            // foreach( var )
+            foreach (var items in getOrderDetails)
+            {
 
+                if (items.Pending == "true")
+                {
+                    items.Pending = " đã hoàn thành";
+
+                }
+                else
+                {
+
+                    items.Pending = " chưa hoàn thành ";
+                }
+
+            }
 
 
         }

@@ -153,6 +153,7 @@ namespace StudentHouseProject.User
                     Description = txtNote.Text ?? "N/A",
                     Status = "false",
                     CreateDate = DateTime.Now,
+                    Inprocess = "false",
 
                 };
                 int OrderId = repository.addOrder_getOrderId(listOrder);
@@ -164,7 +165,7 @@ namespace StudentHouseProject.User
                         OrderId = OrderId,
                         Address = txtAdress.Text,
                         PaymentMethod = cbPayment.Text,
-                        Pending = false,
+                        Pending = "false",
                         Phone = txtPhone.Text,
                         Price = cartlist[i].Price,
                         ServiceId = cartlist[i].ServiceId,
